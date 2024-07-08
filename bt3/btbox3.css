@@ -1,0 +1,27 @@
+#image {
+margin-left: 500px;
+}
+#content {
+float: right;
+margin-top: -150px;
+margin-right: 400px;
+}
+#box {
+    width: 900px;
+    border: 1px lightgray;
+    background-color: lightgray;
+    margin-top: 100px;
+    text-align: center;
+    transform: translate(30%, 30%); /*dịch chuyển hộp để căn giữa*/  
+}
+#boxsc {
+    width: 900px;
+    border: 1px lightgray;
+    background-color: lightgray;
+    margin-top: 40px;
+    text-align: center;
+    transform: translate(30%, 30%); /*dịch chuyển hộp để căn giữa*/  
+}
+#text {
+    padding-left: 265px;
+}

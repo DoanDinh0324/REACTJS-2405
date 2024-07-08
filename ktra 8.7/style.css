@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    background-color: black;
+}
+body{
+    background-color: #FFFFFF;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    line-height: 1.5;
+    border: 2px solid #FFFFFF;
+}
+.section{
+    width: 100%;
+    float: left;
+    background-color: #FFFFFF;
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    float: none;
+}
+.heading{
+    padding-bottom: 20px;
+    background-color: #FFFFFF;
+}
+.company_name{
+    color: #cc9900;
+    float: left;
+    font-size: 30px;
+    padding-left: 30px;
+    margin-top: -9px;
+}
+.menu{
+    margin: 20px 50px 10px 10px;
+}
+.subsite{
+    float: right;
+    margin: 0px 10px 0px 10px;
+}
+.home{
+    background-color: #cc9900;
+    color: #FFFFFF;
+}
+.btn{
+    padding: 5px 30px 5px 30px;
+}
+.headingimg{
+    max-width: 1200px;
+}
+.intro{
+    font-size: 27px;
+    color: #cc9900;
+    margin-top: 50px;
+}
+.intro_transcript{
+    color: #c3c4c5;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 42%;
+}
+.card-body{
+    text-align: left;
+}
+.table1{
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFFF;
+    margin-top: 70px;
+}
+.article{
+    max-width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.articlename{
+    color: #cc9900;
+    text-align: left;
+}
+.article_prescript{
+    color: #c3c4c5;
+}
+.summary{
+    border: none;
+}
+.somewhere{
+    background-color: #cc9900;
+    color: #FFFFFF;
+}
+.main_topic{
+    float: left;
+    margin-top: 30px;
+    max-width: 50%;
+}
+.other_content{
+    float: right;
+    width: 50%;
+    margin-top: 30px;
+}
+.connect1{
+    float: left;
+    width: 50%;
+}
+.connect2{
+    float: right;
+    width: 50%;
+}
+.img-fluid{
+    margin-top: 20px;
+}
+.fence{
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 10px;
+}
+.maintopicimg{
+    margin-bottom: 30px;
+}
+.letter{
+    background-color: #cccccc;
+    margin-top: 10px;
+}
+.choose{
+    color: #006699;
+}
+.under{
+    color: #CCCC66;
+}
+.key{
+    margin-left: 15px;
+}
+.context{
+    color: #666666;
+}
+.read_more{
+    background-color: #666666;
+    color: #FFFFFF;
+}
+.footer_content{
+    float: left;
+    width: 25%;
+    margin-top: 50px;
+}
+footer{
+    background-image: url(/12Ath_project_test/images/footerbackground.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1200px 600px;
+}

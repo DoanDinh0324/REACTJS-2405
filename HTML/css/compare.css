@@ -1,0 +1,22 @@
+/* 
+1. Khi style cùng cấp nói về 1 propety => ưu tiên dùng cái nói sau
+2. Khi 2 style khác cấp cùng nói về 1 propety => ưu tiên dùng cái cấp cao hơn
+    => các cấp cao dần : tag => parent tag => class => parent class => id => parent id
+*/
+body #idcompare {
+    color: rebeccapurple;
+}
+#idcompare {
+    color: pink;
+}
+body .classcompare {
+    color: orange;
+}
+
+h1 {
+    color: red;
+}
+
+h1 {
+    color: green;
+}

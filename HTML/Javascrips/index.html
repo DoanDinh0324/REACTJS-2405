@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        var inputNumber = prompt("Nhập vào trọng lượng của bạn (lớn hơn 30kg):"); //stri
+        // console.log("Lực rơi xuống F =");
+        // console.log(typeof inputNumber);
+        inputNumber = parseFloat(inputNumber);
+        if(inputNumber >=30 && inputNumber <=150){
+            var f = inputNumber * 9.878;
+            console.log("Lực rơi xuống F =" + f);
+        }
+        else{
+            console.log("Bạn nhập không đúng giá trị yêu cầu !")
+        }
+
+        // var inputNumber1 = prompt("Nhập vào chiều dài hình chữ nhật");
+        // var inputNumber2 = prompt("Nhập vào chiều rộng hình chữ nhật");
+        // inputNumber1 = parseFloat(inputNumber1);
+        // inputNumber2 = parseFloat(inputNumber2);
+        // var C = 2*(inputNumber1+inputNumber2);
+        // var S = inputNumber1*inputNumber2;
+        // console.log("Chu vi là:" + C);
+        // console.log("Diện tích là:" + S);  Chu vi hình chữ nhật
+
+
+
+
+    </script> -->
+    <h1>Tính chu vi và diện tích hình tam giác</h1>
+    <script type="text/javascript">
+        var canh1 = prompt("nhập cạnh thứ nhất");
+        canh1 = parseFloat(canh1);
+        var canh2 = prompt("nhập cạnh thứ nhất");
+        canh1 = parseFloat(canh2);
+        var canh3 = prompt("nhập cạnh thứ nhất");
+        canh1 = parseFloat(canh3);
+
+        if(canh1 + canh2 > canh3 && canh1 + canh2 > canh3 && canh2 + canh3 > canh1){
+            var p = canh1 + canh2 + canh3;
+            alert(`chu vi tam giac: ${p}`);
+            var p2 = p/2; //nửa chu vi
+            var s = Math.sqrt(p2 *(p2 - canh1) * (p2 - canh2) * (p2 - canh3));
+            alert(`Diện tích tam giác: ${s}`);
+            hoanthanh = true;
+        }else{
+            alert(`Đây không phải độ dài 3 cạnh tam giác!`);
+            var check = confirm("Bạn có muốn nhập lại không ? ");
+            if(check == true){
+                hoanthanh = false;
+            }else{
+                hoanthanh = true;
+            }
+        }
+        alert("Kết thúc chương trình!")
+
+    </script>
+    
+</body>
+</html>

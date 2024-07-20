@@ -40,7 +40,9 @@ body {
     padding-left: 30px;
     margin-top: -9px;
 }
-
+.c1{
+    display: none;
+}
 .menu {
     margin: 20px 50px 10px 10px;
 }

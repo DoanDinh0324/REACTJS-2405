@@ -4,6 +4,6 @@ $(".menu1").click(function() {
 $(".img2").click(function() {
     $(".c1").toggle();
 });
-$(".img2").click(function() {
-    $(".c3").toggle();
+$(".im2").click(function() {
+    $(".menu6").toggle();
 });

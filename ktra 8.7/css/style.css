@@ -17,7 +17,6 @@ body {
 
 .section {
     width: 100%;
-    float: left;
     background-color: #FFFFFF;
 }
 
@@ -38,16 +37,22 @@ body {
     float: left;
     font-size: 30px;
     padding-left: 30px;
-    margin-top: -9px;
+    margin-top: 10px;
 }
 .c1{
     display: none;
 }
 .menu {
     margin: 20px 50px 10px 10px;
+    float: inline-end;
 }
-
-.subsite {
+.menu1{
+    display: contents;
+}
+.b1{
+    display: none;
+}
+#subsite {
     float: right;
     margin: 0px 10px 0px 10px;
 }
@@ -59,6 +64,7 @@ body {
 
 .btn {
     padding: 5px 30px 5px 30px;
+    /* float: right; */
 }
 
 .headingimg {

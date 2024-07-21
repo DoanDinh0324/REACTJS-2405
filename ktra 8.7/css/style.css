@@ -67,8 +67,9 @@ body {
     /* float: right; */
 }
 
-.headingimg {
-    max-width: 1200px;
+.headingimg > img{
+    max-width: 100%;
+    width: 100%;
 }
 
 .intro {

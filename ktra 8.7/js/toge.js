@@ -32,3 +32,13 @@ $(".im2").click(function() {
       },  
       1000)
 });
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel({
+      items: 3,
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      autoplayHoverPause: true
+  });
+});

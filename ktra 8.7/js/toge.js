@@ -34,7 +34,7 @@ $(".im2").click(function() {
 });
 $(document).ready(function(){
   $(".owl-carousel").owlCarousel({
-      items: 3,
+      items: 0.5,
       loop: true,
       margin: 10,
       autoplay: true,

@@ -90,8 +90,6 @@ body {
 }
 
 .table1 {
-    float: left;
-    background-color: #FFFFFF;
     margin-top: 30px;
 }
 
@@ -191,7 +189,6 @@ body {
 }
 
 .footer_content {
-    width: 25%;
     padding-top: 30px;
 }
 
@@ -200,10 +197,11 @@ body {
 }
 
 footer {
-    background-image: url(../images/footerbackground.jpg);
-    background-repeat: no-repeat;
+    background-image: url(../images/footerbackground.jpg);  
     background-position: center;
+    background-repeat: repeat-y;
     background-size: 1200px 600px;
+    height: 100%;
 }
 
 @media (max-width: 575px) {
@@ -457,4 +455,15 @@ footer {
         flex-direction: column;
     }
 
+}
+
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 1) {
+    .headingimg{
+        max-width: 100%;
+        width: 100%;
+    }
+ 
 }

@@ -133,14 +133,13 @@ body {
 
 .other_content {
     float: right;
-    width: 50%;
     margin-top: 30px;
     display: flex;
 }
 
 .connect1 {
     float: left;
-    width: 50%;
+    width: 100%;
 }
 
 .connect2 {

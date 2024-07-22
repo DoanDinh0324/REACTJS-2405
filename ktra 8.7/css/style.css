@@ -21,8 +21,7 @@ body {
 }
 
 .container {
-    margin-left: auto;
-    margin-right: auto;
+
     width: 1200px;
     float: none;
     max-width: 100%;
@@ -92,16 +91,12 @@ body {
 
 .table1 {
     float: left;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #FFFFFF;
-    margin-top: 70px;
+    margin-top: 30px;
 }
 
 .article {
     max-width: 25%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .articlename {
@@ -116,8 +111,6 @@ body {
 
 .summary {
     border: none;
-    width: 100%;
-    max-width: 100%;
 }
 
 .somewhere {
@@ -131,15 +124,18 @@ body {
     max-width: 50%;
 }
 
+.main_topic1 {
+    padding: 0;
+}
+
 .other_content {
     float: right;
-    margin-top: 30px;
+    margin-top: 18px;
     display: flex;
 }
 
 .connect1 {
     float: left;
-    width: 100%;
 }
 
 .connect2 {
@@ -188,14 +184,16 @@ body {
 .related_post {
     display: table;
 }
+.related_post1 {
+    margin-left: 30px;
+}
 .rounder {
     padding-left: 25px;
 }
 
 .footer_content {
-    float: left;
     width: 25%;
-    margin-top: 50px;
+    padding-top: 30px;
 }
 
 .footer {

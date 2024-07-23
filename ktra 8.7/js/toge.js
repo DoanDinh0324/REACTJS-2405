@@ -33,12 +33,24 @@ $(".im2").click(function() {
       1000)
 });
 $(document).ready(function(){
-  $(".owl-carousel").owlCarousel({
-      items: 0.5,
-      loop: true,
-      margin: 10,
-      autoplay: true,
-      autoplayTimeout: 3000,
-      autoplayHoverPause: true
-  });
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        768:{
+            items:3,
+            nav:false
+        },
+        1200:{
+            items:1,
+            nav:true,
+            loop:false
+        }
+    }
+})
 });

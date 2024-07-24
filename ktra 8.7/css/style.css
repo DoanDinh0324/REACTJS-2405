@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-
+    padding: 0;
     width: 1200px;
     float: none;
     max-width: 100%;
@@ -121,7 +121,7 @@ body {
 .main_topic {
     float: left;
     margin-top: 30px;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .main_topic1 {
@@ -129,19 +129,21 @@ body {
 }
 
 .other_content {
-    float: right;
     margin-top: 18px;
     display: flex;
 }
+.other_content1{
+}
 
 .connect1 {
-    float: left;
+    width: 50%;
 }
 
 .connect2 {
-    float: right;
     width: 50%;
+    overflow: hidden;
 }
+
 
 .img-fluid {
     margin-top: 20px;
@@ -173,6 +175,11 @@ body {
     margin-left: 15px;
 }
 
+.rounder {
+    width: 100%;
+    max-width: 100%;
+}
+
 .context {
     color: #666666;
 }
@@ -181,14 +188,8 @@ body {
     background-color: #666666;
     color: #FFFFFF;
 }
-.related_post {
-    display: table;
-}
 .related_post1 {
     margin-left: 30px;
-}
-.rounder {
-    padding-left: 40px;
 }
 
 .footer_content {

@@ -35,6 +35,11 @@ $(".im2").click(function() {
 $(document).ready(function(){
   $('.owl-carousel').owlCarousel({
     loop:true,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
     margin:10,
     responsiveClass:true,
     responsive:{
@@ -54,3 +59,4 @@ $(document).ready(function(){
     }
 })
 });
+

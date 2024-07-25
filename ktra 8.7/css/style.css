@@ -112,6 +112,13 @@ body {
 .summary {
     border: none;
 }
+.summary1{
+    display: contents;
+}
+
+.summaryy{
+
+}
 
 .somewhere {
     background-color: #cc9900;
@@ -127,7 +134,9 @@ body {
 .main_topic1 {
     padding: 0;
 }
-
+.main_topic2 {
+    padding: 15px;
+}
 .other_content {
     margin-top: 18px;
     display: flex;
@@ -140,7 +149,6 @@ body {
 }
 
 .connect2 {
-    width: 50%;
     overflow: hidden;
 }
 
@@ -178,6 +186,7 @@ body {
 .rounder {
     width: 100%;
     max-width: 100%;
+    display: flex;
 }
 
 .context {
@@ -198,6 +207,7 @@ body {
 
 .footer {
     display: flex;
+    padding-left: 20px;
 }
 
 footer {

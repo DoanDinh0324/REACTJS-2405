@@ -96,6 +96,7 @@ body {
     top: 20%;
     position: absolute;
     right: 10px;
+    display: none;
 }
 .owl-carousel .owl-nav button.owl-prev{
     font-size: 100px;
@@ -104,9 +105,17 @@ body {
     position: absolute;
     left: 10px;
     top: 20%;
+    display: none;
+}
+.carousel1:hover  
+.owl-nav button.owl-prev{
+    display: block;
+}
+.carousel1:hover 
+.owl-nav button.owl-next{
+    display: block;
 }
 .owl-carousel button.owl-dot {
-
 }
 
 .card-body {

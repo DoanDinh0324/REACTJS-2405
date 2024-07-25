@@ -14,6 +14,7 @@ body {
     text-align: center;
     line-height: 1.5;
     border: 2px solid #FFFFFF;
+    font-size: 15px;
 }
 
 .section {
@@ -88,6 +89,26 @@ body {
     overflow: auto;
 }
 
+.owl-carousel .owl-nav button.owl-next{
+    font-size: 100px;
+    float: right;
+    opacity: 1;
+    top: 20%;
+    position: absolute;
+    right: 10px;
+}
+.owl-carousel .owl-nav button.owl-prev{
+    font-size: 100px;
+    float: left;
+    opacity: 1;
+    position: absolute;
+    left: 10px;
+    top: 20%;
+}
+.owl-carousel button.owl-dot {
+
+}
+
 .card-body {
     text-align: left;
 }
@@ -119,6 +140,8 @@ body {
 .summaryy{
 
 }
+
+
 
 .somewhere {
     background-color: #cc9900;

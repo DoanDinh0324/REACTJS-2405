@@ -35,6 +35,10 @@ $(".im2").click(function() {
 $(document).ready(function(){
   $('.owl-carousel').owlCarousel({
     loop:true,
+    dots: true,
+    prevArrow: $('.prev'),
+    nextArrow: $('.next'),
+    infinite: false,
     speed: 300,
     slidesToShow: 3,
     slidesToScroll: 1,

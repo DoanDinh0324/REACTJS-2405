@@ -126,13 +126,11 @@ body {
     margin-top: 30px;
 }
 
-.article {
-}
 
 .articlename {
     color: #cc9900;
     text-align: left;
-    padding: 0;
+    margin: 0;
 }
 
 .article_prescript {
@@ -166,9 +164,7 @@ body {
 .main_topic1 {
     padding: 0;
 }
-.main_topic2 {
-    padding: 15px;
-}
+
 .other_content {
     display: flex;
 }
@@ -176,7 +172,6 @@ body {
 }
 
 .connect1 {
-    width: 50%;
 }
 
 .connect2 {
@@ -185,7 +180,7 @@ body {
 
 
 .img-fluid {
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .fence {
@@ -228,9 +223,6 @@ body {
     background-color: #666666;
     color: #FFFFFF;
 }
-.related_post1 {
-    margin-left: 30px;
-}
 
 .footer_content {
     padding-top: 30px;
@@ -238,7 +230,6 @@ body {
 
 .footer {
     display: flex;
-    padding-left: 20px;
 }
 
 footer {

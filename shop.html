@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web test</title>
+    <link rel="icon" href="https://www.w3schools.com/images/colorpicker2000.png">
+    <link rel="stylesheet" href="../shop/css/style.css">
+    <link rel="stylesheet" href="../shop/tailwincss/tailwind.min.css">
+    <link rel="stylesheet" href="../shop/css/base.css">
+</head>
+
+<body>
+
+    <body>
+        <header>
+            <div class="container">
+                <div class="grid grid-cols-2 gap-4 flex justify-between flex items-center">
+                    <div class="logo py-4">
+                        <a href="">
+                            <span>Classic</span>
+                        </a>
+                    </div>
+                    <div class="menu py-8 flex justify-end">
+                        <ul class="flex md:justify-between">
+                            <div class="active">
+                                <button type="button" class="btn home">Home</button>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="order1">
+            <div class="order bg-gray-100 flex justify-center items-center h-screen">
+                <div class=" bg-white rounded-lg shadow-lg p-4 rounded-s-2xl ">
+                    <!-- Header -->
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-blue-600">Mua hàng</h2>
+                        <button class="close-icon">
+                            <img src="../shop/img/close_round_icon.png" alt="">
+                        </button>
+                    </div>
+            
+                    <!-- Progress Bar -->
+                    <div class="flex items-center mb-8">
+                        <div class="flex items-center">
+                            <div class=" w-8 h-8 flex items-center justify-center bg-blue-500 text-white rounded-full">
+                                <img class="checkmark-icon" src="../shop/img/checkmark_round_icon.png" alt="">
+                            </div>
+                            <span class="ml-2 font-medium">Đơn hàng</span>
+                        </div>
+            
+                        <div class="w-16 h-px bg-blue-300 mx-2"></div>
+            
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white rounded-full">
+                                <span>2</span>
+                            </div>
+                            <span class="ml-2 font-medium text-black">Banner</span>
+                        </div>
+            
+                        <div class="w-16 h-px bg-gray-300 mx-2"></div>
+            
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 flex items-center justify-center bg-gray-200 text-gray-400 rounded-full">
+                                <span>3</span>
+                            </div>
+                            <span class="ml-2 text-gray-400">Thanh toán</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700">Màu văn bản</label>
+                                <input type="text" value="#000000" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700">Màu nền</label>
+                                <input type="text" value="#FFFFFF" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700">Nội dung</label>
+                                <input type="text" placeholder="Nhập nội dung" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700">Thêm ảnh/video</label>
+                                <div class="flex items-center space-x-4 mt-2">
+                                    <div>
+                                        <input type="radio" id="image" name="media" value="image" checked>
+                                        <label for="image" class="ml-2">Ảnh</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="video" name="media" value="video">
+                                        <label for="video" class="ml-2">Video</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Xem trước</label>
+                            <div class="w-full h-48 border border-gray-300 rounded-md mt-1"></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-5 gap-2 mt-4">
+                        <div class="border-2 border-dashed border-blue-300 rounded-lg flex items-center justify-center h-20">
+                            <span class="text-blue-400 text-3xl">+</span>
+                        </div>
+                        <div class="border-2 border-dashed border-blue-300 rounded-lg flex items-center justify-center h-20">
+                            <span class="text-blue-400 text-3xl">+</span>
+                        </div>
+                        <div class="border-2 border-dashed border-blue-300 rounded-lg flex items-center justify-center h-20">
+                            <span class="text-blue-400 text-3xl">+</span>
+                        </div>
+                        <div class="border-2 border-dashed border-blue-300 rounded-lg flex items-center justify-center h-20">
+                            <span class="text-blue-400 text-3xl">+</span>
+                        </div>
+                        <div class="border-2 border-dashed border-blue-300 rounded-lg flex items-center justify-center h-20">
+                            <span class="text-blue-400 text-3xl">+</span>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <input type="text" placeholder="Nhập link URL" class="block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                    </div>
+                    <div class="flex justify-between items-center mt-6">
+                        <button class="text-gray-600 hover:text-gray-800">Quay lại</button>
+                        <button class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Tiếp theo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer></footer>
+
+
+        <script type="text/javascript"></script>
+        <script src="../shop/js/jquery-3.7.1.js"></script>
+        <script src="../shop/js/toggle.js"></script>
+    </body>
+
+</html>

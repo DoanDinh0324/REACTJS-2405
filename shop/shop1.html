@@ -92,7 +92,7 @@
                                             <span class="text-gray-600">Ảnh</span>
                                         </label>
                                         <label class="flex items-center">
-                                            <input type="radio" name="mediaType" value="video" onclick="toggleFileInput('video')" class="mr-2 text-blue-500">
+                                            <input type="file" name="media" accept="video/*"onclick="toggleFileInput('video')" class="mr-2 text-blue-500">
                                             <span class="text-gray-600">Video</span>
                                         </label>
                                     </div>
@@ -102,29 +102,29 @@
                         <div class="right">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Xem trước</label>
-                                <div   id="imagePreview1" class="w-full h-96 border border-gray-300 rounded-md"></div>
+                                <div  id="imagePreview1" class="w-full h-96 border border-gray-300 rounded-md"></div>
                             </div>
                         </div>
                     </div>
                     <div class="grid grid-cols-5 gap-4">
                         <!-- File input containers -->
-                        <div class=" border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50" onclick="triggerFileInput(1)">
+                        <div class="file-container border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50" onclick="triggerFileInput(1)">
                             <span class="text-blue-400 text-2xl">+</span>
                             <input type="file" id="fileInput1" class="hidden" onchange="previewFile(1)">
                         </div>
-                        <div class=" border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50" onclick="triggerFileInput(2)">
+                        <div class="file-container border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50" onclick="triggerFileInput(2)">
                             <span class="text-blue-400 text-2xl">+</span>
                             <input type="file" id="fileInput2" class="hidden" onchange="previewFile(2)">
                         </div>
-                        <div class=" border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50" onclick="triggerFileInput(3)">
+                        <div class="file-container border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50" onclick="triggerFileInput(3)">
                             <span class="text-blue-400 text-2xl">+</span>
                             <input type="file" id="fileInput3" class="hidden" onchange="previewFile(3)">
                         </div>
-                        <div class=" border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50" onclick="triggerFileInput(4)">
+                        <div class="file-container border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50" onclick="triggerFileInput(4)">
                             <span class="text-blue-400 text-2xl">+</span>
                             <input type="file" id="fileInput4" class="hidden" onchange="previewFile(4)">
                         </div>
-                        <div class=" border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50" onclick="triggerFileInput(5)">
+                        <div class="file-container border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50" onclick="triggerFileInput(5)">
                             <span class="text-blue-400 text-2xl">+</span>
                             <input type="file" id="fileInput5" class="hidden" onchange="previewFile(5)">
                         </div>

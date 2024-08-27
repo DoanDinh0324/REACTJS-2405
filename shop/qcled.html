@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web test</title>
+    <link rel="icon" href="https://www.w3schools.com/images/colorpicker2000.png">
+    <link rel="stylesheet" href="../shop/css/style.css">
+    <link rel="stylesheet" href="../shop/tailwincss/tailwind.min.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Container chính -->
+    <div class="container mx-auto">
+        <div class="flex p-4">
+            <!-- Cột bên trái - Danh sách video -->
+            <div class="w-1/5 space-y-4">
+                <!-- Video item -->
+                <div class="relative w-full">
+                    <video id="video1" class="w-full h-auto rounded-md shadow-lg">
+                        <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <!-- Custom Controls -->
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 p-4 flex items-center justify-between text-white">
+                        <!-- Left Controls (Play, Volume, Time) -->
+                        <div class="flex items-center space-x-4">
+                            <!-- Play Icon -->
+                            <button id="playPauseBtn1" class="focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14.752 11.168l-6.584-3.788A1 1 0 007 8.232v7.536a1 1 0 001.168.976l6.584-3.788a1 1 0 000-1.768z" />
+                                </svg>
+                            </button>
+
+                            <!-- Volume Icon -->
+                            <button id="muteBtn1" class="focus:outline-none">
+                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                                </svg>
+                            </button>
+
+                            <!-- Time -->
+                            <span id="currentTime1">0:00 / 10:</span>
+                        </div>
+
+                        <!-- Right Controls (Settings, Fullscreen) -->
+                        <div class="flex items-center space-x-4">
+                            <!-- Settings Icon -->
+                            <button class="focus:outline-none">
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
+                                </svg>
+
+                            </button>
+
+                            <!-- Fullscreen Icon -->
+                            <button id="fullscreenBtn1" class="focus:outline-none">
+                                <img class="w-6 h-4" src="../shop/icons/ytp-id-21.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative w-full">
+                    <video id="video1" class="w-full h-auto rounded-md shadow-lg">
+                        <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <!-- Custom Controls -->
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 p-4 flex items-center justify-between text-white">
+                        <!-- Left Controls (Play, Volume, Time) -->
+                        <div class="flex items-center space-x-4">
+                            <!-- Play Icon -->
+                            <button id="playPauseBtn1" class="focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14.752 11.168l-6.584-3.788A1 1 0 007 8.232v7.536a1 1 0 001.168.976l6.584-3.788a1 1 0 000-1.768z" />
+                                </svg>
+                            </button>
+
+                            <!-- Volume Icon -->
+                            <button id="muteBtn1" class="focus:outline-none">
+                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                                </svg>
+                            </button>
+
+                            <!-- Time -->
+                            <span id="currentTime1">0:00 / 10:</span>
+                        </div>
+
+                        <!-- Right Controls (Settings, Fullscreen) -->
+                        <div class="flex items-center space-x-4">
+                            <!-- Settings Icon -->
+                            <button class="focus:outline-none">
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
+                                </svg>
+
+                            </button>
+
+                            <!-- Fullscreen Icon -->
+                            <button id="fullscreenBtn1" class="focus:outline-none">
+                                <img class="w-6 h-4" src="../shop/icons/ytp-id-21.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative w-full">
+                    <img src="../shop/img/imgqcled/right/qc3.png" alt="Video Thumbnail"
+                        class="w-full h-auto rounded-lg">
+                    <div class="absolute  right-0 bottom-0 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                        05:25
+                    </div>
+                </div>
+                <div class="relative w-full">
+                    <img src="../shop/img/imgqcled/right/qc4.png" alt="Video Thumbnail"
+                        class="w-full h-auto rounded-lg">
+                    <div class="absolute  right-0 bottom-0 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                        09:30
+                    </div>
+                </div>
+                <div class="relative w-full">
+                    <img src="../shop/img/imgqcled/right/qc5.png" alt="Video Thumbnail"
+                        class="w-full h-auto rounded-lg">
+                    <div class="absolute  right-0 bottom-0 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                        23:35
+                    </div>
+                </div>
+                <div class="relative w-full">
+                    <img src="../shop/img/imgqcled/right/qc6.png" alt="Video Thumbnail"
+                        class="w-full h-auto rounded-lg">
+                    <div class="absolute  right-0 bottom-0 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+                        14:20
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cột giữa - Video chính -->
+            <div class="w-3/5 mx-4">
+                <div class="relative">
+
+                    <video id="myVideo" class="w-full h-auto rounded-md shadow-lg">
+                        <source src="../shop/videos/video-tuanvu4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <!-- Custom Controls -->
+                    <div
+                        class="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 p-4 flex items-center justify-between text-white">
+                        <!-- Left Controls (Play, Volume, Time) -->
+                        <div class="flex items-center space-x-4">
+                            <!-- Play Icon -->
+                            <button id="playPauseBtn" class="focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14.752 11.168l-6.584-3.788A1 1 0 007 8.232v7.536a1 1 0 001.168.976l6.584-3.788a1 1 0 000-1.768z" />
+                                </svg>
+                            </button>
+
+                            <!-- Volume Icon -->
+                            <button id="muteBtn" class="focus:outline-none">
+                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                                </svg>
+                            </button>
+
+                            <!-- Time -->
+                            <span id="currentTime">0:00 / 16:06</span>
+                        </div>
+
+                        <!-- Right Controls (Settings, Fullscreen) -->
+                        <div class="flex items-center space-x-4">
+                            <!-- Settings Icon -->
+                            <button class="focus:outline-none">
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
+                                </svg>
+
+                            </button>
+
+                            <!-- Fullscreen Icon -->
+                            <button id="fullscreenBtn" class="focus:outline-none">
+                                <img class="w-6 h-4" src="../shop/icons/ytp-id-21.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-200 to-transparent mb-14">
+                        <div class="flex items-center justify-between">
+                            <div class="flex space-x-4">
+                                <button class="px-2 py-1 text-sm bg-white rounded">Đời sống</button>
+                                <button class="px-2 py-1 text-sm bg-white rounded">Khám phá</button>
+                                <button class="px-2 py-1 text-sm bg-white rounded">Du lịch</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cột bên phải - Quảng cáo -->
+            <div class="w-1/5 space-y-4">
+                <div class="relative w-full">
+                    <img src="../shop/img/imgqcled/left/Banner.png" alt="Video Thumbnail"
+                        class="w-full h-auto rounded-lg">
+                </div>
+                <div class="relative w-full">
+                    <img src="../shop/img/imgqcled/left/image 1813.png" alt="Video Thumbnail"
+                        class="w-full h-auto rounded-lg">
+                </div>
+                <div class="relative w-full">
+                    <img src="../shop/img/imgqcled/left/image 1814.png" alt="Video Thumbnail"
+                        class="w-full h-auto rounded-lg">
+                </div>
+                <div class="relative w-full">
+                    <img src="../shop/img/imgqcled/left/image 1815.png" alt="Video Thumbnail"
+                        class="w-full h-auto rounded-lg">
+                </div>
+                <div class="relative w-full">
+                    <img src="../shop/img/imgqcled/left/image 1816.png" alt="Video Thumbnail"
+                        class="w-full h-auto rounded-lg">
+                </div>
+                <div class="relative w-full">
+                    <img src="../shop/img/imgqcled/left/image 1817.png" alt="Video Thumbnail"
+                        class="w-full h-auto rounded-lg">
+                </div>
+                <div class="relative w-full">
+                    <img src="../shop/img/imgqcled/left/image 1818.png" alt="Video Thumbnail"
+                        class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript"></script>
+    <script src="../shop/js/jquery-3.7.1.js"></script>
+    <script src="../shop/js/toggle.js"></script>
+    <script src="../shop/js/jsqcled.js"></script>
+
+</body>
+
+</html>

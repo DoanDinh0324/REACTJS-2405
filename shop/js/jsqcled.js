@@ -53,6 +53,7 @@ const currentTimeDisplay1 = document.getElementById('currentTime1');
 playPauseBtn1.addEventListener('click', () => {
   if (video1.paused) {
     video1.play();
+    video1.play = "none"
   } else {
     video1.pause();
   }

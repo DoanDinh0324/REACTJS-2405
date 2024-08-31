@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Volume Control</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-800 flex items-center justify-center min-h-screen">
+
+  <!-- Video Player -->
+  <div class="relative w-full max-w-2xl">
+    <video id="video" class="w-full rounded-lg shadow-lg">
+      <source src="path/to/your/video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Control Buttons -->
+    <div class="absolute bottom-4 left-4 flex items-center space-x-2">
+      <button id="controlButton" class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg">
+        <span id="playIcon">▶️</span>
+      </button>
+      <button id="fullscreenButton" class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg">
+        🔲 <!-- Fullscreen icon -->
+      </button>
+    </div>
+    <div class="w-full bg-gray-300 h-2 rounded">
+        <div class="bg-red-500 h-2 rounded-l" style="width: 40%;"></div>
+    </div>
+    
+    <!-- Volume Control -->
+    <div class="absolute bottom-4 right-4 flex items-center space-x-2">
+      <input type="range" id="volumeSlider" class="w-24 h-2 bg-gray-400 rounded-lg appearance-none cursor-pointer" min="0" max="1" step="0.1">
+      <button id="muteButton" class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg">
+        🔊 <!-- Volume icon -->
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById('video');
+    const controlButton = document.getElementById('controlButton');
+    const playIcon = document.getElementById('playIcon');
+    const fullscreenButton = document.getElementById('fullscreenButton');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const muteButton = document.getElementById('muteButton');
+
+    // Toggle play/pause on button click
+    controlButton.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        playIcon.classList.add('hidden'); 
+      } else {
+        video.pause();
+        playIcon.classList.remove('hidden');
+      }
+    });
+
+    // Fullscreen functionality
+    fullscreenButton.addEventListener('click', () => {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        video.requestFullscreen();
+      }
+    });
+
+    // Volume control
+    volumeSlider.addEventListener('input', (event) => {
+      video.volume = event.target.value;
+    });
+
+    // Mute/unmute button functionality
+    muteButton.addEventListener('click', () => {
+      video.muted = !video.muted;
+      muteButton.textContent = video.muted ? '🔇' : '🔊';
+    });
+
+    document.querySelector('.progress-inner').style.width = '70%';
+  </script>
+
+</body>
+</html>

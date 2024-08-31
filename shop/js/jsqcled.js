@@ -1,45 +1,37 @@
+const video = document.getElementById('video');
+const controlButton = document.getElementById('controlButton');
+const playIcon = document.getElementById('playIcon');
+const fullscreenButton = document.getElementById('fullscreenButton');
+const volumeSlider = document.getElementById('volumeSlider');
+const muteButton = document.getElementById('muteButton');
 
-//play videos
-const video = document.getElementById('myVideo');
-const playPauseBtn = document.getElementById('playPauseBtn');
-const muteBtn = document.getElementById('muteBtn');
-const currentTimeDisplay = document.getElementById('currentTime');
+// Initial state: show play icon
+playIcon.classList.remove('hidden');
 
-// Play/Pause Functionality
-playPauseBtn.addEventListener('click', () => {
+// Toggle play/pause on button click
+controlButton.addEventListener('click', () => {
   if (video.paused) {
     video.play();
+    playIcon.classList.add('hidden'); 
   } else {
     video.pause();
+    playIcon.classList.remove('hidden');
   }
 });
-
-// Mute/Unmute Functionality
-muteBtn.addEventListener('click', () => {
-  video.muted = !video.muted;
-});
-
-// Update Time Display
-video.addEventListener('timeupdate', () => {
-  const currentTime = Math.floor(video.currentTime);
-  const minutes = Math.floor(currentTime / 60);
-  const seconds = currentTime % 60;
-  currentTimeDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds} / 16:06`;
-});
-// JavaScript to toggle fullscreen
-const fullscreenBtn = document.getElementById('fullscreenBtn');
-const videoContainer = document.getElementById('myVideo');
-
-fullscreenBtn.addEventListener('click', () => {
-  if (!document.fullscreenElement) {
-    videoContainer.requestFullscreen().catch(err => {
-      alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-    });
-  } else {
+fullscreenButton.addEventListener('click', () => {
+  if (document.fullscreenElement) {
     document.exitFullscreen();
+  } else {
+    video.requestFullscreen();
   }
 });
+    // Volume control
+    volumeSlider.addEventListener('input', (event) => {
+      video.volume = event.target.value;
+    });
 
-
-
-
+    // Mute/unmute button functionality
+    muteButton.addEventListener('click', () => {
+      video.muted = !video.muted;
+      muteButton.textContent = video.muted ? '🔇' : '🔊';
+    });

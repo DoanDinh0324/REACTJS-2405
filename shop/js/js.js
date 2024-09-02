@@ -28,11 +28,14 @@ function updateAll(event) {
 
 
 
-//show-images
+
+
+// Hàm kích hoạt trường nhập tệp
 function triggerFileInput(classId) {
   document.querySelector('.fileInput' + classId).click();
 }
 
+// Hàm xem trước tệp
 function previewFile(classId) {
   const fileInputs = document.querySelectorAll('.fileInput' + classId);
   const previewContainers = document.querySelectorAll('.imagePreview' + classId);
@@ -42,19 +45,36 @@ function previewFile(classId) {
     if (file) {
       const reader = new FileReader();
       reader.onload = function (e) {
-        const previewContainer = previewContainers[index];
-        previewContainer.innerHTML = '';  // Clear the preview container
-        const imgElement = document.createElement('img');
-        imgElement.src = e.target.result;
-        imgElement.className = 'object-cover w-full h-full rounded-md';
-        // const videoElement = document.createElement('video');
-        // videoElement.src = e.target.result;
-        // videoElement.className = 'object-cover w-full h-full rounded-md';
-        // videoElement.controls = true; previewContainer.appendChild(videoElement);
-        previewContainer.appendChild(imgElement);
+        const src = e.target.result;
+
+        // Hiển thị ảnh trong tất cả các phần tử có lớp hoặc ID
+        displayImageInAllContainers(src, classId);
       };
       reader.readAsDataURL(file);
     }
   });
 }
 
+
+// Hàm hiển thị ảnh trong tất cả các phần tử có lớp hoặc ID
+function displayImageInAllContainers(src, classId) {
+  // Tìm tất cả các phần tử có lớp cụ thể
+  const containersByClass = document.querySelectorAll('.imagePreview' + classId);
+  containersByClass.forEach(container => {
+    const imgElement = document.createElement('img');
+    imgElement.src = src;
+    imgElement.className = 'object-cover w-full h-full rounded-md';
+    container.innerHTML = ''; // Xóa nội dung hiện tại của khung
+    container.appendChild(imgElement);
+  });
+
+  // Tìm tất cả các phần tử có ID cụ thể
+  const containersById = document.querySelectorAll('#' + classId);
+  containersById.forEach(container => {
+    const imgElement = document.createElement('img');
+    imgElement.src = src;
+    imgElement.className = 'object-cover w-full h-full rounded-md';
+    container.innerHTML = ''; // Xóa nội dung hiện tại của khung
+    container.appendChild(imgElement);
+  });
+}

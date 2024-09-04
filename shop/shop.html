@@ -68,7 +68,7 @@
                         <div class="left">
                             <span class=" text-gray-700 text-sm">Bìa biểu ngữ</span>
                             <div
-                                class=" imagePreview1 sm:w-full w-28 mb-2 border-2 border-dashed border-blue-300 rounded-lg h-28 flex items-center justify-center cursor-pointer hover:bg-blue-50 ">
+                                class=" imagePreview1 w-28 mb-2 border-2 border-dashed border-blue-300 rounded-lg h-28 flex items-center justify-center cursor-pointer hover:bg-blue-50 ">
                                 <span class=" text-blue-400 text-2xl">+</span>
                             </div>
                             <div class="mb-4">
@@ -96,9 +96,8 @@
                                                 class="mr-2 text-blue-500" checked>Ảnh
                                         </label>
                                         <label class="flex items-center">
-                                            <input type="radio" name="mediaType" value="video"
-                                            onclick="toggleFileInput('video')" class="mr-2 text-blue-500">
-                                     Video
+                                            <input id="video" type="radio" name="mediaType" value="video" class="mr-2 text-blue-500">
+                                            Video
                                         </label>
                                     </div>
                                 </div>
@@ -107,8 +106,7 @@
                         <div class="right">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Xem trước</label>
-                                <div
-                                    class=" imagePreview1 w-full h-96 border border-gray-300 rounded-md">
+                                <div class=" videoPreview1 imagePreview1 w-full h-96 border border-gray-300 rounded-md">
                                 </div>
                             </div>
                         </div>
@@ -118,27 +116,27 @@
                         <div class=" imagePreview1 border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
                             onclick="triggerFileInput(1)">
                             <span class=" text-blue-400 text-2xl">+</span>
-                            <input type="file" id="videoInput" class="fileInput1 hidden" onchange="previewFile(1)">
+                            <input type="file" class="fileInput1 hidden" onchange="previewFile(1)">
                         </div>
                         <div class=" border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
-                            onclick="triggerFileInput(2)">
-                            <span class="text-blue-400 text-2xl">+</span>
-                            <input type="file" id="fileInput1" class="hidden" onchange="previewFile(2)">
+                            onclick="triggerFileInput(1)">
+                            <span class=" text-blue-400 text-2xl">+</span>
+                            <input type="file" class="fileInput1 hidden" onchange="previewFile(1)">
                         </div>
                         <div class=" border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
-                            onclick="triggerFileInput(3)">
-                            <span class="text-blue-400 text-2xl">+</span>
-                            <input type="file" id="fileInput1" class="hidden" onchange="previewFile(3)">
+                            onclick="triggerFileInput(1)">
+                            <span class=" text-blue-400 text-2xl">+</span>
+                            <input type="file" class="fileInput1 hidden" onchange="previewFile(1)">
                         </div>
                         <div class=" border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
-                            onclick="triggerFileInput(4)">
-                            <span class="text-blue-400 text-2xl">+</span>
-                            <input type="file" id="fileInput1" class="hidden" onchange="previewFile(4)">
+                            onclick="triggerFileInput(1)">
+                            <span class=" text-blue-400 text-2xl">+</span>
+                            <input type="file" class="fileInput1 hidden" onchange="previewFile(1)">
                         </div>
                         <div class=" border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
-                            onclick="triggerFileInput(5)">
-                            <span class="text-blue-400 text-2xl">+</span>
-                            <input type="file" id="fileInput1" class="hidden" onchange="previewFile(5)">
+                            onclick="triggerFileInput(1)">
+                            <span class=" text-blue-400 text-2xl">+</span>
+                            <input type="file" class="fileInput1 hidden" onchange="previewFile(1)">
                         </div>
                     </div>
                     <div class="mt-4">
@@ -148,7 +146,7 @@
                     <div class="flex justify-between items-center mt-6">
                         <button class="text-gray-600 hover:text-gray-800"><a href="">Quay lại</a></button>
                         <button class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"><a href="">Tiếp
-                            theo</a></button>
+                                theo</a></button>
                     </div>
                 </div>
             </div>

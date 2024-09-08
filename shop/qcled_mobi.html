@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web test</title>
+    <link rel="icon" href="https://www.w3schools.com/images/colorpicker2000.png">
+    <link rel="stylesheet" href="../shop/css/style.css">
+    <link rel="stylesheet" href="../shop/tailwincss/tailwind.min.css">
+</head>
+
+<body class="">
+
+    <!-- Container chính -->
+    <div class="">
+        <div class="p-2 sm:block sm:w-full">
+
+            <div class="  2xl:mx-4 2xl:w-full h-full sm:w-full">
+                <div class="relative">
+
+                    <div class="flex items-center justify-center">
+                        <video id="video" class="w-full rounded-lg shadow-lg" controls>
+                            <source src="../shop/videos/video-tuanvu4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    
+
+
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-200 to-transparent top-0">
+                        <div class="flex items-center justify-between">
+                            <div class="flex space-x-1 overflow-hidden whitespace-nowrap">
+                                <button class="w-24 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                    <img class="pr-2" src="../shop/icons/shopping-app 1.png" alt="">Đời sống</button>
+                                <button class="w-24 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                    <img class="pr-2" src="../shop/icons/social-media-marketing 1.png" alt="">Khámphá</button>
+                                <button class="w-24 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                    <img class="pr-2" src="../shop/icons/airplane 1.png" alt="">Du lịch</button>
+                                <!-- <button class="sm:w-full 2xl:w-28 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                    <img class="pr-2" src="../shop/icons/music-game 1.png" alt="">Âm nhạc</button>
+                                <button class="sm:w-full 2xl:w-28 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                    <img class="pr-2" src="../shop/icons/politics 1.png" alt="">Chính trị</button>
+                                <button class="sm:w-full 2xl:w-36 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                    <img class="pr-2" src="../shop/icons/social-media.png" alt="">Mạng xã hội</button>
+                                <button class="sm:w-full 2xl:w-36 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                    <img class="pr-2" src="../shop/icons/social-media-marketing 1.png" alt="">Công nghệ</button>
+                                <button class="sm:w-full 2xl:w-32 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                    <img class="pr-2" src="../shop/icons/science-research 1.png" alt="">Khoa học</button>
+                                <button class="sm:w-full 2xl:w-32 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                    <img class="pr-2" src="../shop/icons/cat 2.png" alt="">Thú cưng</button> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full bg-gray-300 h-2 rounded absolute bottom-0 left-0 right-0 bg-gradient-to-t from-neutral-200 to-transparent mb-24">
+                        <div class="bg-red-500 h-2 rounded-l" style="width: 40%;"></div>
+                    </div>
+                    
+                    <div class="mb-1 absolute bottom-0 rounded-xl w-full bg-black bg-opacity-50 text-white px-8 py-7 flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <button id="controlButton" class="focus:outline-none">
+                                <img id="playIcon" class="h-8 w-8" src="../shop/icons/playvideo.png" alt="">
+                            </button>
+                            <button class="focus:outline-none">
+                                <img class="h-8 w-8" src="../shop/icons/stopvideo.png" alt="">
+                            </button>
+                            <button id="volumeSlider" class="focus:outline-none">
+                                <img id="muteButton" class="h-8 w-8" src="../shop/icons/volum.png" alt="">
+                            </button>
+                            <span class="text-sm contents">0:00 / 10:21</span>
+                        </div>
+            
+                        <div class="flex items-center space-x-4">
+                            <button class="focus:outline-none">
+                                <img class="h-8 w-8" src="../shop/icons/cc.png" alt="">
+                            </button>
+                            <button class="focus:outline-none">
+                                <img class="h-8 w-8" src="../shop/icons/svg76.png" alt="">
+                            </button>
+                            <button class="focus:outline-none">
+                                <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                  </svg>
+                            </button>
+                            <button class="focus:outline-none">
+                                <img class="h-8 w-8" src="../shop/icons/svg78.png" alt="">
+                            </button>
+                            <button class="focus:outline-none">
+                                <img class="h-8 w-8" src="../shop/icons/svg79.png" alt="">
+                            </button>
+                            <button id="fullscreenButton" class="focus:outline-none">
+                                <img class="h-8 w-8" src="../shop/icons/svg80.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flex  flex justify-around p-2">
+                <button id="active" class="border-2 w-3/6 p-2.5 text-sm font-semibold">Gợi ý liên quan</button>
+                <button  class="qcimg text-sm border-2 w-3/6 p-2.5 font-semibold">Quảng cáo ADV</button>
+            </div>
+
+            <!-- Cột bên trái - Danh sách video -->
+            <div class="">
+                <div class="sm:w-full sm:h-full space-y-4 md:col-span-4 md:space-y-4">
+                    <!-- Video item -->
+                    <div id="qcvideo" class="hidden">
+                        <div class=" w-full">
+                            <video class="w-full rounded sm:h-full" controls>
+                                <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class=" w-full">
+                            <video class="w-full rounded sm:h-full" controls>
+                                <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class=" w-full">
+                            <video class="w-full rounded sm:h-full" controls>
+                                <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class=" w-full">
+                            <video class="w-full rounded sm:h-full" controls>
+                                <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class=" w-full">
+                            <video class="w-full rounded sm:h-full" controls>
+                                <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class=" w-full">
+                            <video class="w-full rounded sm:h-full" controls>
+                                <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class=" w-full">
+                            <video class="w-full rounded sm:h-full" controls>
+                                <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Cột giữa - Video chính -->
+    
+    
+                <div class="text-sm font-semibold mb-2">
+                    <div class="qcimg1 flex flex-col space-y-2 hidden">
+                        <div class="w-full">
+                            <img src="../shop/img/imgqcled/left/Banner.png" alt="Video Thumbnail"
+                                class="w-full h-auto rounded-lg">
+                        </div>
+                        <div class="w-full">
+                            <img src="../shop/img/imgqcled/left/image 1813.png" alt="Video Thumbnail"
+                                class="w-full h-auto rounded-lg">
+                        </div>
+                        <div class="w-full">
+                            <img src="../shop/img/imgqcled/left/image 1814.png" alt="Video Thumbnail"
+                                class="w-full h-auto rounded-lg">
+                        </div>
+                        <div class="w-full">
+                            <img src="../shop/img/imgqcled/left/image 1815.png" alt="Video Thumbnail"
+                                class="w-full h-auto rounded-lg">
+                        </div>
+                        <div class="w-full">
+                            <img src="../shop/img/imgqcled/left/image 1816.png" alt="Video Thumbnail"
+                                class="w-full h-auto rounded-lg">
+                        </div>
+                        <div class="w-full">
+                            <img src="../shop/img/imgqcled/left/image 1817.png" alt="Video Thumbnail"
+                                class="w-full h-auto rounded-lg">
+                        </div>
+                        <div class="w-full">
+                            <img src="../shop/img/imgqcled/left/image 1818.png" alt="Video Thumbnail"
+                                class="w-full h-auto rounded-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript"></script>
+    <script src="../shop/js/jquery-3.7.1.js"></script>
+    <script src="../shop/js/toggle_qcled.js"></script>
+    <script src="../shop/js/toggle.js"></script>
+    <script src="../shop/js/jsqcled.js"></script>
+
+</body>
+
+</html>

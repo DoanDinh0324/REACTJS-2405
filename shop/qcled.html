@@ -14,133 +14,191 @@
 
     <!-- Container chính -->
     <div class="">
-        <div class="2xl:flex p-2 sm:block sm:w-full">
+        <div class="flex p-2 block w-full">
             <!-- Cột bên trái - Danh sách video -->
-            <div class="2xl:w-2/12 sm:w-full sm:h-full space-y-4">
+            <div class="w-2/12 h-full space-y-4">
                 <!-- Video item -->
-                <div class=" w-full">
-                    <video class="w-full rounded sm:h-full" controls>
+                <div class=" w-full" onclick="swapVideo(this)">
+                    <video class="w-full rounded h-full">
                         <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
                     </video>
                 </div>
-                <div class=" w-full">
-                    <video class="w-full rounded sm:h-full" controls>
+                <div class=" w-full" onclick="swapVideo(this)">
+                    <video class="w-full rounded h-full">
                         <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
                     </video>
                 </div>
-                <div class=" w-full">
-                    <video class="w-full rounded sm:h-full" controls>
+                <div class=" w-full" onclick="swapVideo(this)">
+                    <video class="w-full rounded h-full">
                         <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
                     </video>
                 </div>
-                <div class=" w-full">
-                    <video class="w-full rounded sm:h-full" controls>
+                <div class=" w-full" onclick="swapVideo(this)">
+                    <video class="w-full rounded h-full">
                         <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
                     </video>
                 </div>
-                <div class=" w-full">
-                    <video class="w-full rounded sm:h-full" controls>
+                <div class=" w-full" onclick="swapVideo(this)">
+                    <video class="w-full rounded h-full">
                         <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
                     </video>
                 </div>
-                <div class=" w-full">
-                    <video class="w-full rounded sm:h-full" controls>
+                <div class=" w-full" onclick="swapVideo(this)">
+                    <video class="w-full rounded h-full">
                         <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
                     </video>
                 </div>
-                <div class=" w-full">
-                    <video class="w-full rounded sm:h-full" controls>
+                <div class=" w-full" onclick="swapVideo(this)">
+                    <video class="w-full rounded h-full">
                         <source src="../shop/videos/videoplayback.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
                     </video>
                 </div>
             </div>
 
             <!-- Cột giữa - Video chính -->
-            <div class="  2xl:mx-4 2xl:w-full h-full sm:w-full">
+            <div class="  mx-4 w-full h-full">
                 <div class="relative">
-                    <!-- <div class="w-full h-full sm:h-full rounded-xl ">
-                        <img src="../shop/img/Body.png" alt="">
-                    </div> -->
 
                     <div class="flex items-center justify-center h-screen bg-gray-900">
-                        <video id="video" class="w-full rounded-lg shadow-lg" controls>
+                        <video id="main-video" class="w-full rounded-lg shadow-lg">
                             <source src="../shop/videos/video-tuanvu4.mp4" type="video/mp4">
+                            <track src="../shop/subtitles/subtitles.srt" kind="subtitles" srclang="vi"
+                                label="Vietnamese" default>
                         </video>
                     </div>
-                    
+                    <!-- Mini Player -->
+                    <div id="mini-player" class="fixed bg-gray-900 text-white flex items-center hidden">
+                        <!-- Mini Player Video -->
+                        <video id="mini-video" class="w-1/4 h-1/4" muted>
+                            <source src="../shop/videos/video-tuanvu4.mp4" type="video/mp4">
+                        </video>
+                        <!-- Mini Player Controls -->
+                        <div class="flex flex-col justify-between">
+                            <button id="mini-play-button" class="text-white">
+                                <img id="mini-play-icon" class="h-5 w-5" src="../shop/icons/playvideo.png" alt="">
+                            </button>
+                            <div class="flex items-center gap-1">
+                                <span id="mini-time" class="text-xs">00:00</span>
+                                <input type="range" id="mini-progress" class="w-16 h-1 bg-gray-700 accent-blue-500"
+                                    min="0" max="100" value="0">
+                            </div>
+                        </div>
+                    </div>
 
 
-                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-200 to-transparent mb-28">
+
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-200 to-transparent mb-28">
                         <div class="flex items-center justify-between">
                             <div class="flex space-x-1 overflow-hidden whitespace-nowrap">
-                                <button class="sm:w-full 2xl:w-28 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                <button
+                                    class="w-28 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
                                     <img class="pr-2" src="../shop/icons/shopping-app 1.png" alt="">Đời sống</button>
-                                <button class="sm:w-full 2xl:w-32 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
-                                    <img class="pr-2" src="../shop/icons/social-media-marketing 1.png" alt="">Khámphá</button>
-                                <button class="sm:w-full 2xl:w-24 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                <button
+                                    class="w-32 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                    <img class="pr-2" src="../shop/icons/social-media-marketing 1.png"
+                                        alt="">Khámphá</button>
+                                <button
+                                    class="w-24 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
                                     <img class="pr-2" src="../shop/icons/airplane 1.png" alt="">Du lịch</button>
-                                <button class="sm:w-full 2xl:w-28 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                <button
+                                    class="w-28 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
                                     <img class="pr-2" src="../shop/icons/music-game 1.png" alt="">Âm nhạc</button>
-                                <button class="sm:w-full 2xl:w-28 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                <button
+                                    class="w-28 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
                                     <img class="pr-2" src="../shop/icons/politics 1.png" alt="">Chính trị</button>
-                                <button class="sm:w-full 2xl:w-36 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                <button
+                                    class="w-36 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
                                     <img class="pr-2" src="../shop/icons/social-media.png" alt="">Mạng xã hội</button>
-                                <button class="sm:w-full 2xl:w-36 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
-                                    <img class="pr-2" src="../shop/icons/social-media-marketing 1.png" alt="">Công nghệ</button>
-                                <button class="sm:w-full 2xl:w-32 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
-                                    <img class="pr-2" src="../shop/icons/science-research 1.png" alt="">Khoa học</button>
-                                <button class="sm:w-full 2xl:w-32 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                <button
+                                    class="w-36 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                    <img class="pr-2" src="../shop/icons/social-media-marketing 1.png" alt="">Công
+                                    nghệ</button>
+                                <button
+                                    class="w-32 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
+                                    <img class="pr-2" src="../shop/icons/science-research 1.png" alt="">Khoa
+                                    học</button>
+                                <button
+                                    class="w-32 overflow-hidden text-sm bg-white rounded-xl flex items-center justify-center whitespace-nowrap">
                                     <img class="pr-2" src="../shop/icons/cat 2.png" alt="">Thú cưng</button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="w-full bg-gray-300 h-2 rounded absolute bottom-0 left-0 right-0 bg-gradient-to-t from-neutral-200 to-transparent mb-24">
-                        <div class="bg-red-500 h-2 rounded-l" style="width: 40%;"></div>
+                    <div id="progress-bar-container"
+                        class="w-full bg-gray-300 h-2 rounded absolute bottom-0 left-0 right-0 bg-gradient-to-t from-neutral-200 to-transparent mb-24">
+                        <div id="progress-bar" class="bg-red-500 h-2 rounded-l" style="width: 0;"></div>
                     </div>
-                    
-                    <div class="mb-1 absolute bottom-0 rounded-xl w-full bg-black bg-opacity-50 text-white px-8 py-7 flex items-center justify-between">
+                    <div
+                        class="mb-1 absolute bottom-0 rounded-xl w-full bg-black bg-opacity-50 text-white px-8 py-7 flex items-center justify-between">
                         <div class="flex items-center space-x-2">
-                            <button id="controlButton" class="focus:outline-none">
-                                <img id="playIcon" class="h-8 w-8" src="../shop/icons/playvideo.png" alt="">
+                            <div id="controlButton">
+                                <button class="focus:outline-none pt-1.5">
+                                    <img id="playIcon" class="h-5 w-5" src="../shop/icons/playvideo.png" alt="">
+                                </button>
+                                <button class="focus:outline-none pt-1.5">
+                                    <svg id="pauseIcon" class="w-5 h-5 text-white hidden"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <rect x="6" y="4" width="4" height="16" fill="white"></rect>
+                                        <rect x="14" y="4" width="4" height="16" fill="white"></rect>
+                                    </svg>
+
+                                </button>
+                            </div>
+                            <button class="focus:outline-none ">
+                                <img class="h-5 w-5" src="../shop/icons/stopvideo.png" alt="">
                             </button>
-                            <button class="focus:outline-none">
-                                <img class="h-8 w-8" src="../shop/icons/stopvideo.png" alt="">
+                            <button id="replayButton" class="focus:outline-none ">
+                                <svg id="replayIcon" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                                    <path fill-rule="evenodd"
+                                        d="M10 4.5c1.215 0 2.417.055 3.604.162a.68.68 0 0 1 .615.597c.124 1.038.208 2.088.25 3.15l-1.689-1.69a.75.75 0 0 0-1.06 1.061l2.999 3a.75.75 0 0 0 1.06 0l3.001-3a.75.75 0 1 0-1.06-1.06l-1.748 1.747a41.31 41.31 0 0 0-.264-3.386 2.18 2.18 0 0 0-1.97-1.913 41.512 41.512 0 0 0-7.477 0 2.18 2.18 0 0 0-1.969 1.913 41.16 41.16 0 0 0-.16 1.61.75.75 0 1 0 1.495.12c.041-.52.093-1.038.154-1.552a.68.68 0 0 1 .615-.597A40.012 40.012 0 0 1 10 4.5ZM5.281 9.22a.75.75 0 0 0-1.06 0l-3.001 3a.75.75 0 1 0 1.06 1.06l1.748-1.747c.042 1.141.13 2.27.264 3.386a2.18 2.18 0 0 0 1.97 1.913 41.533 41.533 0 0 0 7.477 0 2.18 2.18 0 0 0 1.969-1.913c.064-.534.117-1.071.16-1.61a.75.75 0 1 0-1.495-.12c-.041.52-.093 1.037-.154 1.552a.68.68 0 0 1-.615.597 40.013 40.013 0 0 1-7.208 0 .68.68 0 0 1-.615-.597 39.785 39.785 0 0 1-.25-3.15l1.689 1.69a.75.75 0 0 0 1.06-1.061l-2.999-3Z"
+                                        clip-rule="evenodd" />
+                                </svg>
                             </button>
-                            <button id="volumeSlider" class="focus:outline-none">
-                                <img id="muteButton" class="h-8 w-8" src="../shop/icons/volum.png" alt="">
-                            </button>
-                            <span class="text-sm contents">0:00 / 10:21</span>
+                            <div id="volume-controls" class="flex items-center">
+                                <button id="volume-button" class="focus:outline-none mt-1">
+                                    <img id="volume-icon" class="h-5 w-5" src="../shop/icons/volum.png" alt="">
+                                </button>
+                                <div id="volume-bar-container"
+                                    class="w-32 bg-gray-700 h-2 mx-4 relative cursor-pointer hidden">
+                                    <div id="volume-bar" class="bg-blue-500 h-full" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div id="video-controls" class="flex items-center justify-center">
+                                <span id="current-time" class="text-white">00:00</span>
+                                <div id="progress-bar-container"
+                                    class="w-full bg-gray-700 mx-4 relative cursor-pointer">
+                                    <div id="progress-bar" class="-ml-2.5 bg-blue-500 h-full" style="width: 0%;">/</div>
+                                </div>
+                                <span id="total-time" class="-ml-3.5 text-white">00:00</span>
+                            </div>
                         </div>
-            
+
                         <div class="flex items-center space-x-4">
-                            <button class="focus:outline-none">
-                                <img class="h-8 w-8" src="../shop/icons/cc.png" alt="">
+                            <button id="subtitlesButton" class="focus:outline-none">
+                                <img id="subtitlesIcon" class="h-5 w-5" src="../shop/icons/cc.png" alt="">
+                            </button>
+                            <button id="toggle-mini-player" class="focus:outline-none">
+                                <img class="h-5 w-5" src="../shop/icons/svg76.png" alt="">
                             </button>
                             <button class="focus:outline-none">
-                                <img class="h-8 w-8" src="../shop/icons/svg76.png" alt="">
+                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
                             </button>
                             <button class="focus:outline-none">
-                                <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                  </svg>
+                                <img class="h-5 w-5" src="../shop/icons/svg78.png" alt="">
                             </button>
                             <button class="focus:outline-none">
-                                <img class="h-8 w-8" src="../shop/icons/svg78.png" alt="">
-                            </button>
-                            <button class="focus:outline-none">
-                                <img class="h-8 w-8" src="../shop/icons/svg79.png" alt="">
+                                <img class="h-5 w-5" src="../shop/icons/svg79.png" alt="">
                             </button>
                             <button id="fullscreenButton" class="focus:outline-none">
-                                <img class="h-8 w-8" src="../shop/icons/svg80.png" alt="">
+                                <img class="h-5 w-5" src="../shop/icons/svg80.png" alt="">
                             </button>
                         </div>
                     </div>
@@ -148,7 +206,7 @@
                 </div>
             </div>
 
-            <div class="2xl:w-2/12 space-y-4 sm:w-full">
+            <div class="w-2/12 space-y-4 ">
                 <div class="relative w-full">
                     <img src="../shop/img/imgqcled/left/Banner.png" alt="Video Thumbnail"
                         class="w-full h-auto rounded-lg">

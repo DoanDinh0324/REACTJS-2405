@@ -14,12 +14,6 @@ const volumeButton = document.getElementById('volume-button');  // Nút âm lư�
 const volumeIcon = document.getElementById('volume-icon');  // Biểu tượng âm lượng
 const volumeBar = document.getElementById('volume-bar');  // Thanh điều chỉnh âm lượng
 const volumeBarContainer = document.getElementById('volume-bar-container');  // Container của thanh âm lượng
-const miniPlayer = document.getElementById('mini-player');  // Mini player
-const miniVideo = document.getElementById('mini-video');  // Video trong mini player
-const miniPlayButton = document.getElementById('mini-play-button');  // Nút phát trong mini player
-const miniPlayIcon = document.getElementById('mini-play-icon');  // Biểu tượng phát trong mini player
-const miniProgress = document.getElementById('mini-progress');  // Thanh tiến trình trong mini player
-const miniTime = document.getElementById('mini-time');  // Thời gian trong mini player
 const toggleMiniPlayerButton = document.getElementById('toggle-mini-player');  // Nút kích hoạt mini player
 
 // Initial state: show play icon
@@ -156,61 +150,3 @@ toggleMiniPlayerButton.addEventListener('click', () => {
   }
 });
 
-// Khi video phát, đảm bảo nó ở chế độ xem đầy đủ nếu chưa được thu nhỏ
-video.addEventListener('play', () => {
-  if (!video.classList.contains('minimized')) {
-    video.classList.add('maximized');
-  }
-});
-
-// Cập nhật mini player khi video chính bắt đầu phát
-video.addEventListener('play', () => {
-  if (video.classList.contains('minimized')) {
-    miniVideo.src = video.src;  // Đồng bộ hóa video trong mini player với video chính
-    updateMiniPlayerProgress(); // Cập nhật thanh tiến trình của mini player
-  }
-});
-
-// Cập nhật mini player khi video chính bị dừng
-video.addEventListener('pause', () => {
-  if (video.classList.contains('minimized')) {
-    miniVideo.pause(); // Dừng video trong mini player
-  }
-});
-
-// Khi nhấp vào nút phát trong mini player
-miniPlayButton.addEventListener('click', () => {
-  if (miniVideo.paused) {
-    miniVideo.play();
-    miniPlayIcon.innerHTML = '<path d="M4 22V2l18 10-18 10z"/>'; // Biểu tượng phát
-  } else {
-    miniVideo.pause();
-    miniPlayIcon.innerHTML = '<path d="M6 19l14-7-14-7v14z"/>'; // Biểu tượng tạm dừng
-  }
-});
-
-// Cập nhật thanh tiến trình của mini player
-function updateMiniPlayerProgress() {
-  miniProgress.max = video.duration;
-  miniProgress.value = video.currentTime;
-  miniTime.textContent = formatTime(video.currentTime);
-}
-
-// Định dạng thời gian video
-function formatTime(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
-  return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-}
-
-// Cập nhật thanh tiến trình khi video chính thay đổi thời gian
-video.addEventListener('timeupdate', () => {
-  if (video.classList.contains('minimized')) {
-    updateMiniPlayerProgress();
-  }
-});
-
-// Điều chỉnh video chính khi người dùng thay đổi thanh tiến trình
-miniProgress.addEventListener('input', (e) => {
-  video.currentTime = e.target.value;
-});

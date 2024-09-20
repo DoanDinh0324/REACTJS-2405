@@ -31,22 +31,12 @@ controlButton.addEventListener('click', () => {
     playIcon.classList.remove('hidden');  // Hiển thị biểu tượng play
   }
 });
-// Cập nhật thanh tiến trình khi video phát
-video.addEventListener('timeupdate', () => {
-  const percentage = (video.currentTime / video.duration) * 100;  // Tính phần trăm thời gian phát
-  progressBar.style.width = `${percentage}%`;  // Cập nhật độ dài thanh tiến trình
-});
 // Khi nhấp vào nút phát lại
 replayButton.addEventListener('click', () => {
   video.currentTime = 0;  // Đặt thời gian video về 0
   video.play();  // Phát video từ đầu
   playIcon.classList.add('hidden');  // Ẩn biểu tượng play
   pauseIcon.classList.remove('hidden');  // Hiển thị biểu tượng pause
-});
-// Khi nhấp vào nút phụ đề
-subtitlesButton.addEventListener('click', () => {
-  subtitlesEnabled = !subtitlesEnabled;  // Chuyển trạng thái phụ đề
-  subtitlesTrack.mode = subtitlesEnabled ? 'showing' : 'hidden';  // Hiển thị hoặc ẩn phụ đề
 });
 fullscreenButton.addEventListener('click', () => {
   if (document.fullscreenElement) {
@@ -122,23 +112,27 @@ video.addEventListener('volumechange', () => {
 });
 
 function swapVideo(smallVideoElement) {
-  // Lấy video lớn
   const mainVideo = document.getElementById('main-video');
   const mainSource = mainVideo.querySelector('source');
 
-  // Lấy video nhỏ
   const smallVideo = smallVideoElement.querySelector('video');
   const smallSource = smallVideo.querySelector('source');
 
-  // Hoán đổi URL của video lớn và video nhỏ
   const tempUrl = mainSource.src;
   mainSource.src = smallSource.src;
   smallSource.src = tempUrl;
 
-  // Tải lại cả video lớn và video nhỏ
+  // Reload both videos
   mainVideo.load();
   smallVideo.load();
+
+  // Ensure metadata is loaded and duration is updated
+  mainVideo.addEventListener('loadedmetadata', () => {
+    const duration = mainVideo.duration;
+    totalTimeElem.textContent = formatTime(duration);  // Update total time after swap
+  });
 }
+
 // Khi nhấp vào nút kích hoạt mini player
 toggleMiniPlayerButton.addEventListener('click', () => {
   if (video.classList.contains('minimized')) {

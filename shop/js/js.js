@@ -25,81 +25,84 @@ function updateAll(event) {
   });
 }
 
+// Lấy tất cả các phần tử chứa file input và các khung hình nhỏ
+const fileInputs = document.querySelectorAll('.fileInput');
+const imagePreviews = document.querySelectorAll('.imagePreview');
 
-// Hàm kích hoạt trường nhập tệp
-function triggerFileInput(classId) {
-  document.querySelector('.fileInput' + classId).click();
-}
+// Lặp qua các khung hình nhỏ và gắn sự kiện click để kích hoạt chọn file
+imagePreviews.forEach((preview) => {
+    const id = preview.getAttribute('data-id');
+    preview.addEventListener('click', () => {
+        document.querySelector(`.fileInput[data-id="${id}"]`).click();
+    });
+});
 
-// Hàm xem trước tệp
-function previewFile(classId) {
-  const fileInputs = document.querySelectorAll('.fileInput' + classId);
-  const previewContainers = document.querySelectorAll('.imagePreview' + classId);
-  
+// Lặp qua tất cả các file input và xử lý xem trước tệp
+fileInputs.forEach((fileInput) => {
+    fileInput.addEventListener('change', () => {
+        const id = fileInput.getAttribute('data-id');
+        const previewContainer = document.querySelector(`.imagePreview[data-id="${id}"]`);
+        const file = fileInput.files[0];
 
-  fileInputs.forEach((fileInput) => {
-    const file = fileInput.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const src = e.target.result;
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const src = e.target.result;
 
-        // Hiển thị ảnh hoặc video trong tất cả các phần tử có lớp hoặc ID
-        if (file.type.startsWith('image/')) {
-          displayImageInAllContainers(src, classId);
-        } else if (file.type.startsWith('video/')) {
-          displayVideoInAllContainers(src, classId);
+                // Hiển thị hình ảnh hoặc video trong khung nhỏ
+                if (file.type.startsWith('image/')) {
+                    displayImage(src, previewContainer);
+                } else if (file.type.startsWith('video/')) {
+                    displayVideo(src, previewContainer);
+                }
+
+                // Gắn sự kiện click để hiển thị hình ảnh hoặc video trong 2 khung lớn
+                previewContainer.addEventListener('click', () => {
+                    showInBothMainPreviews(src, file.type);
+                });
+            };
+            reader.readAsDataURL(file);
         }
-      };
-      reader.readAsDataURL(file);
-    }
-  });
-}
+    });
+});
 
-// Hàm hiển thị ảnh trong tất cả các phần tử có lớp hoặc ID
-function displayImageInAllContainers(src, classId) {
-  // Tìm tất cả các phần tử có lớp cụ thể
-  const containersByClass = document.querySelectorAll('.imagePreview' + classId);
-  containersByClass.forEach(container => {
+// Hiển thị ảnh trong khung nhỏ
+function displayImage(src, container) {
     const imgElement = document.createElement('img');
     imgElement.src = src;
     imgElement.className = 'object-cover w-full h-full rounded-md';
     container.innerHTML = ''; // Xóa nội dung hiện tại của khung
     container.appendChild(imgElement);
-  });
-
-  // Tìm tất cả các phần tử có ID cụ thể
-  const containersById = document.querySelectorAll('#' + classId);
-  containersById.forEach(container => {
-    const imgElement = document.createElement('img');
-    imgElement.src = src;
-    imgElement.className = 'object-cover w-full h-full rounded-md';
-    container.innerHTML = ''; // Xóa nội dung hiện tại của khung
-    container.appendChild(imgElement);
-  });
 }
 
-// Hàm hiển thị video trong tất cả các phần tử có ID là "video"
-function displayVideoInAllContainers(src, classId) {
-  // Tìm tất cả các phần tử có lớp cụ thể
-  const containersByClass = document.querySelectorAll('.videoPreview' + classId);
-  containersByClass.forEach(container => {
+// Hiển thị video trong khung nhỏ
+function displayVideo(src, container) {
     const videoElement = document.createElement('video');
     videoElement.src = src;
-    videoElement.controls = true; // Hiển thị điều khiển video
+    videoElement.controls = true; // Hiển thị các điều khiển video
     videoElement.className = 'object-cover w-full h-full rounded-md';
     container.innerHTML = ''; // Xóa nội dung hiện tại của khung
     container.appendChild(videoElement);
-  });
+}
 
-  // Tìm tất cả các phần tử có ID cụ thể
-  const containersById = document.querySelectorAll('#' + classId);
-  containersById.forEach(container => {
-    const videoElement = document.createElement('video');
-    videoElement.src = src;
-    videoElement.controls = true; // Hiển thị điều khiển video
-    videoElement.className = 'object-cover w-full h-full rounded-md';
-    container.innerHTML = ''; // Xóa nội dung hiện tại của khung
-    container.appendChild(videoElement);
-  });
+// Hiển thị hình ảnh hoặc video trong cả hai khung chứa lớn
+function showInBothMainPreviews(src, fileType) {
+    const mainPreviews = [document.querySelector('.mainPreview1'), document.querySelector('.mainPreview2')];
+    
+    mainPreviews.forEach(mainPreview => {
+        mainPreview.innerHTML = ''; // Xóa nội dung hiện tại của khung
+        
+        if (fileType.startsWith('image/')) {
+            const imgElement = document.createElement('img');
+            imgElement.src = src;
+            imgElement.className = 'object-cover w-full h-full rounded-md';
+            mainPreview.appendChild(imgElement);
+        } else if (fileType.startsWith('video/')) {
+            const videoElement = document.createElement('video');
+            videoElement.src = src;
+            videoElement.controls = true; // Hiển thị điều khiển video
+            videoElement.className = 'object-cover w-full h-full rounded-md';
+            mainPreview.appendChild(videoElement);
+        }
+    });
 }

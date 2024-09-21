@@ -11,143 +11,141 @@
 </head>
 
 <body>
+    <div class="container mx-auto flex flex justify-center">
+        <div class="w-full order bg-gray-400 flex justify-center items-center">
+            <div class="w-1/2 my-5 bg-white rounded-lg shadow-lg p-4 rounded-r-2xl rounded-l-2xl w-7/12 ">
+                <div class=" items-center mb-6 flex justify-between">
+                    <span class="text-2xl font-bold text-blue-600">Mua Hàng</span>
+                    <button class="close-icon w-4">
+                        <img src="../shop/img/close_round_icon.png" alt="">
+                    </button>
+                </div>
 
-    <body>
+                <div class="flex items-center mb-8 text-sm text-xs flex justify-center overflow-hidden sm:w-full">
+                    <li class=" flex w-full items-center justify-center text-blue-600 ">
+                        <span
+                            class="flex items-center justify-center 2xl:w-10 2xl:h-10 bg-blue-500 rounded-full sm:w-8 sm:h-6 lg:h-6 lg:w-6 dark:bg-blue-800 shrink-0">
+                            <svg class="w-3.5 h-3.5 text-white lg:w-4 lg:h-4 dark:text-blue-300" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                            </svg>
+                        </span>
+                        <span class="ml-2 text-black">Đơn Hàng</span>
+                    </li>
+                    <div class="w-full h-px bg-blue-300 mx-2"></div>
+                    <li class="flex w-full items-center justify-center">
+                        <span
+                            class="flex items-center justify-center bg-blue-500 text-white 2xl:w-10 2xl:h-10 sm:w-6 sm:h-6 rounded-full lg:h-6 lg:w-6 dark:bg-gray-700 shrink-0">2
+                        </span>
+                        <span class="ml-2 text-black">Banner</span>
+                    </li>
+                    <div class="w-full h-px bg-gray-300 mx-2"></div>
+                    <li class=" w-full flex items-center justify-center">
+                        <span
+                            class="2xl:w-10 2xl:h-10 sm:w-8 sm:h-6 flex items-center justify-center bg-white border rounded-full">
+                            3
+                        </span>
+                        <span class="ml-2 text-gray-400">Thanh toán</span>
+                    </li>
+                </div>
 
-
-        <div class="container mx-auto flex flex justify-center">
-            <div class="w-full order bg-gray-400 flex justify-center items-center">
-                <div class="w-1/2 my-5 bg-white rounded-lg shadow-lg p-4 rounded-r-2xl rounded-l-2xl w-7/12 ">
-                    <div class=" items-center mb-6 flex justify-between">
-                        <span class="text-2xl font-bold text-blue-600">Mua Hàng</span>
-                        <button class="close-icon w-4">
-                            <img src="../shop/img/close_round_icon.png" alt="">
-                        </button>
-                    </div>
-
-                    <div class="flex items-center mb-8 text-sm text-xs flex justify-center overflow-hidden sm:w-full">
-                        <li class=" flex w-full items-center justify-center text-blue-600 ">
-                            <span
-                                class="flex items-center justify-center 2xl:w-10 2xl:h-10 bg-blue-500 rounded-full sm:w-8 sm:h-6 lg:h-6 lg:w-6 dark:bg-blue-800 shrink-0">
-                                <svg class="w-3.5 h-3.5 text-white lg:w-4 lg:h-4 dark:text-blue-300" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                </svg>
-                            </span>
-                            <span class="ml-2 text-black">Đơn Hàng</span>
-                        </li>
-                        <div class="w-full h-px bg-blue-300 mx-2"></div>
-                        <li class="flex w-full items-center justify-center">
-                            <span
-                                class="flex items-center justify-center bg-blue-500 text-white 2xl:w-10 2xl:h-10 sm:w-6 sm:h-6 rounded-full lg:h-6 lg:w-6 dark:bg-gray-700 shrink-0">2
-                            </span>
-                            <span class="ml-2 text-black">Banner</span>
-                        </li>
-                        <div class="w-full h-px bg-gray-300 mx-2"></div>
-                        <li class=" w-full flex items-center justify-center">
-                            <span class="2xl:w-10 2xl:h-10 sm:w-8 sm:h-6 flex items-center justify-center bg-white border rounded-full">
-                                3
-                            </span>
-                            <span class="ml-2 text-gray-400">Thanh toán</span>
-                        </li>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="left">
-                            <span class=" text-gray-700 text-sm">Bìa biểu ngữ</span>
-                            <div
-                                class=" imagePreview1 w-28  mb-2 border-2 border-dashed border-blue-300 rounded-lg h-28 flex items-center justify-center cursor-pointer hover:bg-blue-50 ">
-                                <span class=" text-blue-400 text-2xl">+</span>
-                            </div>
-                            <div class="mb-4">
-                                <label class="block mb-2 text-sm font-medium text-gray-700">Màu văn bản</label>
-                                <div class="mt-5 block w-full h-10 border border-gray-300 rounded-md shadow-sm p-2">
-                                    <input class="float-right" type="color" value="#000000" id="color-picker" />
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <label class="block mb-2 text-sm font-medium text-gray-700">Màu nền</label>
-                                <input type="text" value="#FFFFFF"
-                                    class="mt-5 block w-full h-10 border border-gray-300 rounded-md shadow-sm p-2">
-                            </div>
-                            <div class="mb-4">
-                                <label class="block mb-2 text-sm font-medium text-gray-700">Nội dung</label>
-                                <input type="text" placeholder="Nhập nội dung"
-                                    class="mt-5 block w-full h-10 border border-gray-300 rounded-md shadow-sm p-2">
-                            </div>
-                            <div class="mb-4">
-                                <label class="block text-sm font-medium text-gray-700">Thêm ảnh/video</label>
-                                <div class="flex items-center space-x-4 mt-2">
-                                    <div class="flex items-center mb-4">
-                                        <label class="mr-4 flex items-center">
-                                            <input type="radio" name="mediaType" value="image"
-                                                class="mr-2 text-blue-500" checked>Ảnh
-                                        </label>
-                                        <label class="flex items-center">
-                                            <input id="video" type="radio" name="mediaType" value="video" class="mr-2 text-blue-500">
-                                            Video
-                                        </label>
-                                    </div>
-                                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="left">
+                        <span class=" text-gray-700 text-sm">Bìa biểu ngữ</span>
+                        <div
+                            class="mainPreview1 w-28  mb-2 border-2 border-dashed border-blue-300 rounded-lg h-28 flex items-center justify-center cursor-pointer hover:bg-blue-50 ">
+                            <span class=" text-blue-400 text-2xl">+</span>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block mb-2 text-sm font-medium text-gray-700">Màu văn bản</label>
+                            <div class="mt-5 block w-full h-10 border border-gray-300 rounded-md shadow-sm p-2">
+                                <input class="float-right" type="color" value="#000000" id="color-picker" />
                             </div>
                         </div>
-                        <div class="right">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Xem trước</label>
-                                <div class=" videoPreview1 imagePreview1 w-full h-96 border border-gray-300 rounded-md">
+                        <div class="mb-4">
+                            <label class="block mb-2 text-sm font-medium text-gray-700">Màu nền</label>
+                            <input type="text" value="#FFFFFF"
+                                class="mt-5 block w-full h-10 border border-gray-300 rounded-md shadow-sm p-2">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block mb-2 text-sm font-medium text-gray-700">Nội dung</label>
+                            <input type="text" placeholder="Nhập nội dung"
+                                class="mt-5 block w-full h-10 border border-gray-300 rounded-md shadow-sm p-2">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700">Thêm ảnh/video</label>
+                            <div class="flex items-center space-x-4 mt-2">
+                                <div class="flex items-center mb-4">
+                                    <label class="mr-4 flex items-center">
+                                        <input type="radio" name="mediaType" value="image" class="mr-2 text-blue-500"
+                                            checked>Ảnh
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input id="video" type="radio" name="mediaType" value="video"
+                                            class="mr-2 text-blue-500">
+                                        Video
+                                    </label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-5 gap-4">
-                        <!-- File input containers -->
-                        <div class=" imagePreview1 border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
-                            onclick="triggerFileInput(1)">
-                            <span class=" text-blue-400 text-2xl">+</span>
-                            <input type="file" class="fileInput1 hidden" onchange="previewFile(1)">
-                        </div>
-                        <div class="imagePreview2 border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
-                            onclick="triggerFileInput(2)">
-                            <span class=" text-blue-400 text-2xl">+</span>
-                            <input type="file" class="fileInput2 hidden" onchange="previewFile(2)">
-                        </div>
-                        <div class="imagePreview3 border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
-                            onclick="triggerFileInput(3)">
-                            <span class=" text-blue-400 text-2xl">+</span>
-                            <input type="file" class="fileInput3 hidden" onchange="previewFile(3)">
-                        </div>
-                        <div class="imagePreview4 border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
-                            onclick="triggerFileInput(4)">
-                            <span class=" text-blue-400 text-2xl">+</span>
-                            <input type="file" class="fileInput4 hidden" onchange="previewFile(4)">
-                        </div>
-                        <div class="imagePreview5 border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
-                            onclick="triggerFileInput(5)">
-                            <span class=" text-blue-400 text-2xl">+</span>
-                            <input type="file" class="fileInput5 hidden" onchange="previewFile(5)">
+                    <div class="right">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Xem trước</label>
+                            <div class="mainPreview2 videoPreview w-full h-96 border border-gray-300 rounded-md">
+                            </div>
                         </div>
                     </div>
-                    <div class="mt-4">
-                        <input type="text" placeholder="Nhập link URL"
-                            class="block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                </div>
+                <div class="grid grid-cols-5 gap-4">
+                    <!-- File input containers -->
+                    <div class=" imagePreview border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
+                    data-id="1">
+                        <span class=" text-blue-400 text-2xl">+</span>
+                        <input type="file" class="fileInput hidden" data-id="1">
                     </div>
-                    <div class="flex justify-between items-center mt-6">
-                        <button class="text-gray-600 hover:text-gray-800"><a href="">Quay lại</a></button>
-                        <button class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"><a href="/">Tiếp
-                                theo</a></button>
+                    <div class="imagePreview border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
+                    data-id="2">
+                        <span class=" text-blue-400 text-2xl">+</span>
+                        <input type="file" class="fileInput hidden" data-id="2">
                     </div>
+                    <div class="imagePreview border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
+                    data-id="3">
+                        <span class=" text-blue-400 text-2xl">+</span>
+                        <input type="file" class="fileInput hidden" data-id="3">
+                    </div>
+                    <div class="imagePreview border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
+                    data-id="4">
+                        <span class=" text-blue-400 text-2xl">+</span>
+                        <input type="file" class="fileInput hidden" data-id="4">
+                    </div>
+                    <div class="imagePreview border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
+                    data-id="5">
+                        <span class=" text-blue-400 text-2xl">+</span>
+                        <input type="file" class="fileInput hidden" data-id="5">
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <input type="text" placeholder="Nhập link URL"
+                        class="block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                </div>
+                <div class="flex justify-between items-center mt-6">
+                    <button class="text-gray-600 hover:text-gray-800"><a href="">Quay lại</a></button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"><a href="/">Tiếp
+                            theo</a></button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <footer></footer>
+    <footer></footer>
 
 
-        <script type="text/javascript"></script>
-        <script src="../shop/js/jquery-3.7.1.js"></script>
-        <script src="../shop/js/toggle.js"></script>
-        <script src="../shop/js/js.js"></script>
-    </body>
+    <script type="text/javascript"></script>
+    <script src="../shop/js/jquery-3.7.1.js"></script>
+    <script src="../shop/js/toggle.js"></script>
+    <script src="../shop/js/js.js"></script>
+</body>
 
 </html>

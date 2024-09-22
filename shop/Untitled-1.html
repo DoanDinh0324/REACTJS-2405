@@ -11,90 +11,27 @@
 </head>
 
 <body>
-  <div class="videoPreview1 border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
-  onclick="triggerFileInput(1)">
-  <span class="text-blue-400 text-2xl">+</span>
-  <input type="file" class="fileInput1 hidden" onchange="previewFile(1)">
-</div>
-
-<div class="videoPreview2 border-2 border-dashed border-blue-300 rounded-lg h-24 flex items-center justify-center cursor-pointer hover:bg-blue-50"
-  onclick="triggerFileInput(2)">
-  <span class="text-blue-400 text-2xl">+</span>
-  <input type="file" class="fileInput2 hidden" onchange="previewFile(2)">
-</div>
-
-<!-- Khung lớn để hiển thị video khi click vào video nhỏ -->
-<div class="mainPreview border-2 border-solid border-green-500 rounded-lg h-64 flex items-center justify-center">
-  <!-- Video sẽ hiển thị tại đây -->
-</div>
-
-
-
-
+  <div class="w-full" onclick="swapVideo('https://www.youtube.com/embed/Az9g-ExLVEU')"> <iframe
+      class="w-full rounded h-full" src="https://www.youtube.com/embed/Az9g-ExLVEU" frameborder="0"></iframe> </div>
+  <!-- Hình thu nhỏ của video khác -->
+  <div class="w-full" onclick="swapVideo('../shop/videos/video-tuanvu4.mp4')"> <iframe class="w-full rounded h-full"
+      src="../shop/videos/video-tuanvu4.mp4" frameborder="0"></iframe> </div> <!-- Trình phát video chính -->
+  <div class="flex items-center justify-center h-screen bg-gray-900"> <video id="main-video"
+      class="w-full rounded-lg shadow-lg" controls>
+      <source id="main-source" src="../shop/videos/videoplayback.mp4" type="video/mp4">
+      <track src="../shop/subtitles/subtitles.srt" kind="subtitles" srclang="vi" label="Tiếng Việt" default>
+    </video> </div>
   <footer></footer>
 
   <script>
-    const fileInputs = document.querySelectorAll('input[type="file"]');
-const videoPreviews = document.querySelectorAll('.videoPreview');
-const mainPreview = document.querySelector('.mainPreview');
-
-videoPreviews.forEach((preview) => {
-    const id = preview.classList[0].replace('videoPreview', '');
-    preview.addEventListener('click', () => {
-        document.querySelector(`.fileInput${id}`).click();
-    });
-});
-
-fileInputs.forEach((fileInput) => {
-    fileInput.addEventListener('change', () => {
-        const id = fileInput.classList[0].replace('fileInput', '');
-        const previewContainer = document.querySelector(`.videoPreview${id}`);
-        const file = fileInput.files[0];
-
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                const src = e.target.result;
-
-                // Hiển thị video trong khung nhỏ
-                displayVideo(src, previewContainer);
-
-                // Gắn sự kiện click để hiển thị video trong khung lớn
-                previewContainer.addEventListener('click', () => {
-                    showInMainPreview(src, id);
-                });
-            };
-            reader.readAsDataURL(file);
-        }
-    });
-});
-
-// Hiển thị video trong khung nhỏ
-function displayVideo(src, container) {
-    const videoElement = document.createElement('video');
-    videoElement.src = src;
-    videoElement.controls = true;
-    videoElement.className = 'object-cover w-full h-full rounded-md';
-    container.innerHTML = ''; // Xóa nội dung hiện tại của khung
-    container.appendChild(videoElement);
-}
-
-// Hiển thị video trong khung lớn và cập nhật khung nhỏ
-function showInMainPreview(src, id) {
-    // Xóa nội dung khung lớn và thêm video mới
-    mainPreview.innerHTML = '';
-
-    const videoElement = document.createElement('video');
-    videoElement.src = src;
-    videoElement.controls = true;
-    videoElement.className = 'object-cover w-full h-full rounded-md';
-    mainPreview.appendChild(videoElement);
-
-    // Cập nhật khung nhỏ
-    const previewContainer = document.querySelector(`.videoPreview${id}`);
-    displayVideo(src, previewContainer);
-}
-
+function swapVideo(videoSrc) { 
+  const mainVideo = document.getElementById('main-video'); 
+  const mainSource = document.getElementById('main-source'); 
+  // Đặt nguồn mới 
+  mainSource.src = videoSrc;
+   // Tải và phát video 
+   mainVideo.load(); mainVideo.play(); 
+  }
   </script>
 </body>
 

@@ -25,11 +25,10 @@ function updateAll(event) {
   });
 }
 
-// Lấy tất cả các phần tử chứa file input và các khung hình nhỏ
 const fileInputs = document.querySelectorAll('.fileInput');
 const imagePreviews = document.querySelectorAll('.imagePreview');
 
-// Lặp qua các khung hình nhỏ và gắn sự kiện click để kích hoạt chọn file
+// Add click events to image previews to trigger file input
 imagePreviews.forEach((preview) => {
     const id = preview.getAttribute('data-id');
     preview.addEventListener('click', () => {
@@ -37,61 +36,52 @@ imagePreviews.forEach((preview) => {
     });
 });
 
-// Lặp qua tất cả các file input và xử lý xem trước tệp
+// Handle file input change to show previews
 fileInputs.forEach((fileInput) => {
-    fileInput.addEventListener('change', () => {
-        const id = fileInput.getAttribute('data-id');
-        const previewContainer = document.querySelector(`.imagePreview[data-id="${id}"]`);
-        const file = fileInput.files[0];
-
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                const src = e.target.result;
-
-                // Hiển thị hình ảnh hoặc video trong khung nhỏ
-                if (file.type.startsWith('image/')) {
-                    displayImage(src, previewContainer);
-                } else if (file.type.startsWith('video/')) {
-                    displayVideo(src, previewContainer);
-                }
-
-                // Gắn sự kiện click để hiển thị hình ảnh hoặc video trong 2 khung lớn
-                previewContainer.addEventListener('click', () => {
-                    showInBothMainPreviews(src, file.type);
-                });
-            };
-            reader.readAsDataURL(file);
-        }
-    });
+    fileInput.addEventListener('change', handleFileSelect);
 });
 
-// Hiển thị ảnh trong khung nhỏ
+function handleFileSelect(event) {
+    const id = this.getAttribute('data-id');
+    const previewContainer = document.querySelector(`.imagePreview[data-id="${id}"]`);
+    const file = this.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const src = e.target.result;
+            file.type.startsWith('image/') ? displayImage(src, previewContainer) : displayVideo(src, previewContainer);
+            previewContainer.addEventListener('click', () => showInBothMainPreviews(src, file.type));
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+// Display image in small container
 function displayImage(src, container) {
     const imgElement = document.createElement('img');
     imgElement.src = src;
     imgElement.className = 'object-cover w-full h-full rounded-md';
-    container.innerHTML = ''; // Xóa nội dung hiện tại của khung
+    container.innerHTML = ''; // Clear current content
     container.appendChild(imgElement);
 }
 
-// Hiển thị video trong khung nhỏ
+// Display video in small container
 function displayVideo(src, container) {
     const videoElement = document.createElement('video');
     videoElement.src = src;
-    videoElement.controls = true; // Hiển thị các điều khiển video
+    videoElement.controls = true; // Show video controls
     videoElement.className = 'object-cover w-full h-full rounded-md';
-    container.innerHTML = ''; // Xóa nội dung hiện tại của khung
+    container.innerHTML = ''; // Clear current content
     container.appendChild(videoElement);
 }
 
-// Hiển thị hình ảnh hoặc video trong cả hai khung chứa lớn
+// Show image or video in main previews
 function showInBothMainPreviews(src, fileType) {
     const mainPreviews = [document.querySelector('.mainPreview1'), document.querySelector('.mainPreview2')];
-    
+
     mainPreviews.forEach(mainPreview => {
-        mainPreview.innerHTML = ''; // Xóa nội dung hiện tại của khung
-        
+        mainPreview.innerHTML = ''; // Clear current content
         if (fileType.startsWith('image/')) {
             const imgElement = document.createElement('img');
             imgElement.src = src;
@@ -100,9 +90,56 @@ function showInBothMainPreviews(src, fileType) {
         } else if (fileType.startsWith('video/')) {
             const videoElement = document.createElement('video');
             videoElement.src = src;
-            videoElement.controls = true; // Hiển thị điều khiển video
+            videoElement.controls = true; // Show video controls
             videoElement.className = 'object-cover w-full h-full rounded-md';
             mainPreview.appendChild(videoElement);
         }
     });
 }
+
+
+
+let mediaSources = []; // Mảng để lưu trữ các nguồn hình ảnh/video
+let currentIndex = 0; // Chỉ số hiện tại
+
+// Cập nhật mảng mediaSources khi người dùng chọn tệp
+function handleFileSelect(event) {
+    const id = this.getAttribute('data-id');
+    const previewContainer = document.querySelector(`.imagePreview[data-id="${id}"]`);
+    const file = this.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const src = e.target.result;
+            mediaSources.push(src); // Thêm nguồn vào mảng
+            file.type.startsWith('image/') ? displayImage(src, previewContainer) : displayVideo(src, previewContainer);
+            previewContainer.addEventListener('click', () => {
+                showInBothMainPreviews(src, file.type);
+                startAutoSwitch(); // Bắt đầu tự động chuyển đổi khi nhấp vào preview
+            });
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+// Hàm tự động chuyển đổi hình ảnh/video
+function startAutoSwitch() {
+    clearInterval(autoSwitchInterval); // Xóa interval trước đó nếu có
+    autoSwitchInterval = setInterval(() => {
+        if (mediaSources.length > 0) {
+            currentIndex = (currentIndex + 1) % mediaSources.length; // Cập nhật chỉ số
+            showInBothMainPreviews(mediaSources[currentIndex], getFileType(mediaSources[currentIndex])); // Hiển thị media tiếp theo
+        }
+    }, 3000); // Thay đổi mỗi 3 giây (3000 ms)
+}
+
+// Lấy kiểu tệp từ URL
+function getFileType(src) {
+    return src.startsWith('data:image/') ? 'image/' : 'video/';
+}
+
+// Thêm biến autoSwitchInterval
+let autoSwitchInterval;
+
+// Các hàm khác vẫn giữ nguyên...

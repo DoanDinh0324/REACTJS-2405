@@ -1,20 +1,23 @@
 const video = document.getElementById('main-video');  // Video chính
 const controlButton = document.getElementById('controlButton');  // Nút điều khiển play/pause
 const playIcon = document.getElementById('playIcon');  // Biểu tượng play
-const pauseIcon = document.getElementById('pauseIcon');  // Biểu tượng pause
 const progressBar = document.getElementById('progress-bar');  // Thanh tiến trình
 const progressBarContainer = document.getElementById('progress-bar-container');  // Container của thanh tiến trình
+const pauseIcon = document.getElementById('pauseIcon');
 const replayButton = document.getElementById('replayButton');  // Nút phát lại
 const currentTimeElem = document.getElementById('current-time');  // Hiển thị thời gian hiện tại
 const totalTimeElem = document.getElementById('total-time');  // Hiển thị tổng thời gian
-const fullscreenButton = document.getElementById('fullscreenButton');  // Nút toàn màn hình
+const subtitlesButton = document.getElementById('subtitlesButton');  // Nút phụ đề
+const subtitlesTrack = document.getElementById('subtitles');  // Track phụ đề
+const fullscreenButton = document.getElementById('fullscreenButton');
 const volumeButton = document.getElementById('volume-button');  // Nút âm lượng
 const volumeIcon = document.getElementById('volume-icon');  // Biểu tượng âm lượng
 const volumeBar = document.getElementById('volume-bar');  // Thanh điều chỉnh âm lượng
 const volumeBarContainer = document.getElementById('volume-bar-container');  // Container của thanh âm lượng
 const toggleMiniPlayerButton = document.getElementById('toggle-mini-player');  // Nút kích hoạt mini player
+document.getElementById('nextButton').addEventListener('click', nextVideo);   // Gán sự kiện cho nút Next
 
-// Trạng thái khởi tạo: hiển thị biểu tượng play
+// Initial state: show play icon
 playIcon.classList.remove('hidden');
 
 // Toggle play/pause on button click
@@ -29,7 +32,6 @@ controlButton.addEventListener('click', () => {
     playIcon.classList.remove('hidden');  // Hiển thị biểu tượng play
   }
 });
-
 // Khi nhấp vào nút phát lại
 replayButton.addEventListener('click', () => {
   video.currentTime = 0;  // Đặt thời gian video về 0
@@ -37,8 +39,6 @@ replayButton.addEventListener('click', () => {
   playIcon.classList.add('hidden');  // Ẩn biểu tượng play
   pauseIcon.classList.remove('hidden');  // Hiển thị biểu tượng pause
 });
-
-// Toàn màn hình
 fullscreenButton.addEventListener('click', () => {
   if (document.fullscreenElement) {
     document.exitFullscreen();
@@ -46,7 +46,6 @@ fullscreenButton.addEventListener('click', () => {
     video.requestFullscreen();
   }
 });
-
 // Hàm để định dạng thời gian thành mm:ss
 function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
@@ -57,7 +56,7 @@ function formatTime(seconds) {
 // Cập nhật thời gian video và thanh tiến trình
 video.addEventListener('timeupdate', () => {
   const currentTime = video.currentTime;
-  const duration = video.duration || 0;  // Phòng trường hợp video chưa có duration
+  const duration = video.duration;
 
   // Cập nhật thời gian hiện tại và tổng thời gian
   currentTimeElem.textContent = formatTime(currentTime);
@@ -65,7 +64,7 @@ video.addEventListener('timeupdate', () => {
 
   // Cập nhật thanh tiến trình
   const percentage = (currentTime / duration) * 100;
-  progressBar.style.width = `${isNaN(percentage) ? 0 : percentage}%`;  // Tránh chia cho 0
+  progressBar.style.width = `${percentage}%`;
 });
 
 // Cho phép người dùng tua video bằng cách nhấp vào thanh tiến trình
@@ -75,7 +74,6 @@ progressBarContainer.addEventListener('click', (e) => {
   const percentage = offsetX / rect.width;  // Tính phần trăm vị trí nhấp chuột
   video.currentTime = percentage * video.duration;  // Tua video đến thời điểm tương ứng
 });
-
 // Cập nhật trạng thái âm lượng và biểu tượng
 function updateVolume() {
   const volume = video.volume;
@@ -91,8 +89,13 @@ function updateVolume() {
 
 // Khi nhấp vào nút âm lượng
 volumeButton.addEventListener('click', () => {
-  const isHidden = volumeBarContainer.classList.toggle('hidden');
-  volumeButton.classList.toggle('text-gray-500', !isHidden);  // Đổi màu nút âm lượng
+  if (volumeBarContainer.classList.contains('hidden')) {
+    volumeBarContainer.classList.remove('hidden');  // Hiển thị thanh âm lượng
+    volumeButton.classList.add('text-gray-500');  // Đổi màu nút âm lượng
+  } else {
+    volumeBarContainer.classList.add('hidden');  // Ẩn thanh âm lượng
+    volumeButton.classList.remove('text-gray-500');  // Khôi phục màu nút âm lượng
+  }
 });
 
 // Cập nhật thanh âm lượng khi kéo
@@ -105,58 +108,75 @@ volumeBarContainer.addEventListener('click', (e) => {
 });
 
 // Cập nhật thanh âm lượng khi thay đổi âm lượng video
-video.addEventListener('volumechange', updateVolume);  // Gọi hàm cập nhật
-
-// Đoạn mã mới để tự động ẩn/hiện điều khiển
-const controls = document.querySelectorAll(".absolute.bottom-0.left-0.right-0, .absolute.bottom-0.rounded-xl");
-
-// Ẩn điều khiển khi video bắt đầu phát
-video.addEventListener("play", () => {
-  controls.forEach(control => control.style.display = "none");
+video.addEventListener('volumechange', () => {
+  updateVolume();  // Cập nhật thanh âm lượng và biểu tượng khi âm lượng thay đổi
 });
 
-// Hiển thị điều khiển khi người dùng di chuột hoặc click vào video
-const showControls = () => {
-  controls.forEach(control => control.style.display = "");
-  clearTimeout(window.controlTimeout);
-  window.controlTimeout = setTimeout(() => {
-    controls.forEach(control => control.style.display = "none");
-  }, 3000);
-};
-
-// Gán sự kiện di chuột và click để hiển thị điều khiển
-video.addEventListener("mousemove", showControls);
-video.addEventListener("click", showControls);
-
-// Hiển thị điều khiển khi video bị tạm dừng
-video.addEventListener("pause", () => {
-  controls.forEach(control => control.style.display = "block");
-});
-
-// Kích hoạt mini player
-toggleMiniPlayerButton.addEventListener('click', () => {
-  video.classList.toggle('minimized');
-  video.classList.toggle('maximized');  // Chuyển đổi giữa chế độ mini player và chế độ đầy đủ
-});
-
-// Hàm đổi video
 function swapVideo(smallVideoElement) {
-  const mainSource = video.querySelector('source');
+  const mainVideo = document.getElementById('main-video');
+  const mainSource = mainVideo.querySelector('source');
 
   const smallVideo = smallVideoElement.querySelector('video');
   const smallSource = smallVideo.querySelector('source');
 
-  // Đổi nguồn video
   const tempUrl = mainSource.src;
   mainSource.src = smallSource.src;
   smallSource.src = tempUrl;
 
   // Reload both videos
-  video.load();
+  mainVideo.load();
   smallVideo.load();
 
-  // Cập nhật thời gian tổng sau khi đổi video
-  video.addEventListener('loadedmetadata', () => {
-    totalTimeElem.textContent = formatTime(video.duration);
+  // Ensure metadata is loaded and duration is updated
+  mainVideo.addEventListener('loadedmetadata', () => {
+    const duration = mainVideo.duration;
+    totalTimeElem.textContent = formatTime(duration);  // Update total time after swap
   });
+}
+
+// Khi nhấp vào nút kích hoạt mini player
+toggleMiniPlayerButton.addEventListener('click', () => {
+  if (video.classList.contains('minimized')) {
+    video.classList.remove('minimized');
+    video.classList.add('maximized');  // Trở lại kích thước đầy đủ
+  } else {
+    video.classList.remove('maximized');
+    video.classList.add('minimized');  // Thu nhỏ thành mini player
+  }
+});
+
+// Lưu trữ danh sách video
+const videos = [
+  "../shop/videos/videoplayback.mp4",
+  "../shop/videos/3.mp4",
+  "../shop/videos/4.mp4",
+  "../shop/videos/5.mp4",
+  "../shop/videos/videoplayback (1).mp4",
+  "../shop/videos/videoplayback (2).mp4",
+  "../shop/videos/6.mp4"
+];
+
+// Chỉ số video hiện tại
+let currentVideoIndex = 0;
+
+// Hàm để thay đổi video
+function swapVideo(videoElement) {
+  const mainVideo = document.getElementById('main-video');
+  const source = mainVideo.getElementsByTagName('source')[0];
+  source.src = videoElement.getElementsByTagName('source')[0].src;
+  mainVideo.load();
+  mainVideo.play();
+}
+
+// Hàm để chuyển sang video tiếp theo
+function nextVideo() {
+  currentVideoIndex++;
+  if (currentVideoIndex >= videos.length) {
+      currentVideoIndex = 0; // Quay lại video đầu tiên nếu đã tới cuối danh sách
+  }
+  const mainVideo = document.getElementById('main-video');
+  const source = mainVideo.getElementsByTagName('source')[0];
+  source.src = videos[currentVideoIndex];
+  mainVideo.load();
+  mainVideo.play();
 }

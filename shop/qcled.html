@@ -16,7 +16,7 @@
     <div class="">
         <div class="flex p-2 block w-full">
             <!-- Cột bên trái - Danh sách video -->
-            <div class="w-2/12 h-full space-y-4">
+            <div class="w-1/6 h-full space-y-4">
                 <!-- Video item -->
                 <div class=" w-full" onclick="swapVideo(this)">
                     <video class="w-full rounded h-full">
@@ -56,7 +56,7 @@
             </div>
 
             <!-- Cột giữa - Video chính -->
-            <div class="  mx-4 w-full h-full">
+            <div class="mx-4 w-full h-full">
                 <div class="relative">
 
                     <div class="flex items-center justify-center h-screen bg-gray-900">
@@ -67,7 +67,7 @@
                         </video>
                     </div>
                     <div
-                        class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-200 to-transparent mb-28">
+                        class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-200 to-transparent mb-20">
                         <div class="flex items-center justify-between">
                             <div class="flex space-x-1 overflow-hidden whitespace-nowrap">
                                 <button
@@ -105,11 +105,11 @@
                     </div>
 
                     <div id="progress-bar-container"
-                        class="w-full bg-gray-300 h-2 rounded absolute bottom-0 left-0 right-0 bg-gradient-to-t from-neutral-200 to-transparent mb-24">
+                        class="w-full bg-gray-300 h-2 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-neutral-200 to-transparent mb-16">
                         <div id="progress-bar" class="bg-red-500 h-2 rounded-l" style="width: 0;"></div>
                     </div>
                     <div
-                        class="mb-1 absolute bottom-0 rounded-xl w-full bg-black bg-opacity-50 text-white px-8 py-7 flex items-center justify-between">
+                        class="mb-1 h-14 absolute bottom-0 w-full bg-black bg-opacity-50 text-white px-8 flex items-center justify-between">
                         <div class="flex items-center space-x-2">
                             <div id="controlButton">
                                 <button class="focus:outline-none pt-1.5">
@@ -124,7 +124,7 @@
 
                                 </button>
                             </div>
-                            <button class="focus:outline-none ">
+                            <button id="nextButton" class="focus:outline-none ">
                                 <img class="h-5 w-5" src="../shop/icons/stopvideo.png" alt="">
                             </button>
                             <button id="replayButton" class="focus:outline-none ">
@@ -185,7 +185,7 @@
                 </div>
             </div>
 
-            <div class="w-2/12 space-y-4 ">
+            <div class="w-1/6 space-y-4">
                 <div class="relative w-full">
                     <img src="../shop/img/imgqcled/left/Banner.png" alt="Video Thumbnail"
                         class="w-full h-auto rounded-lg">

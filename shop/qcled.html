@@ -14,9 +14,9 @@
 
     <!-- Container chính -->
     <div class="">
-        <div class="flex p-2 block w-full">
+        <div class="flex p-2 w-full">
             <!-- Cột bên trái - Danh sách video -->
-            <div class="w-1/6 h-full space-y-4">
+            <div class="w-1/6 space-y-2">
                 <!-- Video item -->
                 <div class=" w-full" onclick="swapVideo(this)">
                     <video class="w-full rounded h-full">
@@ -60,7 +60,7 @@
                 <div class="relative">
 
                     <div class="flex items-center justify-center h-screen bg-gray-900">
-                        <video id="main-video" class="w-full rounded-lg shadow-lg">
+                        <video id="main-video" class="w-full">
                             <source src="../shop/videos/video-tuanvu4.mp4" type="video/mp4">
                             <track src="../shop/subtitles/subtitles.srt" kind="subtitles" srclang="vi"
                                 label="Vietnamese" default>
@@ -110,7 +110,7 @@
                     </div>
                     <div
                         class="mb-1 h-14 absolute bottom-0 w-full bg-black bg-opacity-50 text-white px-8 flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
+                        <div class="flex items-center gap-x-6">
                             <div id="controlButton">
                                 <button class="focus:outline-none pt-1.5">
                                     <img id="playIcon" class="h-5 w-5" src="../shop/icons/playvideo.png" alt="">

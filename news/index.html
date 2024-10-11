@@ -17,6 +17,83 @@
       <div class="relative w-full h-full rounded-lg">
         <img class="w-full h-full rounded-lg object-cover" src="../news/img/image1.png" alt="Flood Scene" />
         <div class="absolute inset-3">
+          <!-- Dropdown Menu -->
+          <div class="relative group">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-8 h-8 float-end bg-white rounded-lg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            </svg>
+            <div
+              class="menu absolute right-0 mt-10 w-60 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 transform translate-y-2 transition-all duration-300 ease-in-out hidden group-hover:block">
+              <ul>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/624f60a9-213b-4095-bf3a-4ee56c3ebd84--100.svg"
+                      alt="">
+                    Ghim
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer truncate">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240524/718c12f9-1651-4f0f-ab8a-b331ba528742--100.svg"
+                      alt="">
+                    Sao chép liên kết
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer truncate">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/b0f27f4d-4132-4615-a9f2-d7d011cb9f68--100.svg"
+                      alt="">
+                    Xem lịch sử chỉnh sửa
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/0f57c3ec-79c8-406b-b216-01387a23f4fa--100.svg"
+                      alt="">
+                    Chỉnh sửa
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/f78fcc82-2d0b-4dc9-b222-c3dc3a8e574b--100.svg"
+                      alt="">
+                    Tắt cảm nhận
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240524/e567c1eb-be50-468a-89d2-d94f0a85a37c--100.svg"
+                      alt="">
+                    Ẩn
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/3323ecdb-5807-48b0-b9af-8a19539827c4--100.svg"
+                      alt="">
+                    Xóa bài viết
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240822/4e1c8194-8e2d-40c7-9bc4-e4930ec7efb0--100.jpg"
+                      alt="">
+                    Tải xuống ảnh (1)
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
           <div class="absolute bottom-0 w-full">
             <div class="rounded-lg bg-black/50  bg-scroll">
               <h2 class="text-lg font-semibold text-white px-4 pt-4">
@@ -28,27 +105,105 @@
               </p>
               <div class="flex items-center justify-between rounded-lg p-4">
                 <div class="flex items-center space-x-2">
-                  <img src="../news/img/logo/Ellipse 456.png" class="w-8 h-8 mr-2 rounded-full" alt="Author Logo">
+                  <a href="">
+                    <img src="../news/img/logo/Ellipse 456.png" class="w-8 h-8 mr-2 rounded-full" alt="Author Logo">
+                  </a>
                   <div class="text-white">
-                    <span class="font-semibold">Hạnh Linh</span>
+                    <a class="flex items-center" href="">
+                      <span class="font-semibold">Hạnh Linh</span>
+                      <img class="pl-1 w-4 h-4" src="../news/img/logo/Vector.png" alt="">
+                    </a>
                     <p class="text-sm text-gray-300">Thứ hai, 23/09/2024 - 19:54</p>
                   </div>
                 </div>
-                <div class="rounded-full bg-white/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-5 h-5 text-white">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M18 8a3 3 0 11-6 0 3 3 0 016 0zM10.12 9.88a4.48 4.48 0 00-1.04-.76 6.94 6.94 0 00-2.33-.62A6 6 0 106 16c.21 0 .42-.02.62-.04A4.48 4.48 0 007 15.12L17 9.12a4.48 4.48 0 00-6.88 0zM15.12 10a4.48 4.48 0 010 6.88" />
-                  </svg>
+                <div class="rounded-lg bg-white p-3">
+                    <img src="../news/img/logo/Vector (1).png" alt="">
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="relative w-full h-full rounded-lg pt-4">
+      <div class="relative w-full h-full rounded-lg pt-6">
         <img class="w-full h-full rounded-lg object-cover" src="../news/img/image1.png" alt="Flood Scene" />
         <div class="absolute inset-3">
+          <!-- Dropdown Menu -->
+          <div class="relative group pt-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-8 h-8 float-end bg-white rounded-lg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            </svg>
+            <div
+              class="menu absolute right-0 mt-10 w-60 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 transform translate-y-2 transition-all duration-300 ease-in-out hidden group-hover:block">
+              <ul>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/624f60a9-213b-4095-bf3a-4ee56c3ebd84--100.svg"
+                      alt="">
+                    Ghim
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer truncate">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240524/718c12f9-1651-4f0f-ab8a-b331ba528742--100.svg"
+                      alt="">
+                    Sao chép liên kết
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer truncate">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/b0f27f4d-4132-4615-a9f2-d7d011cb9f68--100.svg"
+                      alt="">
+                    Xem lịch sử chỉnh sửa
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/0f57c3ec-79c8-406b-b216-01387a23f4fa--100.svg"
+                      alt="">
+                    Chỉnh sửa
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/f78fcc82-2d0b-4dc9-b222-c3dc3a8e574b--100.svg"
+                      alt="">
+                    Tắt cảm nhận
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240524/e567c1eb-be50-468a-89d2-d94f0a85a37c--100.svg"
+                      alt="">
+                    Ẩn
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/3323ecdb-5807-48b0-b9af-8a19539827c4--100.svg"
+                      alt="">
+                    Xóa bài viết
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240822/4e1c8194-8e2d-40c7-9bc4-e4930ec7efb0--100.jpg"
+                      alt="">
+                    Tải xuống ảnh (1)
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
           <div class="absolute bottom-0 w-full">
             <div class="rounded-lg bg-black/50  bg-scroll">
               <h2 class="text-lg font-semibold text-white px-4 pt-4">
@@ -60,18 +215,348 @@
               </p>
               <div class="flex items-center justify-between rounded-lg p-4">
                 <div class="flex items-center space-x-2">
-                  <img src="../news/img/logo/Ellipse 456.png" class="w-8 h-8 mr-2 rounded-full" alt="Author Logo">
+                  <a href="">
+                    <img src="../news/img/logo/Ellipse 456.png" class="w-8 h-8 mr-2 rounded-full" alt="Author Logo">
+                  </a>
                   <div class="text-white">
-                    <span class="font-semibold">Hạnh Linh</span>
+                    <a class="flex items-center" href="">
+                      <span class="font-semibold">Hạnh Linh</span>
+                      <img class="pl-1 w-4 h-4" src="../news/img/logo/Vector.png" alt="">
+                    </a>
                     <p class="text-sm text-gray-300">Thứ hai, 23/09/2024 - 19:54</p>
                   </div>
                 </div>
-                <div class="rounded-full bg-white/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                    stroke="currentColor" class="w-5 h-5 text-white">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M18 8a3 3 0 11-6 0 3 3 0 016 0zM10.12 9.88a4.48 4.48 0 00-1.04-.76 6.94 6.94 0 00-2.33-.62A6 6 0 106 16c.21 0 .42-.02.62-.04A4.48 4.48 0 007 15.12L17 9.12a4.48 4.48 0 00-6.88 0zM15.12 10a4.48 4.48 0 010 6.88" />
-                  </svg>
+                <div class="rounded-lg bg-white p-3">
+                    <img src="../news/img/logo/Vector (1).png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative w-full h-full rounded-lg pt-6">
+        <img class="w-full h-full rounded-lg object-cover" src="../news/img/image1.png" alt="Flood Scene" />
+        <div class="absolute inset-3">
+          <!-- Dropdown Menu -->
+          <div class="relative group pt-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-8 h-8 float-end bg-white rounded-lg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            </svg>
+            <div
+              class="menu absolute right-0 mt-10 w-60 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 transform translate-y-2 transition-all duration-300 ease-in-out hidden group-hover:block">
+              <ul>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/624f60a9-213b-4095-bf3a-4ee56c3ebd84--100.svg"
+                      alt="">
+                    Ghim
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer truncate">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240524/718c12f9-1651-4f0f-ab8a-b331ba528742--100.svg"
+                      alt="">
+                    Sao chép liên kết
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer truncate">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/b0f27f4d-4132-4615-a9f2-d7d011cb9f68--100.svg"
+                      alt="">
+                    Xem lịch sử chỉnh sửa
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/0f57c3ec-79c8-406b-b216-01387a23f4fa--100.svg"
+                      alt="">
+                    Chỉnh sửa
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/f78fcc82-2d0b-4dc9-b222-c3dc3a8e574b--100.svg"
+                      alt="">
+                    Tắt cảm nhận
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240524/e567c1eb-be50-468a-89d2-d94f0a85a37c--100.svg"
+                      alt="">
+                    Ẩn
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/3323ecdb-5807-48b0-b9af-8a19539827c4--100.svg"
+                      alt="">
+                    Xóa bài viết
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240822/4e1c8194-8e2d-40c7-9bc4-e4930ec7efb0--100.jpg"
+                      alt="">
+                    Tải xuống ảnh (1)
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="absolute bottom-0 w-full">
+            <div class="rounded-lg bg-black/50  bg-scroll">
+              <h2 class="text-lg font-semibold text-white px-4 pt-4">
+                10 ngày đi qua bão lũ tại miền Bắc
+              </h2>
+              <p class="text-sm text-gray-300 overflow-hidden text-ellipsis whitespace-normal px-4 pt-2">
+                Nước sông dâng cao khiến nhiều tuyến đường ở phường Thiệu Khánh, Thiệu Dương (thành phố Thanh Hóa, tỉnh
+                Thanh Hóa) ngập sâu, người dân phải dùng thuyền di chuyển.
+              </p>
+              <div class="flex items-center justify-between rounded-lg p-4">
+                <div class="flex items-center space-x-2">
+                  <a href="">
+                    <img src="../news/img/logo/Ellipse 456.png" class="w-8 h-8 mr-2 rounded-full" alt="Author Logo">
+                  </a>
+                  <div class="text-white">
+                    <a class="flex items-center" href="">
+                      <span class="font-semibold">Hạnh Linh</span>
+                      <img class="pl-1 w-4 h-4" src="../news/img/logo/Vector.png" alt="">
+                    </a>
+                    <p class="text-sm text-gray-300">Thứ hai, 23/09/2024 - 19:54</p>
+                  </div>
+                </div>
+                <div class="rounded-lg bg-white p-3">
+                    <img src="../news/img/logo/Vector (1).png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative w-full h-full rounded-lg pt-6">
+        <img class="w-full h-full rounded-lg object-cover" src="../news/img/image1.png" alt="Flood Scene" />
+        <div class="absolute inset-3">
+          <!-- Dropdown Menu -->
+          <div class="relative group pt-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-8 h-8 float-end bg-white rounded-lg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            </svg>
+            <div
+              class="menu absolute right-0 mt-10 w-60 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 transform translate-y-2 transition-all duration-300 ease-in-out hidden group-hover:block">
+              <ul>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/624f60a9-213b-4095-bf3a-4ee56c3ebd84--100.svg"
+                      alt="">
+                    Ghim
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer truncate">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240524/718c12f9-1651-4f0f-ab8a-b331ba528742--100.svg"
+                      alt="">
+                    Sao chép liên kết
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer truncate">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/b0f27f4d-4132-4615-a9f2-d7d011cb9f68--100.svg"
+                      alt="">
+                    Xem lịch sử chỉnh sửa
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/0f57c3ec-79c8-406b-b216-01387a23f4fa--100.svg"
+                      alt="">
+                    Chỉnh sửa
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/f78fcc82-2d0b-4dc9-b222-c3dc3a8e574b--100.svg"
+                      alt="">
+                    Tắt cảm nhận
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240524/e567c1eb-be50-468a-89d2-d94f0a85a37c--100.svg"
+                      alt="">
+                    Ẩn
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/3323ecdb-5807-48b0-b9af-8a19539827c4--100.svg"
+                      alt="">
+                    Xóa bài viết
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240822/4e1c8194-8e2d-40c7-9bc4-e4930ec7efb0--100.jpg"
+                      alt="">
+                    Tải xuống ảnh (1)
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="absolute bottom-0 w-full">
+            <div class="rounded-lg bg-black/50  bg-scroll">
+              <h2 class="text-lg font-semibold text-white px-4 pt-4">
+                10 ngày đi qua bão lũ tại miền Bắc
+              </h2>
+              <p class="text-sm text-gray-300 overflow-hidden text-ellipsis whitespace-normal px-4 pt-2">
+                Nước sông dâng cao khiến nhiều tuyến đường ở phường Thiệu Khánh, Thiệu Dương (thành phố Thanh Hóa, tỉnh
+                Thanh Hóa) ngập sâu, người dân phải dùng thuyền di chuyển.
+              </p>
+              <div class="flex items-center justify-between rounded-lg p-4">
+                <div class="flex items-center space-x-2">
+                  <a href="">
+                    <img src="../news/img/logo/Ellipse 456.png" class="w-8 h-8 mr-2 rounded-full" alt="Author Logo">
+                  </a>
+                  <div class="text-white">
+                    <a class="flex items-center" href="">
+                      <span class="font-semibold">Hạnh Linh</span>
+                      <img class="pl-1 w-4 h-4" src="../news/img/logo/Vector.png" alt="">
+                    </a>
+                    <p class="text-sm text-gray-300">Thứ hai, 23/09/2024 - 19:54</p>
+                  </div>
+                </div>
+                <div class="rounded-lg bg-white p-3">
+                    <img src="../news/img/logo/Vector (1).png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="relative w-full h-full rounded-lg pt-6">
+        <img class="w-full h-full rounded-lg object-cover" src="../news/img/image1.png" alt="Flood Scene" />
+        <div class="absolute inset-3">
+          <!-- Dropdown Menu -->
+          <div class="relative group pt-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-8 h-8 float-end bg-white rounded-lg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            </svg>
+            <div
+              class="menu absolute right-0 mt-10 w-60 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 transform translate-y-2 transition-all duration-300 ease-in-out hidden group-hover:block">
+              <ul>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/624f60a9-213b-4095-bf3a-4ee56c3ebd84--100.svg"
+                      alt="">
+                    Ghim
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer truncate">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240524/718c12f9-1651-4f0f-ab8a-b331ba528742--100.svg"
+                      alt="">
+                    Sao chép liên kết
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer truncate">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/b0f27f4d-4132-4615-a9f2-d7d011cb9f68--100.svg"
+                      alt="">
+                    Xem lịch sử chỉnh sửa
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/0f57c3ec-79c8-406b-b216-01387a23f4fa--100.svg"
+                      alt="">
+                    Chỉnh sửa
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/f78fcc82-2d0b-4dc9-b222-c3dc3a8e574b--100.svg"
+                      alt="">
+                    Tắt cảm nhận
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240524/e567c1eb-be50-468a-89d2-d94f0a85a37c--100.svg"
+                      alt="">
+                    Ẩn
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240104/3323ecdb-5807-48b0-b9af-8a19539827c4--100.svg"
+                      alt="">
+                    Xóa bài viết
+                  </a>
+                </li>
+                <li class="px-4 py-2 items-center cursor-pointer">
+                  <a class="flex" href="">
+                    <img class="w-6 h-6 pr-2"
+                      src="https://files.vdiarybook.net/api/files/admin/20240822/4e1c8194-8e2d-40c7-9bc4-e4930ec7efb0--100.jpg"
+                      alt="">
+                    Tải xuống ảnh (1)
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="absolute bottom-0 w-full">
+            <div class="rounded-lg bg-black/50  bg-scroll">
+              <h2 class="text-lg font-semibold text-white px-4 pt-4">
+                10 ngày đi qua bão lũ tại miền Bắc
+              </h2>
+              <p class="text-sm text-gray-300 overflow-hidden text-ellipsis whitespace-normal px-4 pt-2">
+                Nước sông dâng cao khiến nhiều tuyến đường ở phường Thiệu Khánh, Thiệu Dương (thành phố Thanh Hóa, tỉnh
+                Thanh Hóa) ngập sâu, người dân phải dùng thuyền di chuyển.
+              </p>
+              <div class="flex items-center justify-between rounded-lg p-4">
+                <div class="flex items-center space-x-2">
+                  <a href="">
+                    <img src="../news/img/logo/Ellipse 456.png" class="w-8 h-8 mr-2 rounded-full" alt="Author Logo">
+                  </a>
+                  <div class="text-white">
+                    <a class="flex items-center" href="">
+                      <span class="font-semibold">Hạnh Linh</span>
+                      <img class="pl-1 w-4 h-4" src="../news/img/logo/Vector.png" alt="">
+                    </a>
+                    <p class="text-sm text-gray-300">Thứ hai, 23/09/2024 - 19:54</p>
+                  </div>
+                </div>
+                <div class="rounded-lg bg-white p-3">
+                    <img src="../news/img/logo/Vector (1).png" alt="">
                 </div>
               </div>
             </div>
@@ -81,4 +566,5 @@
     </div>
   </div>
 </body>
+
 </html>

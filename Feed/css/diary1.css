@@ -63,8 +63,33 @@ nav::-webkit-scrollbar-thumb:hover,
     }
     .main-between {
         background-color:  rgb(209 213 219);
+        margin-top: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     .main-between1 {
-        margin-top: 147px;
+        padding: 0 15px;
+    }
+    .marquee-container {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+        position: relative;
+    }
+
+    .marquee-text {
+        display: inline-block;
+        padding-left: 100%;
+        animation: marquee 10s linear infinite;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
     }
   }

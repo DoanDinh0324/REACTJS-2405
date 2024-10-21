@@ -7,14 +7,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="../Feed/libs/tailwincss/tailwind-all.css">
     <link rel="stylesheet" href="../Feed/libs/tailwincss/tailwind-all.min.css">
-    <link rel="stylesheet" href="../Feed/css/style.css">
+    <link rel="stylesheet" href="../Feed/css/diary.css">
 </head>
 
 <body>
     <header>
         <div class="w-full bg-white shadow fixed z-50">
-            <div class="h-auto lg:flex items-center justify-between p-4 lg:flex-wrap sm:block">
-                <div class="absolute sm:static px-3 sm:px-0 h-full lg:flex items-center gap-3 sm:hidden">
+            <div class="navbar h-auto lg:flex items-center justify-between p-4 lg:flex-wrap sm:block">
+                <div class="logo absolute sm:static px-3 sm:px-0 h-full lg:flex items-center gap-3 sm:hidden">
                     <button class="text-gray-500 hover:text-blue-700">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                             class="w-6 h-6">
@@ -31,18 +31,18 @@
                     </div>
                 </div>
                 <div
-                    class="relative flex py-3 sm:py-0 sm:gap-5 w-full sm:w-auto justify-between items-center border-b border-solid sm:border-none">
+                    class="navbar1 relative flex py-3 sm:gap-5 w-full sm:w-auto justify-between items-center border-b border-solid sm:border-none">
                     <div class="relative h-full flex items-center">
                         <a href=""><img src="../Feed/img/logo/logo.png" alt="Logo"
                                 class="w-12 h-10 inline-block mr-4"></a>
-                        <div class="relative w-full max-w-lg sm:hidden lg:block">
+                        <div class="search relative w-full max-w-lg sm:hidden lg:block">
                             <img src="../Feed/img/logo/Search.png" alt="Search Icon"
                                 class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5">
                             <input type="text" placeholder="Tìm kiếm VidaryBook..."
                                 class="bg-gray-100 rounded-full pl-10 py-2 text-sm border border-gray-300 focus:outline-none w-96">
                         </div>
                     </div>
-                    <div class="lg:flex items-center lg:flex-grow-0 overflow-y-visible p-5 sm:p-0 lg:block sm:hidden">
+                    <div class="navbar2 lg:flex items-center lg:flex-grow-0 overflow-y-visible p-5 sm:p-0 lg:block sm:hidden">
                         <div class="p-2 bg-blue-100 rounded-lg">
                             <a href=""><img class="w-6 h-6" src="../Feed/img/logo/diary.png" alt="Diary Icon"></a>
                         </div>
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4 lg:p-0 sm:p-3">
+                <div class="navbar3 flex items-center space-x-4 lg:p-0 sm:p-3">
                     <div class="relative inline-block">
                         <div class="bg-gray-200 p-2 rounded-full">
                             <img src="../Feed/img/logo/menu.png" alt="Chat Icon" class="w-6 h-6">
@@ -125,10 +125,9 @@
     </header>
     <main>
         <div class="bg-gray-300 min-h-screen">
-            <div class=" grid lg:grid-cols-4 gap-4 sm:pt-10">
+            <div class="grid lg:grid-cols-4 gap-4 sm:pt-10">
                 <div class="flex justify-between h-full items-start">
-                    <div
-                        class="lg:col-span-1 custom-width bg-gray-50 border-r border-gray-200 fixed left-0 inset-y-0 z-40 sm:hidden lg:block">
+                    <div class="main-left lg:col-span-1 custom-width bg-gray-50 border-r border-gray-200 fixed left-0 inset-y-0 z-40 sm:hidden lg:block">
                         <div class="flex justify-between p-4 pt-20 border-b border-gray-200">
                             <a href="#" class="text-blue-500 font-semibold">Home feed</a>
                             <a href="#" class="text-gray-500">Shop feed</a>
@@ -264,9 +263,9 @@
                         </nav>
                     </div>
                 </div>
-                <div class=" lg:col-span-2 lg:pt-8 sm:pt-20 sm:bg-gray-300">
+                <div class="main-between lg:col-span-2 lg:pt-8 sm:pt-20 sm:bg-gray-300">
                     <div class=" bg-white rounded-lg">
-                        <div class="relative">
+                        <div class="main-between1 relative">
                             <img src="../Feed/img/diary/Rectangle.png" alt="Cover Photo"
                                 class="w-full h-full object-cover">
                             <button
@@ -398,7 +397,7 @@
                                 <button id="dropdownButton" class="flex items-center border bg-gray-200 text-gray-700 px-4 py-1 ml-[15px] rounded-xl relative">
                                     <img src="../Feed/img/diary/mingcute_more-1-fill.png" alt="">
                                   </button>
-                                  <div id="dropdownMenu" class="hidden absolute mt-[35px] w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 right-[490px] focus:outline-none">
+                                  <div id="dropdownMenu" class="hidden absolute mt-[35px] w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 lg:right-[490px] sm:right-[-305px] focus:outline-none">
                                     <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                                       <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
                                         <img class="pr-1" src="../Feed/img/diary/clock.png" alt="">
@@ -518,7 +517,7 @@
                               </div>
                               <div class="grid grid-cols-4 gap-0">
                                 <div class="relative rounded-lg bg-gray-200 p-2">
-                                    <img src="../Feed/img/diary/Rectangle3466041.png" alt="Journal 1" class="w-full h-full">
+                                    <img src="../Feed/img/diary/Rectangle3466041.png" alt="Journal 1" class="w-full h-full object-cover rounded-lg">
                                     <p class="absolute inset-0 flex items-center justify-center text-sm font-medium text-gray-700 bg-black bg-opacity-50 text-white">Thông điệp</p>
                                   </div>
                                   <div class="relative rounded-lg bg-gray-200 p-2">
@@ -540,7 +539,7 @@
                     </div>
                 </div>
                 <aside
-                    class="lg:col-span-1 custom-width bg-white h-screen p-4 shadow-lg fixed right-0 inset-y-0 z-40 pt-20 sm:hidden lg:block">
+                    class="main-right lg:col-span-1 custom-width bg-white h-screen p-4 shadow-lg fixed right-0 inset-y-0 z-40 pt-20 sm:hidden lg:block">
                     <div class=" justify-between h-full items-start">
                         <div class="flex items-center justify-between">
                             <h3 class="font-bold text-xl text-gray-900">Trò chuyện</h3>

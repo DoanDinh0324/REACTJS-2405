@@ -7,14 +7,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="../Feed/libs/tailwincss/tailwind-all.css">
     <link rel="stylesheet" href="../Feed/libs/tailwincss/tailwind-all.min.css">
-    <link rel="stylesheet" href="../Feed/css/style.css">
+    <link rel="stylesheet" href="../Feed/css/diary1.css">
 </head>
 
 <body>
     <header>
         <div class="w-full bg-white shadow fixed z-50">
-            <div class="h-auto lg:flex items-center justify-between p-4 lg:flex-wrap sm:block">
-                <div class="absolute sm:static px-3 sm:px-0 h-full lg:flex items-center gap-3 sm:hidden">
+            <div class="navbar h-auto lg:flex items-center justify-between p-4 lg:flex-wrap sm:block">
+                <div class="logo absolute sm:static px-3 sm:px-0 h-full lg:flex items-center gap-3 sm:hidden">
                     <button class="text-gray-500 hover:text-blue-700">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                             class="w-6 h-6">
@@ -31,18 +31,18 @@
                     </div>
                 </div>
                 <div
-                    class="relative flex py-3 sm:py-0 sm:gap-5 w-full sm:w-auto justify-between items-center border-b border-solid sm:border-none">
+                    class="navbar1 relative flex py-3 sm:py-0 sm:gap-5 w-full sm:w-auto justify-between items-center border-b border-solid sm:border-none">
                     <div class="relative h-full flex items-center">
                         <a href=""><img src="../Feed/img/logo/logo.png" alt="Logo"
                                 class="w-12 h-10 inline-block mr-4"></a>
-                        <div class="relative w-full max-w-lg sm:hidden lg:block">
+                        <div class="search relative w-full max-w-lg sm:hidden lg:block">
                             <img src="../Feed/img/logo/Search.png" alt="Search Icon"
                                 class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5">
                             <input type="text" placeholder="Tìm kiếm VidaryBook..."
                                 class="bg-gray-100 rounded-full pl-10 py-2 text-sm border border-gray-300 focus:outline-none w-96">
                         </div>
                     </div>
-                    <div class="lg:flex items-center lg:flex-grow-0 overflow-y-visible p-5 sm:p-0 lg:block sm:hidden">
+                    <div class="navbar2 lg:flex items-center lg:flex-grow-0 overflow-y-visible p-5 sm:p-0 lg:block sm:hidden">
                         <div class="p-2 bg-blue-100 rounded-lg">
                             <a href=""><img class="w-6 h-6" src="../Feed/img/logo/diary.png" alt="Diary Icon"></a>
                         </div>
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4 lg:p-0 sm:p-3">
+                <div class="navbar3 flex items-center space-x-4 lg:p-0 sm:p-3">
                     <div class="relative inline-block">
                         <div class="bg-gray-200 p-2 rounded-full">
                             <img src="../Feed/img/logo/menu.png" alt="Chat Icon" class="w-6 h-6">
@@ -127,8 +127,7 @@
         <div class="bg-gray-300 min-h-screen">
             <div class=" grid lg:grid-cols-4 gap-4 sm:pt-10">
                 <div class="flex justify-between h-full items-start">
-                    <div
-                        class="lg:col-span-1 custom-width bg-gray-50 border-r border-gray-200 fixed left-0 inset-y-0 z-40 sm:hidden lg:block">
+                    <div class="main-left lg:col-span-1 custom-width bg-gray-50 border-r border-gray-200 fixed left-0 inset-y-0 z-40 sm:hidden lg:block">
                         <div class="flex justify-between p-4 pt-20 border-b border-gray-200">
                             <a href="#" class="text-blue-500 font-semibold">Home feed</a>
                             <a href="#" class="text-gray-500">Shop feed</a>
@@ -264,12 +263,25 @@
                         </nav>
                     </div>
                 </div>
-                <div class="lg:col-span-2 lg:pt-8 sm:pt-20">
-                    <div class="p-4">
-                        <h1 class="text-xl font-semibold">Nhật ký hoạt động</h1>
-                        <div class="flex justify-between items-center mb-4 pt-2">
+                <div class="main-between lg:col-span-2 lg:pt-8 sm:pt-20 lg:m-0 sm:m-0">
+                    <div class="lg:p-4">
+                        <div class="main-between1 flex justify-between">
+                            <h1 class="lg:text-xl sm:text-sm font-semibold">Nhật ký hoạt động</h1>
+                            <div class="flex justify-end items-center space-x-2">
+                                <select class="border rounded-md text-gray-600 lg:px-2 lg:py-1 sm:px-2 sm:py-1 focus:ring focus:ring-blue-300 focus:outline-none">
+                                    <option>Ngày</option>
+                                </select>
+                                <select class="border rounded-md text-gray-600 lg:px-2 lg:py-1 sm:px-2 sm:py-1 focus:ring focus:ring-blue-300 focus:outline-none">
+                                    <option>Tháng</option>
+                                </select>
+                                <select class="border rounded-md text-gray-600 lg:px-2 lg:py-1 sm:px-2 sm:py-1 focus:ring focus:ring-blue-300 focus:outline-none">
+                                    <option>Năm</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-4 pt-2 overflow-x-auto whitespace-nowrap">
                             <div class="flex space-x-2">
-                                <button class="flex items-center bg-white px-3 py-1 text-sm text-blue-500 rounded-xl hover:bg-blue-200 ">
+                                <button class="flex items-center bg-white px-3 py-1 text-sm text-blue-500 rounded-xl hover:bg-blue-200">
                                     <img class="pr-1" src="../Feed/img/diary/_Dot.png" alt="">
                                     Tất cả
                                 </button>
@@ -282,87 +294,82 @@
                                 <button class="bg-white px-3 py-1 text-sm text-blue-500 rounded-xl hover:bg-blue-200">Edit</button>
                                 <button class="bg-white px-3 py-1 text-sm text-blue-500 rounded-xl hover:bg-blue-200">Delete</button>
                             </div>
-                            <div class="flex justify-end items-center space-x-2">
-                                <select class="border rounded-md text-gray-600 px-2 py-1 focus:ring focus:ring-blue-300 focus:outline-none">
-                                    <option>Ngày</option>
-                                </select>
-                                <select class="border rounded-md text-gray-600 px-2 py-1 focus:ring focus:ring-blue-300 focus:outline-none">
-                                    <option>Tháng</option>
-                                </select>
-                                <select class="border rounded-md text-gray-600 px-2 py-1 focus:ring focus:ring-blue-300 focus:outline-none">
-                                    <option>Năm</option>
-                                </select>
-                            </div>
                         </div>
                         <div class="bg-white shadow-md rounded-lg">
                             <div class="divide-y divide-gray-200">
-                                <div class="flex items-center p-4 hover:bg-blue-100">
-                                    <img src="../Feed/img/diary/Icon3.png" alt="User avatar" class="w-[16px] h-[20px] mr-4">
-                                    <img src="../Feed/img/diary/Ellipse2642.png" alt="User avatar" class="w-10 h-10 mr-4">
-                                    <div class="flex-1">
-                                        <p class="text-sm"><span class="font-semibold">Bạn</span> đã xem video <span class="font-semibold">Kỉ niệm giải phóng thủ đô 10/10</span></p>
-                                        <span class="text-xs text-gray-500">2 phút trước</span>
+                                <div class="flex items-center p-3 hover:bg-blue-100">
+                                    <img src="../Feed/img/diary/Icon3.png" alt="User icon" class="w-4 h-5 mr-3">
+                                    <img src="../Feed/img/diary/Ellipse2642.png" alt="User avatar" class="w-8 h-8 mr-3">
+                                    <div class="flex-1 overflow-hidden">
+                                        <p class="text-xs marquee-text">
+                                            <span class="font-semibold">Bạn</span> đã xem video 
+                                            <span class="font-semibold">Kỉ niệm giải phóng thủ đô 10/10</span>
+                                        </p>
+                                        <span class="text-[10px] text-gray-500">2 phút trước</span>
                                     </div>
-                                    <img class="pr-1" src="../Feed/img/diary/_Dot.png" alt="">
+                                    <img class="pr-1 w-2.5 h-2.5" src="../Feed/img/diary/_Dot.png" alt="Dot icon">
                                 </div>
-                    
-                                <div class="flex items-center p-4 hover:bg-blue-100">
-                                    <img src="../Feed/img/diary/Icon4.png" alt="User avatar" class="w-[16px] h-[20px] mr-4">
-                                    <img src="../Feed/img/diary/Ellipse2642.png" alt="User avatar" class="w-10 h-10 mr-4">
-                                    <div class="flex-1">
-                                        <p class="text-sm"><span class="font-semibold">Bạn</span> đã cảm nhận về Nhật ký của <span class="font-semibold">Nguyễn Trọng Cảnh</span></p>
-                                        <span class="text-xs text-gray-500">1 giờ trước</span>
+                                
+                                <div class="flex items-center p-3 hover:bg-blue-100">
+                                    <img src="../Feed/img/diary/Icon4.png" alt="User icon" class="w-4 h-5 mr-3">
+                                    <img src="../Feed/img/diary/Ellipse2642.png" alt="User avatar" class="w-8 h-8 mr-3">
+                                    <div class="flex-1 overflow-hidden">
+                                        <p class="text-xs marquee-text"><span class="font-semibold">Bạn</span> đã cảm nhận về Nhật ký của <span class="font-semibold">Nguyễn Trọng Cảnh</span></p>
+                                        <span class="text-[10px] text-gray-500">1 giờ trước</span>
                                     </div>
-                                    <img class="pr-1" src="../Feed/img/diary/_Dot.png" alt="">
+                                    <img class="pr-1 w-2.5 h-2.5" src="../Feed/img/diary/_Dot.png" alt="Dot icon">
                                 </div>
-                    
-                                <div class="flex items-center p-4 hover:bg-blue-100">
-                                    <img src="../Feed/img/diary/Icon5.png" alt="User avatar" class="w-[16px] h-[20px] mr-4">
-                                    <img src="../Feed/img/diary/Ellipse2642.png" alt="User avatar" class="w-10 h-10 mr-4">
-                                    <div class="flex-1">
-                                        <p class="text-sm"><span class="font-semibold">Bạn</span> đã tặng huy hiệu cho <span class="font-semibold">Trần Nguyên Anh Khôi</span></p>
-                                        <span class="text-xs text-gray-500">3 giờ trước</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-center p-4 hover:bg-blue-100">
-                                    <img src="../Feed/img/diary/Icon6.png" alt="User avatar" class="w-[16px] h-[20px] mr-4">
-                                    <img src="../Feed/img/diary/Ellipse2642.png" alt="User avatar" class="w-10 h-10 mr-4">
-                                    <div class="flex-1">
-                                        <p class="text-sm"><span class="font-semibold">Bạn</span> đã tặng huy hiệu cho <span class="font-semibold">Trần Nguyên Anh Khôi</span></p>
-                                        <span class="text-xs text-gray-500">3 giờ trước</span>
+                                
+                                <div class="flex items-center p-3 hover:bg-blue-100">
+                                    <img src="../Feed/img/diary/Icon5.png" alt="User icon" class="w-4 h-5 mr-3">
+                                    <img src="../Feed/img/diary/Ellipse2642.png" alt="User avatar" class="w-8 h-8 mr-3">
+                                    <div class="flex-1 overflow-hidden">
+                                        <p class="text-xs marquee-text"><span class="font-semibold">Bạn</span> đã tặng huy hiệu cho <span class="font-semibold">Trần Nguyên Anh Khôi</span></p>
+                                        <span class="text-[10px] text-gray-500">3 giờ trước</span>
                                     </div>
                                 </div>
-                                <div class="flex items-center p-4 hover:bg-blue-100">
-                                    <img src="../Feed/img/diary/Icon7.png" alt="User avatar" class="w-[16px] h-[20px] mr-4">
-                                    <img src="../Feed/img/diary/Ellipse2642.png" alt="User avatar" class="w-10 h-10 mr-4">
-                                    <div class="flex-1">
-                                        <p class="text-sm"><span class="font-semibold">Bạn</span> đã tặng huy hiệu cho <span class="font-semibold">Trần Nguyên Anh Khôi</span></p>
-                                        <span class="text-xs text-gray-500">3 giờ trước</span>
+                                
+                                <div class="flex items-center p-3 hover:bg-blue-100">
+                                    <img src="../Feed/img/diary/Icon6.png" alt="User icon" class="w-4 h-5 mr-3">
+                                    <img src="../Feed/img/diary/Ellipse2642.png" alt="User avatar" class="w-8 h-8 mr-3">
+                                    <div class="flex-1 overflow-hidden">
+                                        <p class="text-xs marquee-text"><span class="font-semibold">Bạn</span> đã tặng huy hiệu cho <span class="font-semibold">Trần Nguyên Anh Khôi</span></p>
+                                        <span class="text-[10px] text-gray-500">3 giờ trước</span>
                                     </div>
                                 </div>
-                                <div class="flex items-center p-4 hover:bg-blue-100">
-                                    <img src="../Feed/img/diary/Icon8.png" alt="User avatar" class="w-[16px] h-[20px] mr-4">
-                                    <img src="../Feed/img/diary/Ellipse2642.png" alt="User avatar" class="w-10 h-10 mr-4">
-                                    <div class="flex-1">
-                                        <p class="text-sm"><span class="font-semibold">Bạn</span> đã tặng huy hiệu cho <span class="font-semibold">Trần Nguyên Anh Khôi</span></p>
-                                        <span class="text-xs text-gray-500">3 giờ trước</span>
+                        
+                                <div class="flex items-center p-3 hover:bg-blue-100">
+                                    <img src="../Feed/img/diary/Icon7.png" alt="User icon" class="w-4 h-5 mr-3">
+                                    <img src="../Feed/img/diary/Ellipse2642.png" alt="User avatar" class="w-8 h-8 mr-3">
+                                    <div class="flex-1 overflow-hidden">
+                                        <p class="text-xs marquee-text"><span class="font-semibold">Bạn</span> đã tặng huy hiệu cho <span class="font-semibold">Trần Nguyên Anh Khôi</span></p>
+                                        <span class="text-[10px] text-gray-500">3 giờ trước</span>
                                     </div>
                                 </div>
-                                <div class="flex items-center p-4 hover:bg-blue-100">
-                                    <img src="../Feed/img/diary/Icon9.png" alt="User avatar" class="w-[16px] h-[20px] mr-4">
-                                    <img src="../Feed/img/diary/Ellipse2642.png" alt="User avatar" class="w-10 h-10 mr-4">
-                                    <div class="flex-1">
-                                        <p class="text-sm"><span class="font-semibold">Bạn</span> đã tặng huy hiệu cho <span class="font-semibold">Trần Nguyên Anh Khôi</span></p>
-                                        <span class="text-xs text-gray-500">3 giờ trước</span>
+                        
+                                <div class="flex items-center p-3 hover:bg-blue-100">
+                                    <img src="../Feed/img/diary/Icon8.png" alt="User icon" class="w-4 h-5 mr-3">
+                                    <img src="../Feed/img/diary/Ellipse2642.png" alt="User avatar" class="w-8 h-8 mr-3">
+                                    <div class="flex-1 overflow-hidden">
+                                        <p class="text-xs marquee-text"><span class="font-semibold">Bạn</span> đã tặng huy hiệu cho <span class="font-semibold">Trần Nguyên Anh Khôi</span></p>
+                                        <span class="text-[10px] text-gray-500">3 giờ trước</span>
+                                    </div>
+                                </div>
+                        
+                                <div class="flex items-center p-3 hover:bg-blue-100">
+                                    <img src="../Feed/img/diary/Icon9.png" alt="User icon" class="w-4 h-5 mr-3">
+                                    <img src="../Feed/img/diary/Ellipse2642.png" alt="User avatar" class="w-8 h-8 mr-3">
+                                    <div class="flex-1 overflow-hidden">
+                                        <p class="text-xs marquee-text"><span class="font-semibold">Bạn</span> đã tặng huy hiệu cho <span class="font-semibold">Trần Nguyên Anh Khôi</span></p>
+                                        <span class="text-[10px] text-gray-500">3 giờ trước</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
                 </div>
                 <aside
-                    class="lg:col-span-1 custom-width bg-white h-screen p-4 shadow-lg fixed right-0 inset-y-0 z-40 pt-20 sm:hidden lg:block">
+                    class="main-right lg:col-span-1 custom-width bg-white h-screen p-4 shadow-lg fixed right-0 inset-y-0 z-40 pt-20 sm:hidden lg:block">
                     <div class=" justify-between h-full items-start">
                         <div class="flex items-center justify-between">
                             <h3 class="font-bold text-xl text-gray-900">Trò chuyện</h3>

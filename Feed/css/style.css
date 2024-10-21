@@ -31,7 +31,4 @@ nav::-webkit-scrollbar-thumb:hover,
 #notifications-dropdown {
     z-index: 10; /* Make sure the dropdown appears above other elements */
 }
-
-.hidden {
-    display: none;
-}
+  

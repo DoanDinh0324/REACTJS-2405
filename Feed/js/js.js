@@ -12,15 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
         arrow.classList.toggle('rotate-180');
     });
 });
-document.addEventListener('DOMContentLoaded', function() {
-    // Get elements
-    const channelMenu = document.getElementById('channelMenu');
-    const channelSubmenu = document.getElementById('channelSubmenu');
-    const channelArrow = document.getElementById('channelArrow');
+const dropdownButton = document.getElementById('dropdownButton');
+const dropdownMenu = document.getElementById('dropdownMenu');
 
-    // Toggle submenu and arrow rotation
-    channelMenu.addEventListener('click', function() {
-        channelSubmenu.classList.toggle('hidden'); // Toggle submenu visibility
-        channelArrow.classList.toggle('rotate-180'); // Rotate arrow on click
-    });
+dropdownButton.addEventListener('click', () => {
+  dropdownMenu.classList.toggle('hidden');
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+  if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+    dropdownMenu.classList.add('hidden');
+  }
 });

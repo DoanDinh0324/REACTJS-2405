@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Feed/libs/tailwincss/tailwind-all.css">
+    <link rel="stylesheet" href="../Feed/libs/tailwincss/tailwind-all.min.css">
+    <link rel="stylesheet" href="../Feed/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="w-full bg-white shadow fixed z-50">
+            <div class="h-auto lg:flex items-center justify-between p-4 lg:flex-wrap sm:block">
+                <div class="absolute sm:static px-3 sm:px-0 h-full lg:flex items-center gap-3 sm:hidden">
+                    <button class="text-gray-500 hover:text-blue-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    <div class="flex items-center space-x-2 text-sm text-gray-600">
+                        <img class="w-8 h-8" src="../Feed/img/logo/Weather.png" alt="Weather Icon">
+                        <div class="flex flex-col">
+                            <span>Hà Nội, 24 độ C</span>
+                            <span class="text-gray-400">Trời nắng</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="relative flex py-3 sm:py-0 sm:gap-5 w-full sm:w-auto justify-between items-center border-b border-solid sm:border-none">
+                    <div class="relative h-full flex items-center">
+                        <a href=""><img src="../Feed/img/logo/logo.png" alt="Logo"
+                                class="w-12 h-10 inline-block mr-4"></a>
+                        <div class="relative w-full max-w-lg sm:hidden lg:block">
+                            <img src="../Feed/img/logo/Search.png" alt="Search Icon"
+                                class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5">
+                            <input type="text" placeholder="Tìm kiếm VidaryBook..."
+                                class="bg-gray-100 rounded-full pl-10 py-2 text-sm border border-gray-300 focus:outline-none w-96">
+                        </div>
+                    </div>
+                    <div class="lg:flex items-center lg:flex-grow-0 overflow-y-visible p-5 sm:p-0 lg:block sm:hidden">
+                        <div class="p-2 bg-blue-100 rounded-lg">
+                            <a href=""><img class="w-6 h-6" src="../Feed/img/logo/diary.png" alt="Diary Icon"></a>
+                        </div>
+                        <div class="p-2">
+                            <a href=""><img class="w-6 h-6" src="../Feed/img/logo/clapperboard.png"
+                                    alt="Clapperboard Icon"></a>
+                        </div>
+                        <div class="p-2">
+                            <a href=""><img class="w-6 h-6" src="../Feed/img/logo/small-talk.png" alt="Talk Icon"></a>
+                        </div>
+                        <div class="p-2">
+                            <a href=""><img class="w-6 h-6" src="../Feed/img/logo/Group1.png" alt="Group 1 Icon"></a>
+                        </div>
+                        <div class="p-2">
+                            <a href=""><img class="w-6 h-6" src="../Feed/img/logo/Group2.png" alt="Group 2 Icon"></a>
+                        </div>
+                        <div class="p-2">
+                            <a href=""><img class="w-6 h-6" src="../Feed/img/logo/Layer.png" alt="Layer Icon"></a>
+                        </div>
+                        <div class="p-2">
+                            <a href=""><img class="w-6 h-6" src="../Feed/img/logo/Group3.png" alt="Group 3 Icon"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 lg:p-0 sm:p-3">
+                    <div class="relative inline-block">
+                        <div class="bg-gray-200 p-2 rounded-full">
+                            <img src="../Feed/img/logo/menu.png" alt="Chat Icon" class="w-6 h-6">
+                        </div>
+                    </div>
+                    <div class="relative inline-block">
+                        <div class="bg-gray-200 p-2 rounded-full">
+                            <img src="../Feed/img/logo/message.png" alt="Chat Icon" class="w-6 h-6">
+                        </div>
+                        <span id=""
+                            class="absolute top-2 right-2 transform translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+                            0
+                        </span>
+                    </div>
+                    <div class="relative inline-block">
+                        <div class="bg-gray-200 p-2 rounded-full">
+                            <img src="../Feed/img/logo/group4.png" alt="Chat Icon" class="w-6 h-6">
+                        </div>
+                    </div>
+                    <div class="relative inline-block">
+                        <div id="notification-button" class="bg-gray-200 p-2 rounded-full cursor-pointer">
+                            <img src="../Feed/img/logo/Group5.png" alt="Chat Icon" class="w-6 h-6">
+                        </div>
+                        <span id="notification-badge"
+                            class="absolute top-2 right-2 transform translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+                            0
+                        </span>
+                    </div>
+
+                    <div id="notification-list" class="bg-white rounded-lg shadow-lg p-4 max-w-sm mx-auto hidden">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-xl font-bold">All notifications</h2>
+                            <button class="text-gray-500 hover:text-gray-700">•••</button>
+                        </div>
+                        <div class="flex space-x-2 mb-4">
+                            <button
+                                class="bg-blue-100 text-blue-500 px-3 py-1 rounded-full border border-blue-500">All</button>
+                            <button class="bg-gray-100 text-gray-500 px-3 py-1 rounded-full">Community</button>
+                            <button class="bg-gray-100 text-gray-500 px-3 py-1 rounded-full">Unread</button>
+                            <button class="bg-gray-100 text-gray-500 px-3 py-1 rounded-full">Custom Link</button>
+                        </div>
+                        <div class="space-y-4">
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img src="../Feed/img/logo/Profile.png" alt="Profile" class="w-8 h-8 rounded-full">
+                    </div>
+                    <div class="relative">
+                        <img src="../Feed/img/logo/icon-park-solid_down-one.png" alt="Dropdown Icon"
+                            class="w-8 h-8 rounded-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="bg-gray-300 min-h-screen">
+            <div class=" grid lg:grid-cols-4 gap-4 sm:pt-10">
+                <div class="flex justify-between h-full items-start">
+                    <div
+                        class="lg:col-span-1 custom-width bg-gray-50 border-r border-gray-200 fixed left-0 inset-y-0 z-40 sm:hidden lg:block">
+                        <div class="flex justify-between p-4 pt-20 border-b border-gray-200">
+                            <a href="#" class="text-blue-500 font-semibold">Home feed</a>
+                            <a href="#" class="text-gray-500">Shop feed</a>
+                        </div>
+                        <nav class="p-4 pb-10 overflow-y-auto h-[calc(100vh-6rem)]">
+                            <h3 class="text-xl text-gray-900 mb-2">MẠNG XÃ HỘI</h3>
+                            <ul>
+                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                    <img src="../Feed/img/left/people.svg" alt="icon" class="w-5 h-5 mr-2">
+                                    <span class="text-gray-700">Trang cộng đồng (5)</span>
+                                </li>
+                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                    <img src="../Feed/img/left/Group.png" alt="icon" class="w-5 h-5 mr-2">
+                                    <span class="text-gray-700">Nhật ký</span>
+                                </li>
+                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                    <img src="../Feed/img/left/Icon.png" alt="icon" class="w-5 h-5 mr-2">
+                                    <span class="text-gray-700">Khảo sát</span>
+                                </li>
+                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                    <img src="../Feed/img/left/layer2.png" alt="icon" class="w-5 h-5 mr-2">
+                                    <span class="text-gray-700">Sự kiện</span>
+                                </li>
+                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                    <img src="../Feed/img/left/layer2.png" alt="icon" class="w-5 h-5 mr-2">
+                                    <span class="text-gray-700">Bản đồ thông minh</span>
+                                </li>
+                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                    <img src="../Feed/img/left/Group1.png" alt="icon" class="w-5 h-5 mr-2">
+                                    <span class="text-gray-700">Smart Q&A</span>
+                                </li>
+                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                    <img src="../Feed/img/left/Group5.png" alt="icon" class="w-5 h-5 mr-2">
+                                    <span class="text-gray-700">Tìm kiếm</span>
+                                </li>
+                                <li id="parentMenu" class="flex items-center rounded-lg p-2 mb-2 cursor-pointer">
+                                    <img src="../Feed/img/left/layer-2.png" alt="icon" class="w-5 h-5 mr-2">
+                                    <span class="font-semibold">Trang cá nhân</span>
+                                    <svg id="arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-5 ml-auto">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </li>
+                                <ul id="submenu" class="ml-6 hidden">
+                                    <li class="flex block items-center rounded-lg hover:bg-blue-100 p-2 mb-2">
+                                        <img src="../Feed/img/left/_04.Icon.png" alt="icon" class="w-5 h-5 mr-2">
+                                        <span>Trang cá nhân</span>
+                                    </li>
+                                    <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                        <img src="../Feed/img/left/Group9.png" alt="icon" class="w-5 h-5 mr-2">
+                                        <span>Ảnh</span>
+                                    </li>
+                                    <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                        <img src="../Feed/img/left/reel.svg" alt="icon" class="w-5 h-5 mr-2">
+                                        <span>Video</span>
+                                    </li>
+                                    <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                        <img src="../Feed/img/left/Group8.png" alt="icon" class="w-5 h-5 mr-2">
+                                        <span>Huy hiệu</span>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <img src="../Feed/img/left/Group4.png" alt="icon" class="w-5 h-5 mr-2">
+                                <span class="text-gray-700">Bạn bè</span>
+                            </li>
+                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <img src="../Feed/img/left/Group3.png" alt="icon" class="w-5 h-5 mr-2">
+                                <span class="text-gray-700">Nhóm</span>
+                            </li>
+                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <img src="../Feed/img/left/Icon1.png" alt="icon" class="w-5 h-5 mr-2">
+                                <span class="text-gray-700">Doanh nghiệp</span>
+                            </li>
+                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <img src="../Feed/img/left/facebook-page 1.svg" alt="icon" class="w-5 h-5 mr-2">
+                                <span class="text-gray-700">Trang</span>
+                            </li>
+                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <img src="../Feed/img/left/Group6.png" alt="icon" class="w-5 h-5 mr-2">
+                                <span class="text-gray-700">Danh ngôn</span>
+                            </li>
+                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <img src="../Feed/img/left/Vector3.png" alt="icon" class="w-5 h-5 mr-2">
+                                <span class="text-gray-700">Bảng ghi nhận</span>
+                            </li>
+                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <img src="../Feed/img/left/Group7.png" alt="icon" class="w-5 h-5 mr-2">
+                                <span class="text-gray-700">Kênh của tôi</span>
+                            </li>
+                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <img src="../Feed/img/left/Birthday_Cake.png" alt="icon" class="w-5 h-5 mr-2">
+                                <span class="text-gray-700">Sinh nhật</span>
+                            </li>
+                            <div id="channelMenu" class="cursor-pointer">
+                                <li class="flex items-center rounded-lg hover:bg-blue-100 p-2 mb-2">
+                                    <img src="../Feed/img/left/Layer25.png" alt="icon" class="w-5 h-5 mr-2">
+                                    <span class="font-semibold">Kênh</span>
+                                    <svg id="channelArrow" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="size-5 ml-auto">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </li>
+                                <ul id="channelSubmenu" class="ml-6 hidden">
+                                    <li class="flex items-center rounded-lg p-2 mb-2">
+                                        <img src="../Feed/img/left/Vector4.png" alt="icon" class="w-5 h-5 mr-2">
+                                        <span>Kênh video</span>
+                                    </li>
+                                    <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                        <img src="../Feed/img/left/Group10.png" alt="icon" class="w-5 h-5 mr-2">
+                                        <span>Kênh hình ảnh</span>
+                                    </li>
+                                    <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                        <img src="../Feed/img/left/music.svg" alt="icon" class="w-5 h-5 mr-2">
+                                        <span>Kênh nhạc</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h3 class="text-sm text-gray-900 mt-4 mb-2">CỬA HÀNG CỦA TÔI</h3>
+                            <ul>
+                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                    <img src="../Feed/img/left/marketplace.svg" alt="icon" class="w-5 h-5 mr-2">
+                                    <span>Chợ mua bán</span>
+                                </li>
+                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                    <img src="../Feed/img/left/Group11.png" alt="icon" class="w-5 h-5 mr-2">
+                                    <span>Chợ của tôi</span>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class=" lg:col-span-2 lg:pt-8 sm:pt-20 sm:bg-gray-300">
+                    <div class=" bg-white rounded-lg">
+                        <div class="relative">
+                            <img src="../Feed/img/diary/Rectangle.png" alt="Cover Photo"
+                                class="w-full h-full object-cover">
+                            <button
+                                class="flex items-center absolute top-4 right-4 bg-blue-500 text-white text-sm font-medium px-3 py-2 rounded-md">
+                                <img class="pr-2" src="../Feed/img/diary/22-p2p.png" alt="">
+                                Chuyển đổi tài khoản
+                            </button>
+                            <button
+                                class="flex items-center absolute bottom-4 right-4 bg-gray-300 text-gray-900 text-sm font-medium px-3 py-2 rounded-md">
+                                <img class="pr-2" src="../Feed/img/diary/Vector.png" alt="">
+                                Thay đổi ảnh cover
+                            </button>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center">
+                                <div class="text-center">
+                                    <p class="text-sm font-bold text-gray-700 mt-2">Linh vật</p>
+                                    <div class="flex space-x-2 pt-4">
+                                        <div class="text-center 2xl:w-[100px]">
+                                            <img src="../Feed/img/diary/image1785.png" alt="Mascot Icon"
+                                                class="w-[64px] h-[64px] mx-auto">
+                                            <p class="text-sm font-medium text-gray-500">Người theo dõi</p>
+                                            <p class="text-lg font-bold text-gray-900">14</p>
+                                        </div>
+                                        <div class="text-center 2xl:w-[100px]">
+                                            <img src="../Feed/img/diary/image1785.png" alt="Mascot Icon"
+                                                class="w-[64px] h-[64px] mx-auto">
+                                            <p class="text-sm font-medium text-gray-500">Bạn bè</p>
+                                            <p class="text-lg font-bold text-gray-900">18</p>
+                                        </div>
+                                        <div class="text-center 2xl:w-[100px]">
+                                            <img src="../Feed/img/diary/image1785.png" alt="Mascot Icon"
+                                                class="w-[64px] h-[64px] mx-auto">
+                                            <p class="text-sm font-medium text-gray-500">Đang theo dõi</p>
+                                            <p class="text-lg font-bold text-gray-900">6</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex relative">
+                                    <div
+                                        class="absolute -top-32 h-[150px] w-[150px] left-[15px] bg-white border-4 border-white rounded-full">
+                                        <img src="../Feed/img/diary/Ellipse.png" alt="Profile Picture"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="mt-8">
+                                        <div class="flex items-center space-x-2 truncate">
+                                            <h1 class="text-2xl text-blue-500 font-bold">VdiaryBook Life</h1>
+                                            <img src="../Feed/img/diary/logo.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-sm font-bold text-gray-700 mt-2">Nhãn hiệu</p>
+                                    <div class="flex space-x-2 pt-4">
+                                        <div class="text-center 2xl:w-[100px]">
+                                            <img src="../Feed/img/diary/image1785.png" alt="Mascot Icon"
+                                                class="w-[64px] h-[64px] mx-auto">
+                                            <p class="text-sm font-medium text-gray-500">Tiêu đề</p>
+                                            <p class="text-lg font-bold text-gray-900">0</p>
+                                        </div>
+                                        <div class="text-center 2xl:w-[100px]">
+                                            <img src="../Feed/img/diary/image1785.png" alt="Mascot Icon"
+                                                class="w-[64px] h-[64px] mx-auto">
+                                            <p class="text-sm font-medium text-gray-500">Tiêu đề</p>
+                                            <p class="text-lg font-bold text-gray-900">0</p>
+                                        </div>
+                                        <div class="text-center 2xl:w-[100px]">
+                                            <img src="../Feed/img/diary/image1785.png" alt="Mascot Icon"
+                                                class="w-[64px] h-[64px] mx-auto">
+                                            <p class="text-sm font-medium text-gray-500">Tiêu đề</p>
+                                            <p class="text-lg font-bold text-gray-900">0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-center space-x-4">
+                                <div class="text-center">
+                                    <img src="../Feed/img/diary/idea1.png" alt="">
+                                    <p class="text-sm text-gray-600 font-black pt-1">4</p>
+                                </div>
+                                <div class="text-center">
+                                    <img src="../Feed/img/diary/trophy-star1.png" alt="">
+                                    <p class="text-sm text-gray-600 font-black pt-1">4</p>
+                                </div>
+                                <div class="text-center">
+                                    <img src="../Feed/img/diary/medal1.png" alt="">
+                                    <p class="text-sm text-gray-600 font-black pt-1">3</p>
+                                </div>
+                                <div class="text-center">
+                                    <img src="../Feed/img/diary/motivation1.png" alt="">
+                                    <p class="text-sm text-gray-600 font-black pt-1">2</p>
+                                </div>
+                                <div class="text-center">
+                                    <img src="../Feed/img/diary/copywriting.png" alt="">
+                                    <p class="text-sm text-gray-600 font-black pt-1">2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-200 p-2 w-full">
+                            <div class="flex justify-between space-x-2">
+                                <button class="flex items-center bg-blue-600 text-white px-2 py-1 truncate rounded-xl">
+                                    <img class="pr-2" src="../Feed/img/diary/writing1.png" alt="">
+                                    Dòng nhật ký
+                                </button>
+                                <button class="flex items-center border text-gray-700 px-2 py-1 truncate rounded-xl">
+                                    <img class="pr-2" src="../Feed/img/diary/global-network1.png" alt="">
+                                    Trang web
+                                </button>
+                                <button class="flex items-center border text-gray-700 px-2 py-1 truncate rounded-xl">
+                                    <img class="pr-2" src="../Feed/img/diary/refer1.png" alt="">
+                                    Giới thiệu
+                                </button>
+                                <button class="flex items-center border text-gray-700 px-2 py-1 truncate rounded-xl">
+                                    <img class="pr-2" src="../Feed/img/diary/friends1.png" alt="">
+                                    Bạn bè
+                                </button>
+                                <button class="flex items-center border text-gray-700 px-2 py-1 truncate rounded-xl">
+                                    <img class="pr-2" src="../Feed/img/diary/event1.png" alt="">
+                                    Sự kiện
+                                </button>
+                                <button class="flex items-center border text-gray-700 px-2 py-1 truncate rounded-xl">
+                                    <img class="pr-2" src="../Feed/img/diary/folder1.png" alt="">
+                                    VDB Driver
+                                </button>
+                                <button class="flex items-center border text-gray-700 px-2 py-1 truncate rounded-xl">
+                                    <img class="pr-2" src="../Feed/img/diary/qr-code1.png" alt="">
+                                    Mã QR
+                                </button>
+                                <button id="dropdownButton" class="flex items-center border bg-gray-200 text-gray-700 px-4 py-1 ml-[15px] rounded-xl relative">
+                                    <img src="../Feed/img/diary/mingcute_more-1-fill.png" alt="">
+                                  </button>
+                                  <div id="dropdownMenu" class="hidden absolute mt-[35px] w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 right-[490px] focus:outline-none">
+                                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                                      <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                                        <img class="pr-1" src="../Feed/img/diary/clock.png" alt="">
+                                        Nhật ký hoạt động
+                                      </a>
+                                      <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                                        <img class="pr-1" src="../Feed/img/diary/dollar-sign.png" alt="">
+                                        Tài sản
+                                      </a>
+                                      <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                                        <img class="pr-1" src="../Feed/img/diary/calendar.png" alt="">
+                                        Lịch làm việc
+                                      </a>
+                                      <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                                        <img class="pr-1" src="../Feed/img/diary/database.png" alt="">
+                                        Thống kê truy cập
+                                      </a>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex pt-2 lg:space-x-2 sm:space-x-1">
+                        <button
+                            class="flex items-center truncate space-x-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm px-2 py-1 rounded-xl shadow">
+                            <span class="text-green-500">🛡️</span>
+                            <span>Bảo vệ an toàn cho cuộc sống</span>
+                        </button>
+                        <button
+                            class="flex items-center truncate space-x-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm px-2 py-1 rounded-xl shadow">
+                            <span class="text-red-500">🆘</span>
+                            <span>Tìm kiếm - Giúp đỡ - SOS</span>
+                        </button>
+                        <button
+                            class="flex items-center truncate space-x-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm px-2 py-1 rounded-xl shadow">
+                            <span class="text-yellow-500">📚</span>
+                            <span>Kiến thức cho cuộc sống</span>
+                        </button>
+                        <button
+                            class="flex items-center truncate space-x-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm px-2 py-1 rounded-xl shadow">
+                            <span class="text-green-700">🪖</span>
+                            <span>Tìm thân nhân đồng đội, liệt sĩ</span>
+                        </button>
+                        <a href="#" class="flex items-center truncate space-x-2 text-blue-500 hover:underline text-sm">
+                            <span>🖉</span>
+                            <span>Chỉnh sửa</span>
+                        </a>
+                    </div>
+                    <div class="rounded-lg mt-2">
+                        <div class="grid lg:grid-cols-5 gap-2">
+                          <!-- Left Column (Friends and Images Section) -->
+                          <div class="lg:col-span-2">
+                            <!-- Friends Section -->
+                            <div class="mb-4 bg-white border p-4 rounded-lg">
+                                <div class="flex items-center justify-between">
+                                    <h2 class="font-bold text-gray-700 text-lg">Bạn bè (18)</h2>
+                                <a href="#" class="text-blue-500 hover:underline mt-2 block">Xem tất cả bạn bè</a>
+                                </div>
+                                <div class="flex mt-2 justify-between">
+                                    <div class="flex flex-col items-center truncate">
+                                    <img src="../Feed/img/diary/Ellipse2646.png" alt="Friend 1" class="rounded-full w-[64px] h-[64px]">
+                                    <p class="flex items-center text-sm font-medium text-gray-700">
+                                        VdiaryBook Life
+                                        <img src="../Feed/img/logo/logo1.png" alt="">
+                                    </p>
+                                    </div>
+                                    <div class="flex flex-col items-center truncate">
+                                    <img src="../Feed/img/diary/Ellipse2647.png" alt="Friend 2" class="rounded-full w-[64px] h-[64px]">
+                                    <p class="text-sm font-medium text-gray-700">Trần Trọng Điển</p>
+                                    </div>
+                                    <div class="flex flex-col items-center truncate">
+                                    <img src="../Feed/img/diary/Ellipse2648.png" alt="Friend 3" class="rounded-full w-[64px] h-[64px]">
+                                    <p class="text-sm font-medium text-gray-700">Hà Văn Duy</p>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                            <!-- Images Section -->
+                            <div class="bg-white p-2 rounded-lg">
+                              <h2 class="font-bold text-gray-700 text-lg">Hình ảnh (25)</h2>
+                              <div class="flex lg:justify-between mt-2">
+                                <div class="grid grid-cols-3 gap-1">
+                                    <img src="https://files.vdiarybook.net/api/files/users/6429b4e4c93293fdbb93a8f1/posts/7ed42b73-4e4b-46af-b8b2-609306e73058.jpg" alt="Image 1" class="w-full h-fuw-full rounded-lg object-cover">
+                                    <img src="https://files.vdiarybook.net/api/files/users/6429b4e4c93293fdbb93a8f1/posts/7ed42b73-4e4b-46af-b8b2-609306e73058.jpg" alt="Image 2" class="w-full h-fuw-full rounded-lg object-cover">
+                                    <img src="https://files.vdiarybook.net/api/files/users/6429b4e4c93293fdbb93a8f1/posts/7ed42b73-4e4b-46af-b8b2-609306e73058.jpg" alt="Image 3" class="w-full h-fuw-full rounded-lg object-cover">
+                                </div>
+                              </div>
+                              <a href="#" class="text-blue-500 hover:underline mt-2 block">Xem tất cả hình ảnh</a>
+                            </div>
+                          </div>
+                      
+                          <!-- Middle Column (Search Bar and Journal Section) -->
+                          <div class="lg:col-span-3">
+                            <!-- Search Bar -->
+                            <div class="flex justify-between items-center mb-4 bg-white p-2 rounded-lg">
+                              <div class="flex items-center space-x-2 w-full">
+                                <img src="../Feed/img/diary/Ellipse.png" alt="Logo" class="w-[40px] h-[40px]">
+                                <input type="text" class="border rounded-full px-4 py-2 w-full" placeholder="VdiaryBook Life, hãy chia sẻ khoảnh khắc, kỷ niệm của bạn nhé!">
+                              </div>
+                              <img src="../Feed/img/diary/Group1171275197.png" alt="Cart Icon" class="w-[40px] h-[40px] p-1">
+                            </div>
+                      
+                            <!-- Journal Section -->
+                            <div class="bg-white rounded-lg p-2">   
+                              <div class="flex justify-between items-center mb-2">
+                                <h2 class="font-bold text-gray-700 text-lg">Nhật ký</h2>
+                                <div class="flex space-x-4">
+                                    <div class="flex items-center space-x-1">
+                                        <img src="../Feed/img/diary/mage_clock-fill.png" alt="">
+                                        <button class="text-blue-500">Danh sách chờ đăng</button>
+                                    </div>
+                                    <div class="flex items-center space-x-1">
+                                        <img src="../Feed/img/diary/flowbite_filter-solid.png" alt="">
+                                        <button class="text-blue-500">Bộ lọc</button>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="grid grid-cols-4 gap-0">
+                                <div class="relative rounded-lg bg-gray-200 p-2">
+                                    <img src="../Feed/img/diary/Rectangle3466041.png" alt="Journal 1" class="w-full h-full">
+                                    <p class="absolute inset-0 flex items-center justify-center text-sm font-medium text-gray-700 bg-black bg-opacity-50 text-white">Thông điệp</p>
+                                  </div>
+                                  <div class="relative rounded-lg bg-gray-200 p-2">
+                                    <img src="../Feed/img/diary/Rectangle3466041.png" alt="Journal 1" class="w-full h-full object-cover rounded-lg">
+                                    <p class="absolute inset-0 flex items-center justify-center text-sm font-medium text-gray-700 bg-black bg-opacity-50 text-white">Thông điệp</p>
+                                  </div>
+                                  <div class="relative rounded-lg bg-gray-200 p-2">
+                                    <img src="../Feed/img/diary/Rectangle3466041.png" alt="Journal 1" class="w-full h-full object-cover rounded-lg">
+                                    <p class="absolute inset-0 flex items-center justify-center text-sm font-medium text-gray-700 bg-black bg-opacity-50 text-white">Xin chào</p>
+                                  </div>
+                                  <div class="relative rounded-lg bg-gray-200 p-2">
+                                    <img src="../Feed/img/diary/Rectangle3466041.png" alt="Journal 1" class="w-full h-full object-cover rounded-lg">
+                                    <p class="absolute inset-0 flex items-center justify-center text-sm font-medium text-gray-700 bg-black bg-opacity-50 text-white">Reels</p>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <aside
+                    class="lg:col-span-1 custom-width bg-white h-screen p-4 shadow-lg fixed right-0 inset-y-0 z-40 pt-20 sm:hidden lg:block">
+                    <div class=" justify-between h-full items-start">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-xl text-gray-900">Trò chuyện</h3>
+                            <div class="flex items-center space-x-2">
+                                <button class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="size-8 bg-blue-100 rounded-full p-1 text-blue-500">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    </svg>
+                                </button>
+                                <button class="">
+                                    <img class="bg-blue-100 rounded-full p-2 w-8 h-8" src="../Feed/img/right/Vector.png"
+                                        alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex justify-center mt-2">
+                            <button class="text-blue-500 border-b-2 border-blue-500 w-20 flex flex-col items-center">
+                                <img class=" w-6 h-6" src="../Feed/img/right/Vector1.png" alt="">
+                            </button>
+                            <button class="text-gray-500 ml-4 flex flex-col w-20 items-center">
+                                <img class=" w-6 h-6" src="../Feed/img/right/Vector2.png" alt="">
+                            </button>
+                        </div>
+                        <div class=" pt-2 overflow-y-auto custom-height scrollbar">
+                            <div class="flex items-center p-2">
+                                <div class="relative flex">
+                                    <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50" src="../Feed/img/Footer.png"
+                                        alt="">
+                                    <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
+                                        class="w-10 h-10 rounded-full relative z-20">
+                                </div>
+                                <div class="pl-4">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-semibold text-sm text-blue-500">Admin</span>
+                                        <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
+                                    </div>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <img class="border p-1 w-6 h-6 rounded" src="../Feed/img/right/Rectangle.png"
+                                            alt="">
+                                        <button
+                                            class="flex items-center px-2 py-1 border rounded-lg text-gray-600 hover:bg-gray-200 transition-all">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" class="w-4 h-4 text-red-500 mr-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 6h16M4 12h16m-7 6h7" />
+                                            </svg>
+                                            <span class="text-xs">Trò chuyện</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-2">
+                                <div class="relative flex">
+                                    <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50" src="../Feed/img/Footer.png"
+                                        alt="">
+                                    <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
+                                        class="w-10 h-10 rounded-full relative z-20">
+                                </div>
+                                <div class="pl-4">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-semibold text-sm text-blue-500">Admin</span>
+                                        <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
+                                    </div>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <img class="border p-1 w-6 h-6 rounded" src="../Feed/img/right/Rectangle.png"
+                                            alt="">
+                                        <button
+                                            class="flex items-center px-2 py-1 border rounded-lg text-gray-600 hover:bg-gray-200 transition-all">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" class="w-4 h-4 text-red-500 mr-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 6h16M4 12h16m-7 6h7" />
+                                            </svg>
+                                            <span class="text-xs">Trò chuyện</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-2">
+                                <div class="relative flex">
+                                    <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50" src="../Feed/img/Footer.png"
+                                        alt="">
+                                    <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
+                                        class="w-10 h-10 rounded-full relative z-20">
+                                </div>
+                                <div class="pl-4">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-semibold text-sm text-blue-500">Admin</span>
+                                        <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
+                                    </div>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <img class="border p-1 w-6 h-6 rounded" src="../Feed/img/right/Rectangle.png"
+                                            alt="">
+                                        <button
+                                            class="flex items-center px-2 py-1 border rounded-lg text-gray-600 hover:bg-gray-200 transition-all">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" class="w-4 h-4 text-red-500 mr-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 6h16M4 12h16m-7 6h7" />
+                                            </svg>
+                                            <span class="text-xs">Trò chuyện</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-2">
+                                <div class="relative flex">
+                                    <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50" src="../Feed/img/Footer.png"
+                                        alt="">
+                                    <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
+                                        class="w-10 h-10 rounded-full relative z-20">
+                                </div>
+                                <div class="pl-4">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-semibold text-sm text-blue-500">Admin</span>
+                                        <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
+                                    </div>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <img class="border p-1 w-6 h-6 rounded" src="../Feed/img/right/Rectangle.png"
+                                            alt="">
+                                        <button
+                                            class="flex items-center px-2 py-1 border rounded-lg text-gray-600 hover:bg-gray-200 transition-all">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" class="w-4 h-4 text-red-500 mr-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 6h16M4 12h16m-7 6h7" />
+                                            </svg>
+                                            <span class="text-xs">Trò chuyện</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-2">
+                                <div class="relative flex">
+                                    <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50" src="../Feed/img/Footer.png"
+                                        alt="">
+                                    <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
+                                        class="w-10 h-10 rounded-full relative z-20">
+                                </div>
+                                <div class="pl-4">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-semibold text-sm text-blue-500">Admin</span>
+                                        <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
+                                    </div>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <img class="border p-1 w-6 h-6 rounded" src="../Feed/img/right/Rectangle.png"
+                                            alt="">
+                                        <button
+                                            class="flex items-center px-2 py-1 border rounded-lg text-gray-600 hover:bg-gray-200 transition-all">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" class="w-4 h-4 text-red-500 mr-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 6h16M4 12h16m-7 6h7" />
+                                            </svg>
+                                            <span class="text-xs">Trò chuyện</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-2">
+                                <div class="relative flex">
+                                    <!-- Small Icon on Top -->
+                                    <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50" src="../Feed/img/Footer.png"
+                                        alt="">
+                                    <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
+                                        class="w-10 h-10 rounded-full relative z-20">
+                                </div>
+                                <div class="pl-4">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-semibold text-sm text-blue-500">Admin</span>
+                                        <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
+                                    </div>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <img class="border p-1 w-6 h-6 rounded" src="../Feed/img/right/Rectangle.png"
+                                            alt="">
+                                        <button
+                                            class="flex items-center px-2 py-1 border rounded-lg text-gray-600 hover:bg-gray-200 transition-all">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" class="w-4 h-4 text-red-500 mr-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 6h16M4 12h16m-7 6h7" />
+                                            </svg>
+                                            <span class="text-xs">Trò chuyện</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-2">
+                                <div class="relative flex">
+                                    <!-- Small Icon on Top -->
+                                    <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50" src="../Feed/img/Footer.png"
+                                        alt="">
+                                    <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
+                                        class="w-10 h-10 rounded-full relative z-20">
+                                </div>
+                                <div class="pl-4">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-semibold text-sm text-blue-500">Admin</span>
+                                        <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
+                                    </div>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <img class="border p-1 w-6 h-6 rounded" src="../Feed/img/right/Rectangle.png"
+                                            alt="">
+                                        <button
+                                            class="flex items-center px-2 py-1 border rounded-lg text-gray-600 hover:bg-gray-200 transition-all">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" class="w-4 h-4 text-red-500 mr-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 6h16M4 12h16m-7 6h7" />
+                                            </svg>
+                                            <span class="text-xs">Trò chuyện</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-2">
+                                <div class="relative flex">
+                                    <!-- Small Icon on Top -->
+                                    <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50" src="../Feed/img/Footer.png"
+                                        alt="">
+                                    <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
+                                        class="w-10 h-10 rounded-full relative z-20">
+                                </div>
+                                <div class="pl-4">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-semibold text-sm text-blue-500">Admin</span>
+                                        <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
+                                    </div>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <img class="border p-1 w-6 h-6 rounded" src="../Feed/img/right/Rectangle.png"
+                                            alt="">
+                                        <button
+                                            class="flex items-center px-2 py-1 border rounded-lg text-gray-600 hover:bg-gray-200 transition-all">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" class="w-4 h-4 text-red-500 mr-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 6h16M4 12h16m-7 6h7" />
+                                            </svg>
+                                            <span class="text-xs">Trò chuyện</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-2">
+                                <div class="relative flex">
+                                    <!-- Small Icon on Top -->
+                                    <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50" src="../Feed/img/Footer.png"
+                                        alt="">
+                                    <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
+                                        class="w-10 h-10 rounded-full relative z-20">
+                                </div>
+                                <div class="pl-4">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-semibold text-sm text-blue-500">Admin</span>
+                                        <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
+                                    </div>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <img class="border p-1 w-6 h-6 rounded" src="../Feed/img/right/Rectangle.png"
+                                            alt="">
+                                        <button
+                                            class="flex items-center px-2 py-1 border rounded-lg text-gray-600 hover:bg-gray-200 transition-all">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" class="w-4 h-4 text-red-500 mr-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 6h16M4 12h16m-7 6h7" />
+                                            </svg>
+                                            <span class="text-xs">Trò chuyện</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-2">
+                                <div class="relative flex">
+                                    <!-- Small Icon on Top -->
+                                    <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50" src="../Feed/img/Footer.png"
+                                        alt="">
+                                    <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
+                                        class="w-10 h-10 rounded-full relative z-20">
+                                </div>
+                                <div class="pl-4">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-semibold text-sm text-blue-500">Admin</span>
+                                        <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
+                                    </div>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <img class="border p-1 w-6 h-6 rounded" src="../Feed/img/right/Rectangle.png"
+                                            alt="">
+                                        <button
+                                            class="flex items-center px-2 py-1 border rounded-lg text-gray-600 hover:bg-gray-200 transition-all">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" class="w-4 h-4 text-red-500 mr-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 6h16M4 12h16m-7 6h7" />
+                                            </svg>
+                                            <span class="text-xs">Trò chuyện</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-2">
+                                <div class="relative flex">
+                                    <!-- Small Icon on Top -->
+                                    <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50" src="../Feed/img/Footer.png"
+                                        alt="">
+                                    <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
+                                        class="w-10 h-10 rounded-full relative z-20">
+                                </div>
+                                <div class="pl-4">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-semibold text-sm text-blue-500">Admin</span>
+                                        <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
+                                    </div>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <img class="border p-1 w-6 h-6 rounded" src="../Feed/img/right/Rectangle.png"
+                                            alt="">
+                                        <button
+                                            class="flex items-center px-2 py-1 border rounded-lg text-gray-600 hover:bg-gray-200 transition-all">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" class="w-4 h-4 text-red-500 mr-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 6h16M4 12h16m-7 6h7" />
+                                            </svg>
+                                            <span class="text-xs">Trò chuyện</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="my-10 px-4">
+                                <button
+                                    class="float-end right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white rounded-full p-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4" />
+                                    </svg>
+                                </button>
+                                <div class="flex items-center relative w-full max-w-lg">
+                                    <img src="../Feed/img/logo/Search.png" alt="Search Icon"
+                                        class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5">
+                                    <input type="text" placeholder="Tìm kiếm VidaryBook..."
+                                        class="bg-gray-100 w-full rounded-full px-12 py-2 text-sm border border-blue-300 focus:outline-none w-96">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+        </div>
+    </main>
+
+
+</body>
+<script src="../Feed/js/jquery-3.7.1.js"></script>
+<script src="../Feed/js/js.js"></script>
+<script src="../Feed/js/tailwind.5"></script>
+
+</html>

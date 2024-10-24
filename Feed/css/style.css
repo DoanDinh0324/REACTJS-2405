@@ -36,12 +36,11 @@ nav::-webkit-scrollbar-thumb:hover,
 
 @media screen and (min-width: 375px) {
     .navbar {
-        display: flex;
-        display: block;
-        flex-wrap: wrap;
+        display: none;
+
     }
     .logo {
-      display: none;
+        left: 15px;
     }
     .navbar1 {
         gap: 20px;
@@ -52,19 +51,25 @@ nav::-webkit-scrollbar-thumb:hover,
     }
     .navbar2 {
         display: none;
-        padding: 0;
     }
     .navbar3 {
-        padding: 12px;
+        padding-left: 15px;
     }
     .main-left,
     .main-right {
         display: none;
     }
     .main-between {
-        background-color:  rgb(209 213 219);
+        background-color: rgb(209 213 219);
     }
     .main-between1 {
-        margin-top: 147px;
+        margin-top: 89px;
+    }
+    .user1 {
+        padding: 0;
+        margin: 0;
+    }
+    .user2 {
+        padding: 1px;
     }
   }

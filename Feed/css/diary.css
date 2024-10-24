@@ -34,7 +34,7 @@ nav::-webkit-scrollbar-thumb:hover,
   
 
 
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 375px) {
     .navbar {
         display: flex;
         display: block;
@@ -63,8 +63,6 @@ nav::-webkit-scrollbar-thumb:hover,
     }
     .main-between {
         background-color:  rgb(209 213 219);
-    }
-    .main-between1 {
         margin-top: 83px;
     }
   }

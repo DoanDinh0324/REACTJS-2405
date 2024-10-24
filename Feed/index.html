@@ -13,8 +13,8 @@
 <body>
     <header>
         <div class="w-full bg-white shadow fixed z-50">
-            <div class="h-auto lg:flex items-center justify-between p-4 lg:flex-wrap sm:block">
-                <div class="absolute sm:static px-3 sm:px-0 h-full lg:flex items-center gap-3 sm:hidden">
+            <div class="lg:h-[64px] lg:flex items-center justify-between lg:p-[24px] sm:block">
+                <div class="navbar absolute sm:static px-3 sm:px-0 h-full lg:flex items-center gap-3 sm:hidden">
                     <button class="text-gray-500 hover:text-blue-700">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                             class="w-6 h-6">
@@ -25,24 +25,24 @@
                     <div class="flex items-center space-x-2 text-sm text-gray-600">
                         <img class="w-8 h-8" src="../Feed/img/logo/Weather.png" alt="Weather Icon">
                         <div class="flex flex-col">
-                            <span>Hà Nội, 24 độ C</span>
-                            <span class="text-gray-400">Trời nắng</span>
+                            <span class="text-[#1F1F1F] font-bold" >Hà Nội, 24 độ C</span>
+                            <span class="text-[#1F1F1F]">Trời nắng</span>
                         </div>
                     </div>
                 </div>
                 <div
                     class="relative flex py-3 sm:py-0 sm:gap-5 w-full sm:w-auto justify-between items-center border-b border-solid sm:border-none">
-                    <div class="relative h-full flex items-center">
+                    <div class="logo relative h-full flex items-center">
                         <a href=""><img src="../Feed/img/logo/logo.png" alt="Logo"
                                 class="w-12 h-10 inline-block mr-4"></a>
-                        <div class="relative w-full max-w-lg sm:hidden lg:block">
+                        <div class="search relative w-full max-w-lg sm:hidden lg:block">
                             <img src="../Feed/img/logo/Search.png" alt="Search Icon"
                                 class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5">
                             <input type="text" placeholder="Tìm kiếm VidaryBook..."
                                 class="bg-gray-100 rounded-full pl-10 py-2 text-sm border border-gray-300 focus:outline-none w-96">
                         </div>
                     </div>
-                    <div class="lg:flex items-center lg:flex-grow-0 overflow-y-visible p-5 sm:p-0 lg:block sm:hidden">
+                    <div class="navbar2 lg:flex items-center lg:flex-grow-0 overflow-y-visible p-5 sm:p-0 lg:block sm:hidden">
                         <div class="p-2 bg-blue-100 rounded-lg">
                             <a href=""><img class="w-6 h-6" src="../Feed/img/logo/diary.png" alt="Diary Icon"></a>
                         </div>
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4 lg:p-0 sm:p-3">
+                <div class="navbar3 flex items-center space-x-4 lg:p-0 sm:p-3">
                     <div class="relative inline-block">
                         <div class="bg-gray-200 p-2 rounded-full">
                             <img src="../Feed/img/logo/menu.png" alt="Chat Icon" class="w-6 h-6">
@@ -96,16 +96,11 @@
                             0
                         </span>
                     </div>
-
-                    <!-- Notification List -->
                     <div id="notification-list" class="bg-white rounded-lg shadow-lg p-4 max-w-sm mx-auto hidden">
-                        <!-- Header -->
                         <div class="flex justify-between items-center mb-4">
                             <h2 class="text-xl font-bold">All notifications</h2>
                             <button class="text-gray-500 hover:text-gray-700">•••</button>
                         </div>
-
-                        <!-- Filter Options -->
                         <div class="flex space-x-2 mb-4">
                             <button
                                 class="bg-blue-100 text-blue-500 px-3 py-1 rounded-full border border-blue-500">All</button>
@@ -113,10 +108,7 @@
                             <button class="bg-gray-100 text-gray-500 px-3 py-1 rounded-full">Unread</button>
                             <button class="bg-gray-100 text-gray-500 px-3 py-1 rounded-full">Custom Link</button>
                         </div>
-
-                        <!-- Notifications List -->
                         <div class="space-y-4">
-                            <!-- Notifications will be dynamically inserted here -->
                         </div>
                     </div>
                     <div class="relative">
@@ -132,48 +124,48 @@
     </header>
 
     <main>
-        <div class="bg-gray-300 min-h-screen">
-            <div class=" grid lg:grid-cols-3 gap-3 sm:pt-10">
+        <div class="bg bg-gray-300 min-h-screen">
+            <div class=" grid lg:grid-cols-3 gap-4 sm:pt-[36px]">
                 <div class="flex justify-between h-full items-start">
                     <div
-                        class="lg:col-span-1 custom-width bg-gray-50 border-r border-gray-200 fixed left-0 inset-y-0 z-40 sm:hidden lg:block">
+                        class="main-left col-span-1 lg:custom-width lg:bg-gray-50 lg:border-r lg:border-gray-200 fixed left-0 inset-y-0 z-40 sm:hidden lg:block">
                         <!-- Top tabs -->
                         <div class="flex justify-between p-4 pt-20 border-b border-gray-200">
                             <a href="#" class="text-blue-500 font-semibold">Home feed</a>
-                            <a href="#" class="text-gray-500">Shop feed</a>
+                            <a href="#" class="text-[#636363]">Shop feed</a>
                         </div>
 
                         <!-- Menu items -->
                         <nav class="p-4 pb-10 overflow-y-auto h-[calc(100vh-6rem)]">
-                            <h3 class="text-xl text-gray-900 mb-2">MẠNG XÃ HỘI</h3>
+                            <h3 class="flex items-center text-xl text-[#1F1F1F] font-semibold leading-[17px] h-[41px] mb-2">MẠNG XÃ HỘI</h3>
                             <ul>
                                 <!-- Menu item with icon and text -->
-                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                     <img src="../Feed/img/left/people.svg" alt="icon" class="w-5 h-5 mr-2">
                                     <span class="text-gray-700">Trang cộng đồng (5)</span>
                                 </li>
-                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                     <img src="../Feed/img/left/Group.png" alt="icon" class="w-5 h-5 mr-2">
                                     <span class="text-gray-700">Nhật ký</span>
                                 </li>
                                 <!-- Add more items as needed -->
-                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                     <img src="../Feed/img/left/Icon.png" alt="icon" class="w-5 h-5 mr-2">
                                     <span class="text-gray-700">Khảo sát</span>
                                 </li>
-                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                     <img src="../Feed/img/left/layer2.png" alt="icon" class="w-5 h-5 mr-2">
                                     <span class="text-gray-700">Sự kiện</span>
                                 </li>
-                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                     <img src="../Feed/img/left/layer2.png" alt="icon" class="w-5 h-5 mr-2">
                                     <span class="text-gray-700">Bản đồ thông minh</span>
                                 </li>
-                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                     <img src="../Feed/img/left/Group1.png" alt="icon" class="w-5 h-5 mr-2">
                                     <span class="text-gray-700">Smart Q&A</span>
                                 </li>
-                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                     <img src="../Feed/img/left/Group5.png" alt="icon" class="w-5 h-5 mr-2">
                                     <span class="text-gray-700">Tìm kiếm</span>
                                 </li>
@@ -191,50 +183,50 @@
                                         <img src="../Feed/img/left/_04.Icon.png" alt="icon" class="w-5 h-5 mr-2">
                                         <span>Trang cá nhân</span>
                                     </li>
-                                    <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                    <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                         <img src="../Feed/img/left/Group9.png" alt="icon" class="w-5 h-5 mr-2">
                                         <span>Ảnh</span>
                                     </li>
-                                    <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                    <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                         <img src="../Feed/img/left/reel.svg" alt="icon" class="w-5 h-5 mr-2">
                                         <span>Video</span>
                                     </li>
-                                    <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                    <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                         <img src="../Feed/img/left/Group8.png" alt="icon" class="w-5 h-5 mr-2">
                                         <span>Huy hiệu</span>
                                     </li>
                                 </ul>
 
                             </ul>
-                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                            <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                 <img src="../Feed/img/left/Group4.png" alt="icon" class="w-5 h-5 mr-2">
                                 <span class="text-gray-700">Bạn bè</span>
                             </li>
-                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                            <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                 <img src="../Feed/img/left/Group3.png" alt="icon" class="w-5 h-5 mr-2">
                                 <span class="text-gray-700">Nhóm</span>
                             </li>
-                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                            <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                 <img src="../Feed/img/left/Icon1.png" alt="icon" class="w-5 h-5 mr-2">
                                 <span class="text-gray-700">Doanh nghiệp</span>
                             </li>
-                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                            <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                 <img src="../Feed/img/left/facebook-page 1.svg" alt="icon" class="w-5 h-5 mr-2">
                                 <span class="text-gray-700">Trang</span>
                             </li>
-                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                            <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                 <img src="../Feed/img/left/Group6.png" alt="icon" class="w-5 h-5 mr-2">
                                 <span class="text-gray-700">Danh ngôn</span>
                             </li>
-                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                            <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                 <img src="../Feed/img/left/Vector3.png" alt="icon" class="w-5 h-5 mr-2">
                                 <span class="text-gray-700">Bảng ghi nhận</span>
                             </li>
-                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                            <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                 <img src="../Feed/img/left/Group7.png" alt="icon" class="w-5 h-5 mr-2">
                                 <span class="text-gray-700">Kênh của tôi</span>
                             </li>
-                            <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                            <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                 <img src="../Feed/img/left/Birthday_Cake.png" alt="icon" class="w-5 h-5 mr-2">
                                 <span class="text-gray-700">Sinh nhật</span>
                             </li>
@@ -254,11 +246,11 @@
                                         <img src="../Feed/img/left/Vector4.png" alt="icon" class="w-5 h-5 mr-2">
                                         <span>Kênh video</span>
                                     </li>
-                                    <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                    <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                         <img src="../Feed/img/left/Group10.png" alt="icon" class="w-5 h-5 mr-2">
                                         <span>Kênh hình ảnh</span>
                                     </li>
-                                    <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                    <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                         <img src="../Feed/img/left/music.svg" alt="icon" class="w-5 h-5 mr-2">
                                         <span>Kênh nhạc</span>
                                     </li>
@@ -267,11 +259,11 @@
 
                             <h3 class="text-sm text-gray-900 mt-4 mb-2">CỬA HÀNG CỦA TÔI</h3>
                             <ul>
-                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                     <img src="../Feed/img/left/marketplace.svg" alt="icon" class="w-5 h-5 mr-2">
                                     <span>Chợ mua bán</span>
                                 </li>
-                                <li class="flex items-center mb-2 p-2 rounded-lg hover:bg-blue-100">
+                                <li class="flex items-center py-[4px] px-[16px] h-[36px] gap-[8px] rounded-lg hover:bg-blue-100">
                                     <img src="../Feed/img/left/Group11.png" alt="icon" class="w-5 h-5 mr-2">
                                     <span>Chợ của tôi</span>
                                 </li>
@@ -279,21 +271,21 @@
                         </nav>
                     </div>
                 </div>
-                <div class="">
+                <div class="main-between">
                     <div
-                        class=" flex  bg-white lg:p-2 lg:mt-[35px] items-stretch flex-nowrap justify-between profile-feed-items min-w-max w-full overflow-auto !gap-0 sm:mt-[88px] sm:p-1 rounded">
-                        <a href="#" class="text-blue-500 border-b-2 border-blue-500 pb-1">Bài đăng</a>
-                        <a href="#" class="text-gray-500 hover:text-blue-500">Video</a>
-                        <a href="#" class="text-gray-500 hover:text-blue-500">Vui cười</a>
-                        <a href="#" class="text-gray-500 hover:text-blue-500">Thể thao</a>
-                        <a href="#" class="text-gray-500 hover:text-blue-500">Liên kết video</a>
-                        <a href="#" class="text-gray-500 hover:text-blue-500">Livestream</a>
-                        <a href="#" class="text-gray-500 hover:text-blue-500">Công cụ</a>
+                        class="main-between1 flex bg-white lg:p-2 lg:mt-[24px] items-center flex-nowrap h-[36px] justify-between profile-feed-items min-w-max w-full overflow-auto !gap-0 sm:mt-[52px] sm:p-1">
+                        <a href="#" class="text-blue-500 text-xs border-b-2 border-blue-500 mb-[-8px]">Bài đăng</a>
+                        <a href="#" class="text-gray-500 text-xs hover:text-blue-500">Video</a>
+                        <a href="#" class="text-gray-500 text-xs hover:text-blue-500">Vui cười</a>
+                        <a href="#" class="text-gray-500 text-xs hover:text-blue-500">Thể thao</a>
+                        <a href="#" class="text-gray-500 text-xs hover:text-blue-500">Liên kết video</a>
+                        <a href="#" class="text-gray-500 text-xs hover:text-blue-500">Livestream</a>
+                        <a href="#" class="text-gray-500 text-xs hover:text-blue-500">Công cụ</a>
                     </div>
                     <div class="flex-1 pt-2">
                         <div class="bg-white rounded-lg shadow-md">
                             <div class="flex items-center rounded-lg justify-between bg-white p-4">
-                                <div class="flex items-center space-x-2">
+                                <div class="user flex items-center space-x-2 truncate">
                                     <div class="flex">
                                         <img class="absolute z-10 w-6 h-4 -ml-2" src="../Feed/img/Footer.png" alt="">
                                         <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
@@ -301,7 +293,7 @@
                                     </div>
                                     <div class="pl-2">
                                         <div class="flex items-center space-x-1">
-                                            <span class="font-semibold text-sm text-blue-500">Ngô Minh Sang</span>
+                                            <span class="font-semibold text-sm text-blue-500 ">Ngô Minh Sang</span>
                                             <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
                                         </div>
                                         <div class="flex items-center">
@@ -309,8 +301,8 @@
                                             <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
                                         </div>
                                     </div>
-                                    <div class="h-6 w-px bg-gray-200"></div>
-                                    <div class="pl-2 flex items-center">
+                                    <div class="h-6 lg:w-px sm:w-px bg-gray-200"></div>
+                                    <div class="user1 lg:pl-2 flex items-center">
                                         <img src="../Feed/img/logo/image.png" alt="Canvanex" class="w-6 h-6">
                                         <span class="pl-2 text-blue-500">Canvanex</span>
                                     </div>
@@ -321,7 +313,7 @@
                                     <img src="../Feed/img/logo/close.png" alt="Icon 2" class="w-5 h-5 p-1">
                                 </div>
                             </div>
-                            <div class="h-14">
+                            <div class="h-14 truncate">
                                 <span class="flex justify-center text-pink-500 text-xl">User Profile</span>
                                 <span class="p-4 text-blue-500">https://social.canvanex.com/tathiminhngoc181/</span>
                             </div>
@@ -336,8 +328,8 @@
                                             class="w-10 h-10 rounded-full">
                                     </div>
                                     <div>
-                                        <div class="flex items-center space-x-2">
-                                            <span class="font-semibold text-blue-600 text-lg">Tạ Thị Minh Ngọc</span>
+                                        <div class="flex items-center lg:space-x-2 sm:space-x-2">
+                                            <span class="font-semibold text-blue-600 text-lg truncate">Tạ Thị Minh Ngọc</span>
                                             <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
                                         </div>
                                         <div class="text-sm text-gray-500">
@@ -345,11 +337,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex space-x-2">
-                                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Kết
+                                <div class="flex lg:space-x-2 sm:space-x-2">
+                                    <button class="user2 bg-blue-500 text-white lg:px-4 lg:py-2 sm:px-4 sm:py-2 rounded-lg truncate hover:bg-blue-600">Kết
                                         bạn</button>
                                     <button
-                                        class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400">Nhắn
+                                        class="user2 bg-gray-300 text-gray-700 lg:px-4 lg:py-2 sm:px-4 sm:py-2 rounded-lg truncate hover:bg-gray-400">Nhắn
                                         tin</button>
                                 </div>
                             </div>
@@ -377,24 +369,24 @@
                                 </div>
                                 <div class="flex p-4 justify-between items-center space-x-4">
                                     <button
-                                        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
+                                        class="transition truncate ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
                                         <img class="pr-1" src="../Feed/img/logo/Vector.png" alt=""> Cảm xúc
                                     </button>
                                     <button
-                                        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
+                                        class="transition truncate ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
                                         <img class="pr-1" src="../Feed/img/logo/Group6.png" alt=""> Gắn huy hiệu
                                     </button>
                                     <button
-                                        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
+                                        class="transition truncate ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
                                         <img class="pr-1" src="../Feed/img/logo/Vector2.png" alt=""> Cảm nhận
                                     </button>
                                     <button
-                                        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
+                                        class="transition truncate ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
                                         <img class="pr-1" src="../Feed/img/logo/Vector1.png" alt=""> Chia sẻ
                                     </button>
                                 </div>
                             </div>
-                            <div class="p-6 border-t">
+                            <div class="p-2 border-t">
                                 <div class="flex">
                                     <img class="absolute z-10 w-4 h-3 -ml-2" src="../Feed/img/Footer.png" alt="">
                                     <img src="../Feed/img/Ellipse.png" alt="Commenter Avatar"
@@ -436,9 +428,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md">
+                        <div class="bg-white rounded-lg shadow-md mt-2">
                             <div class="flex items-center rounded-lg justify-between bg-white p-4">
-                                <div class="flex items-center space-x-2">
+                                <div class="user flex items-center space-x-2 truncate">
                                     <div class="flex">
                                         <img class="absolute z-10 w-6 h-4 -ml-2" src="../Feed/img/Footer.png" alt="">
                                         <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
@@ -446,7 +438,7 @@
                                     </div>
                                     <div class="pl-2">
                                         <div class="flex items-center space-x-1">
-                                            <span class="font-semibold text-sm text-blue-500">Ngô Minh Sang</span>
+                                            <span class="font-semibold text-sm text-blue-500 ">Ngô Minh Sang</span>
                                             <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
                                         </div>
                                         <div class="flex items-center">
@@ -454,8 +446,8 @@
                                             <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
                                         </div>
                                     </div>
-                                    <div class="h-6 w-px bg-gray-200"></div>
-                                    <div class="pl-2 flex items-center">
+                                    <div class="h-6 lg:w-px sm:w-px bg-gray-200"></div>
+                                    <div class="user1 lg:pl-2 flex items-center">
                                         <img src="../Feed/img/logo/image.png" alt="Canvanex" class="w-6 h-6">
                                         <span class="pl-2 text-blue-500">Canvanex</span>
                                     </div>
@@ -466,7 +458,7 @@
                                     <img src="../Feed/img/logo/close.png" alt="Icon 2" class="w-5 h-5 p-1">
                                 </div>
                             </div>
-                            <div class="h-14">
+                            <div class="h-14 truncate">
                                 <span class="flex justify-center text-pink-500 text-xl">User Profile</span>
                                 <span class="p-4 text-blue-500">https://social.canvanex.com/tathiminhngoc181/</span>
                             </div>
@@ -481,8 +473,8 @@
                                             class="w-10 h-10 rounded-full">
                                     </div>
                                     <div>
-                                        <div class="flex items-center space-x-2">
-                                            <span class="font-semibold text-blue-600 text-lg">Tạ Thị Minh Ngọc</span>
+                                        <div class="flex items-center lg:space-x-2 sm:space-x-2">
+                                            <span class="font-semibold text-blue-600 text-lg truncate">Tạ Thị Minh Ngọc</span>
                                             <img src="../Feed/img/logo/logo1.png" alt="Verified" class="w-4 h-4">
                                         </div>
                                         <div class="text-sm text-gray-500">
@@ -490,11 +482,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex space-x-2">
-                                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Kết
+                                <div class="flex lg:space-x-2 sm:space-x-2">
+                                    <button class="user2 bg-blue-500 text-white lg:px-4 lg:py-2 sm:px-4 sm:py-2 rounded-lg truncate hover:bg-blue-600">Kết
                                         bạn</button>
                                     <button
-                                        class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400">Nhắn
+                                        class="user2 bg-gray-300 text-gray-700 lg:px-4 lg:py-2 sm:px-4 sm:py-2 rounded-lg truncate hover:bg-gray-400">Nhắn
                                         tin</button>
                                 </div>
                             </div>
@@ -522,24 +514,24 @@
                                 </div>
                                 <div class="flex p-4 justify-between items-center space-x-4">
                                     <button
-                                        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
+                                        class="transition truncate ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
                                         <img class="pr-1" src="../Feed/img/logo/Vector.png" alt=""> Cảm xúc
                                     </button>
                                     <button
-                                        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
+                                        class="transition truncate ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
                                         <img class="pr-1" src="../Feed/img/logo/Group6.png" alt=""> Gắn huy hiệu
                                     </button>
                                     <button
-                                        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
+                                        class="transition truncate ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
                                         <img class="pr-1" src="../Feed/img/logo/Vector2.png" alt=""> Cảm nhận
                                     </button>
                                     <button
-                                        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
+                                        class="transition truncate ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 text-gray-500 flex items-center hover:text-blue-500">
                                         <img class="pr-1" src="../Feed/img/logo/Vector1.png" alt=""> Chia sẻ
                                     </button>
                                 </div>
                             </div>
-                            <div class="p-6 border-t">
+                            <div class="p-2 border-t">
                                 <div class="flex">
                                     <img class="absolute z-10 w-4 h-3 -ml-2" src="../Feed/img/Footer.png" alt="">
                                     <img src="../Feed/img/Ellipse.png" alt="Commenter Avatar"
@@ -584,7 +576,7 @@
                     </div>
 
                     <aside
-                        class="lg:col-span-1 custom-width bg-white h-screen p-4 shadow-lg fixed right-0 inset-y-0 z-40 pt-20 sm:hidden lg:block">
+                        class="main-right col-span-1 custom-width bg-white h-screen p-4 shadow-lg fixed right-0 inset-y-0 z-40 pt-20 sm:hidden lg:block">
                         <div class=" justify-between h-full items-start">
                             <div class="flex items-center justify-between">
                                 <h3 class="font-bold text-xl text-gray-900">Trò chuyện</h3>
@@ -752,7 +744,6 @@
                                 </div>
                                 <div class="flex items-center p-2">
                                     <div class="relative flex">
-                                        <!-- Small Icon on Top -->
                                         <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50"
                                             src="../Feed/img/Footer.png" alt="">
                                         <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
@@ -780,7 +771,6 @@
                                 </div>
                                 <div class="flex items-center p-2">
                                     <div class="relative flex">
-                                        <!-- Small Icon on Top -->
                                         <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50"
                                             src="../Feed/img/Footer.png" alt="">
                                         <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
@@ -808,7 +798,6 @@
                                 </div>
                                 <div class="flex items-center p-2">
                                     <div class="relative flex">
-                                        <!-- Small Icon on Top -->
                                         <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50"
                                             src="../Feed/img/Footer.png" alt="">
                                         <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
@@ -836,7 +825,6 @@
                                 </div>
                                 <div class="flex items-center p-2">
                                     <div class="relative flex">
-                                        <!-- Small Icon on Top -->
                                         <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50"
                                             src="../Feed/img/Footer.png" alt="">
                                         <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
@@ -864,7 +852,6 @@
                                 </div>
                                 <div class="flex items-center p-2">
                                     <div class="relative flex">
-                                        <!-- Small Icon on Top -->
                                         <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50"
                                             src="../Feed/img/Footer.png" alt="">
                                         <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
@@ -892,7 +879,6 @@
                                 </div>
                                 <div class="flex items-center p-2">
                                     <div class="relative flex">
-                                        <!-- Small Icon on Top -->
                                         <img class="absolute z-10 w-6 h-4 -left-3 -top-1 z-50"
                                             src="../Feed/img/Footer.png" alt="">
                                         <img src="../Feed/img/logo/Ellipse.png" alt="Profile"
@@ -944,6 +930,7 @@
 
 
 </body>
+<script src="../Feed/js/api.js"></script>
 <script src="../Feed/js/jquery-3.7.1.js"></script>
 <script src="../Feed/js/js.js"></script>
 <script src="../Feed/js/jsvideo.js"></script>
